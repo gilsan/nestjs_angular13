@@ -1,0 +1,74 @@
+<p-toast></p-toast>
+<div class="admin-page">
+  <p-card [header]="'주문보기'" subheader="주문편집">
+    <p-fieldset legend="상세주문" styleClass="p-mb-2" [toggleable]="true">
+        <div class="grid">
+          <div class="col-4">
+            <h5>주문번호</h5>
+            <p>{{order.id}}</p>
+          </div>
+          <div class="col-4">
+            <h5>주문일자</h5>
+            <p>{{order.dateOrderedDate | date: 'y년MM월dd일'}}</p>
+          </div>
+          <div class="col-4">
+            <h5>주문상태</h5>
+            <p>{{order.status}}</p>
+          </div>
+          <div class="col-4">
+            <h5>주문금액</h5>
+            <p>{{order.totalPrice | currency:'KRW'}}</p>
+          </div>
+        </div>
+    </p-fieldset>
+
+    <p-fieldset legend="주문상품" styleClass="p-mb-2" [toggleable]="true">
+        <div class="grid">
+
+            <div class="col-2 p-text-center p-text-bold">상품명</div>
+            <div class="col-2 p-text-center p-text-bold">브랜드</div>
+            <div class="col-2 p-text-center p-text-bold">카테고리</div>
+            <div class="col-2 p-text-center p-text-bold">가격</div>
+            <div class="col-2 p-text-center p-text-bold">수량</div>
+            <div class="col-2 p-text-center p-text-bold">합계</div>
+
+        </div>
+        <div class="grid" *ngFor="let list of orderProducts; let i = index;" >
+            <div class="col-2">{{list.product.name}}</div>
+            <div class="col-2">{{list.product.brand}} </div>
+            <div class="col-2">{{getCategoryName(i)}}</div>
+            <div class="col-2">{{list.product.price}}</div>
+            <div class="col-2">{{list.order.quantity}}</div>
+            <div class="col-2">{{list.product.price! * list.order.quantity! | currency:'KRW'}} </div>
+        </div>
+        <div class="grid"  style="color: green; ">
+          <div class="col-2 p-offset-8">총합계</div>
+          <div class="col-2 p-text-bold">{{order.totalPrice}}</div>
+        </div>
+    </p-fieldset>
+
+    <p-fieldset legend="주문주소" [toggleable]="true">
+        <div class="grid">
+          <div class="col-4">
+              <h5>주문주소</h5>
+              <p>
+                {{order.user?.zip}}<br />
+                {{order.user?.country}}<br />
+                {{order.user?.city}}<br />
+                {{order.shippingAddress1}} {{order.shippingAddress2}}<br />
+              </p>
+          </div>
+          <div class="col-4">
+            <h5>주문자</h5>
+            <p>{{order.user?.name}}</p>
+          </div>
+          <div class="col-4">
+            <h5>연락처</h5>
+            <p>{{order.phone}}</p>
+          </div>
+        </div>
+    </p-fieldset>
+
+  </p-card>
+
+</div>

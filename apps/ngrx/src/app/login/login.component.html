@@ -1,0 +1,50 @@
+<div class="login-register">
+  <div>
+    <div class="login-register-panel">
+      <div class="grid">
+        <div  class="col-6">
+          <img src="assets/images/login-photo.png">
+        </div>
+
+        <div  class="col-6 login-register-box">
+          <h3>안녕하세요.</h3>
+          <h2>로그인</h2>
+          <form [formGroup]="loginFormGroup">
+            <div class="grid p-mt-5">
+              <div class="col-12">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                  <input type="text" pInputText placeholder="이메일" formControlName="email">
+                </div>
+                <small *ngIf="loginForm['email'].invalid && isSubmitted" class="p-error">이메일은 필수 입니다.</small>
+              </div>
+              <div class="col-12">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                  <input type="password" pInputText placeholder="패스워드" formControlName="password">
+                  <small *ngIf="loginForm['password'].invalid && isSubmitted" class="p-error">암호는 필수 입니다.</small>
+                </div>
+              </div>
+              <div class="col-12">
+                <button label="로그인" class="full-btn login-btn" (click)="onSubmit()">로그인</button>
+              </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

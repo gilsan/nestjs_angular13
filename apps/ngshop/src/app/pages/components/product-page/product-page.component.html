@@ -1,0 +1,44 @@
+<div class="product-page">
+  <div class="grid">
+    <div class="col-6">
+      <ui-gallery [images]="images"></ui-gallery>
+    </div>
+    <div class="col-6 product-name" *ngIf="product">
+      <h2>{{product.name}}</h2>
+      <p class="product-desc">{{product.description}}</p>
+      <div class="product-rating">
+        <p-rating [(ngModel)]="product.rating"
+        [cancel]="false" [disabled]="true"></p-rating>
+      </div>
+      <div class="product-price">
+          {{product.price | currency: 'KRW'}}
+        <span class="price-before">
+          {{ product.price   | currency: 'KRW'}}
+        </span>
+      </div>
+      <div class="product-quantity">
+        <div class="field col-12 md:col-3">
+          <label for="minmax-buttons">수량</label>
+          <p-inputNumber [(ngModel)]="quantity" mode="decimal" [showButtons]="true"
+
+          inputId="quantity" [min]="1" [max]="100">
+          </p-inputNumber>
+        </div>
+      </div>
+      <div class="product-actions">
+        <button pButton pRipple type="button" label="구매" class="p-button-rounded"></button>
+        <button pButton pRipple type="button"
+        (click)="addProductToCart()"
+        label="카트추가" class="p-button-rounded"></button>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="grid">
+    <div class="col-12">
+      <div [innerHTML]="product.richDescription"></div>
+    </div>
+  </div>
+</div>
+
+<p-toast position="bottom-center"></p-toast>

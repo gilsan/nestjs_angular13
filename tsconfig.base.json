@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ngshop/orders": ["libs/orders/src/index.ts"],
+      "@ngshop/products": ["libs/products/src/index.ts"],
+      "@ngshop/ui": ["libs/ui/src/index.ts"],
+      "@ngshop/users": ["libs/users/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -1,0 +1,29 @@
+table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.mat-header-cell {
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+}
+
+
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: lightcyan;
+}
+
+.box_border {
+  border-right: 1px solid lightgray;
+  text-align: center;
+}
+
+.mat-column-image {
+  width: 200px;
+}
+
+.mat-column-price {
+  width: 100px;
+}

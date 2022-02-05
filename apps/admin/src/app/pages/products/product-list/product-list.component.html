@@ -1,0 +1,85 @@
+<div class="admin-page">
+  <mat-card>
+    <mat-card-title>제 품</mat-card-title>
+    <mat-card-subtitle>제품목록</mat-card-subtitle>
+    <div>
+      <mat-grid-list cols="12" rowHeight="70px">
+        <mat-toolbar>
+          <button mat-raised-button color="primary" (click)="addNewProduct()">
+            <mat-icon>add</mat-icon>추가
+          </button>
+        </mat-toolbar>
+      </mat-grid-list>
+    </div>
+  </mat-card>
+  <div>
+    <p-paginator [rows]="2" [totalRecords]="120" [rowsPerPageOptions]="[2,3,4]"
+    (onPageChange)="paginate($event)"
+    ></p-paginator>
+   </div>
+  <div class="table">
+    <mat-grid-list cols="1" rowHeight="70px">
+      <table mat-table [dataSource]="products" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef class="box_border"> 제품명 </th>
+          <td mat-cell *matCellDef="let element"  class="box_border"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="image">
+          <th mat-header-cell *matHeaderCellDef class="box_border"> 이미지 </th>
+          <td mat-cell *matCellDef="let element" class="box_border">
+            <img [src]="element.image" width="50" height="40">
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef class="box_border">가격 </th>
+          <td mat-cell *matCellDef="let element" class="box_border"> {{element.price}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="countInStock">
+          <th mat-header-cell *matHeaderCellDef class="box_border">수량</th>
+          <td mat-cell *matCellDef="let element" class="box_border"> {{element.countInStock}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="category">
+          <th mat-header-cell *matHeaderCellDef class="box_border">품목</th>
+          <td mat-cell *matCellDef="let element" class="box_border"> {{element.category}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="dateCreated">
+          <th mat-header-cell *matHeaderCellDef class="box_border">제조일</th>
+          <td mat-cell *matCellDef="let element"  class="box_border"> {{element.dateCreated}} </td>
+        </ng-container>
+
+
+
+        <ng-container matColumnDef="editdelete">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element"  fxLayout="row" fxLayoutAlign="end end" fxLayoutGap= "10px" style="height: 50px;">
+
+              <button mat-raised-button color="primary" (click)="edit(element)">
+                <mat-icon>edit</mat-icon>
+              </button>
+
+              <button mat-raised-button color="warn" (click)="delete(element.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+
+
+          </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="productColumns"></tr>
+        <tr mat-row
+        class="example-element-row"
+        *matRowDef="let row; columns: productColumns;"></tr>
+      </table>
+    </mat-grid-list>
+  </div>
+
+
+</div>
+

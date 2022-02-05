@@ -1,0 +1,15 @@
+
+  <div class="wrapper">
+    <header>파일올리기</header>
+    <form action="#">
+      <input class="file-input" type="file" name="file" hidden
+        (change)="onFileSelected($event)" #fileInput
+      >
+       <mat-icon (click)="onUpload()">backup</mat-icon>
+      <p (click)="fileInput.click()">파일을 선택해 주세요</p>
+    </form>
+    <section class="progress-area"></section>
+    <section class="uploaded-area"></section>
+  </div>
+
+

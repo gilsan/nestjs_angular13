@@ -1,0 +1,56 @@
+<div class="admin-page">
+  <p-card header="대쉬보드" subheader="최신정보">
+    <div class="grid">
+      <div class="col-3">
+        <p-card styleClass="d-orders">
+          <div class="d-items">
+            <div>
+                <i class="pi pi-shopping-cart"></i><br />
+                <span class="name">주문건수</span>
+            </div>
+            <span class="number">{{orderCount}}</span>
+          </div>
+        </p-card>
+      </div>
+      <div class="col-3">
+        <p-card styleClass="c-orders">
+          <div class="d-items">
+            <div>
+                <i class="pi pi-shopping-cart"></i><br />
+                <span class="name">주문자수</span>
+            </div>
+            <span class="number">{{customerCount}}</span>
+          </div>
+        </p-card>
+      </div>
+
+      <div class="col-3">
+        <p-card styleClass="p-orders">
+          <div class="d-items">
+            <div>
+                <i class="pi pi-shopping-cart"></i><br />
+                <span class="name">주문상품수</span>
+            </div>
+            <span class="number">{{totalQuantity}}</span>
+          </div>
+        </p-card>
+      </div>
+
+      <div class="col-3">
+        <p-card styleClass="t-orders">
+          <div class="d-items">
+            <div>
+                <i class="pi pi-shopping-cart"></i><br />
+                <span class="name">주문금액</span>
+            </div>
+            <span class="number">{{totalPrice | currency: 'KRW'}}</span>
+          </div>
+        </p-card>
+      </div>
+
+
+    </div>
+  </p-card>
+
+</div>
+

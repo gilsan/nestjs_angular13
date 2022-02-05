@@ -1,0 +1,71 @@
+<div class="checkout-page">
+  <div>
+    <p-button  label="장바구니로"  icon="pi pi-arrow-left" (onClick)="backToCart()"></p-button>
+  </div>
+  <div class="grid">
+    <div class="col-8">
+          <div class="grid checkout-form">
+            <div class="col-12">
+              <form [formGroup]="form">
+                <div class="p-fluid p-formgrid grid ">
+                  <div class="p-field col-4">
+                      <label for="name">*이름</label>
+                      <input id="name" type="text" pInputText formControlName="name">
+                      <small class="p-error" *ngIf="userControl['name'].invalid && isSubmitted">이름란은 필수 입니다.</small>
+                  </div>
+                  <div class="p-field col-4">
+                      <label for="email">*이메일</label>
+                      <input id="email" type="text" pInputText formControlName="email">
+                      <small class="p-error" *ngIf="userControl['email'].invalid && isSubmitted">이메일란은 필수 입니다.</small>
+                  </div>
+                </div>
+
+                <div class="p-fluid p-formgrid grid">
+                    <div class="p-field col-4">
+                      <label for="phone">전화번호</label>
+                      <p-inputMask formControlName="phone" mask="999-9999-9999" placeholder="(010) 9999-9999"></p-inputMask>
+                    </div>
+                    <div class="p-field col-4">
+                      <label for="zip">우편번호</label>
+                      <input id="zip" type="text" pInputText formControlName="zipcode">
+                    </div>
+                </div>
+
+                <div class="p-fluid p-formgrid grid">
+                  <div class="p-field col-4">
+                    <label for="city">시/도</label>
+                    <input id="city" type="text" pInputText formControlName="city">
+                  </div>
+                  <div class="p-field col-4">
+                    <label for="city">구/군</label>
+                    <input id="streetname" type="text" pInputText formControlName="street">
+                  </div>
+
+                </div>
+
+                <div class="p-fluid p-formgrid grid">
+                  <div class="p-field col-4">
+                    <label for="apartment">주소</label>
+                    <input id="apartment" type="text" pInputText formControlName="apartment">
+                  </div>
+                  <div class="p-field col-4">
+                    <label for="country">국가</label>
+                    <p-dropdown   formControlName="country"
+                    [options]="countries" optionLabel="name" optionValue="name"
+                    [filter]="true" filterBy="name" [showClear]="true" placeholder="국가선택"></p-dropdown>
+                  </div>
+
+                </div>
+              </form>
+            </div>
+          </div>
+    </div>
+    <div class="col-4">
+      <order-order-summary [marginTop] ="40"
+       [totalPrice]="grandTotal"></order-order-summary>
+      <div class="checkout-button">
+        <button  pButton   label="주문" (click)="placeOrder()"  ></button>
+      </div>
+    </div>
+  </div>
+</div>

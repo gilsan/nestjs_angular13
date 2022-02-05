@@ -1,0 +1,102 @@
+<p-toast></p-toast>
+<div class="admin-page">
+  <p-card [header]="editMode ? '사용자 수정' : '사용자 등록'" subheader="사용자 등록/수정" >
+    <div class="grid mb-5">
+      <div class="col-12">
+        <p-toolbar >
+          <div class="p-toolbar-group-right"></div>
+            <div class="p-toolbar-group-left">
+              <p-button
+                  styleClass="p-button-success  p-mr-4"
+                  [label]="editMode ? '수정' : '추가'"
+                  icon="pi pi-plus"
+                  (click)="addNew()">
+              </p-button>&nbsp;&nbsp;&nbsp;
+              <p-button
+                  styleClass="p-button-danger p-ml-2"
+                  label="나가기"
+                  icon="pi pi-minus"
+                  (click)="cancel()">
+              </p-button>
+            </div>
+        </p-toolbar>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="col-12">
+        <form [formGroup]="form">
+          <div class="p-fluid p-formgrid grid">
+            <div class="p-field col-4">
+                <label for="name">*이름</label>
+                <input id="name" type="text" pInputText formControlName="name">
+                <small class="p-error" *ngIf="userControl['name'].invalid && isSubmitted">이름란은 필수 입니다.</small>
+            </div>
+            <div class="p-field col-4">
+                <label for="email">*이메일</label>
+                <input id="email" type="text" pInputText formControlName="email">
+                <small class="p-error" *ngIf="userControl['email'].invalid && isSubmitted">이메일란은 필수 입니다.</small>
+            </div>
+            <div class="p-field col-4">
+              <label for="password">*패스워드</label>
+              <input id="password" type="text" pInputText formControlName="password">
+              <small class="p-error" *ngIf="userControl['password'].invalid && isSubmitted">패스워드란은 필수 입니다.</small>
+            </div>
+          </div>
+
+          <div class="p-fluid p-formgrid grid">
+              <div class="p-field col-4">
+                <label for="phone">전화번호</label>
+                <p-inputMask formControlName="phone" mask="999-9999-9999" placeholder="(010) 9999-9999"></p-inputMask>
+              </div>
+              <div class="p-field col-4">
+                  <label for="isAdmin">관리자</label><br />
+                  <p-inputSwitch formControlName="isAdmin" styleClass="p-mt-2"></p-inputSwitch>
+              </div>
+          </div>
+
+          <div class="p-fluid p-formgrid grid">
+            <div class="p-field col-4">
+              <label for="city">시/도</label>
+              <input id="city" type="text" pInputText formControlName="city">
+            </div>
+            <div class="p-field col-4">
+              <label for="city">구/군</label>
+              <input id="streetname" type="text" pInputText formControlName="street">
+            </div>
+            <div class="p-field col-4">
+              <label for="apartment">구/군</label>
+              <input id="apartment" type="text" pInputText formControlName="apartment">
+            </div>
+          </div>
+
+          <div class="p-fluid p-formgrid grid">
+            <div class="p-field col-4">
+              <label for="zip">우편번호</label>
+              <input id="zip" type="text" pInputText formControlName="zip">
+            </div>
+            <div class="p-field col-4">
+              <label for="country">국가</label>
+              <p-dropdown   formControlName="country"
+              [options]="countries" optionLabel="name" optionValue="id"
+              [filter]="true" filterBy="name" [showClear]="true" placeholder="국가선택"></p-dropdown>
+            </div>
+
+          </div>
+
+
+
+
+
+
+        </form>
+      </div>
+    </div>
+
+  </p-card>
+
+</div>
+
+<p-toast position="bottom-center" key="updateKey"></p-toast>
+<p-toast position="bottom-center" key="insertKey"></p-toast>
+

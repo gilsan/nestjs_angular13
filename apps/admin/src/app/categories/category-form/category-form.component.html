@@ -1,0 +1,53 @@
+<div class="admin-page">
+  <mat-card>
+    <mat-card-title *ngIf="editMode; else editcategory">카테고리 추가</mat-card-title>
+    <ng-template #editcategory>
+      <mat-card-title >카테고리 편집</mat-card-title>
+    </ng-template>
+    <mat-card-subtitle>카테고리 목록 추가/편집하기</mat-card-subtitle>
+    <div>
+          <mat-grid-list cols="12" rowHeight="70px">
+            <mat-toolbar fxLayout="row" fxLayoutAlign="end center" fxLayoutGap= "10px">
+              <button mat-raised-button color="primary" aria-label="추가"   (click)="add()" *ngIf="editMode; else editbutton">
+                <mat-icon>add</mat-icon>추가
+              </button>
+
+              <ng-template #editbutton>
+                <button mat-raised-button color="primary" aria-label="저장"   (click)="update()">
+                  <mat-icon>add</mat-icon>수정
+                </button>
+              </ng-template>
+
+              <button mat-raised-button color="warn" aria-label="추가"   (click)="cancel()">
+                <mat-icon>remove</mat-icon>나가기
+              </button>
+            </mat-toolbar>
+          </mat-grid-list>
+          <mat-grid-list  cols="12" rowHeight="70px">
+            <form  [formGroup]="form"  fxLayout="row" fxLayoutAlign="space-around center">
+              <mat-form-field appearance="outline" >
+                <mat-label>카테고리명</mat-label>
+                <input matInput type="text" placeholder="카테고리명" formControlName="name" id="name">
+                <mat-error *ngIf="form.invalid && isSubmitted" style="color:red">카테고리명은 필수 입니다</mat-error>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" >
+                <mat-label>아이콘</mat-label>
+                <input matInput type="text" placeholder="아이콘" formControlName="icon">
+                <mat-error *ngIf="form.invalid && isSubmitted" style="color:red">아이콘은 필수 입니다</mat-error>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" >
+                <mat-label>색</mat-label>
+                <input matInput type="text" placeholder="색" formControlName="color">
+
+              </mat-form-field>
+
+
+            </form>
+          </mat-grid-list>
+    </div>
+  </mat-card>
+
+</div>
+

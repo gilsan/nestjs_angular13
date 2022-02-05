@@ -1,0 +1,25 @@
+<p-card [header]="" [style]="{width: '360px', 'margin-top': '10px'}" styleClass="p-card-shadow"
+  *ngFor="let course of courses; let i =index;">
+  <ng-template pTemplate="header">
+    <h3>{{course.description}}</h3>
+    <img alt="Card" [src]="course.iconUrl">
+
+  </ng-template>
+
+  <p>{{course.longDescription}}</p>
+  <ng-template pTemplate="footer">
+    <p-button label="보기" icon="pi pi-check"  [routerLink]="['/courses','lists', course.id]"></p-button>
+    <p-button label="수정" icon="pi pi-check" (click)="edit(course, i)" [style]="{'margin-left': '.5em'}"></p-button>
+    <p-button label="삭제" icon="pi pi-times" (click)="delete(i)" styleClass="p-button-secondary"
+      [style]="{'margin-left': '.5em'}"></p-button>
+  </ng-template>
+</p-card>
+
+<p-dialog header="Header" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
+    [draggable]="false" [resizable]="false">
+
+        <ng-template pTemplate="footer">
+        <p-button icon="pi pi-save" (click)="save()" label="저장" styleClass="p-button-text"></p-button>
+        <p-button icon="pi pi-times" (click)="cancel()" label="취소" styleClass="p-button-text"></p-button>
+        </ng-template>
+</p-dialog>

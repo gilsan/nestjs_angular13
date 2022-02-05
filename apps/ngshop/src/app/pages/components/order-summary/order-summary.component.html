@@ -1,0 +1,20 @@
+<div class="summary-order"  [ngStyle]="{'margin-top' : marginTop +'px'}">
+  <h3>주문내역</h3>
+  <div class="summary-price">
+    <span>총금액</span>
+    <span>{{ totalPrice | currency: 'KRW' }}</span>
+  </div>
+  <div class="summary-price">
+    <span>포장 & 배송</span>
+    <span class="free">무료</span>
+  </div>
+  <div class="to-checkout">
+    <div class="summary-price">
+      <span>총금액</span>
+      <span>{{ totalPrice | currency: 'KRW' }}</span>
+    </div>
+  </div>
+  <div class="checkout-button" *ngIf="!isCheckout">
+    <button pButton label="결재하기" styleClass="p-button-sm" (click)="checkout()"></button>
+  </div>
+</div>

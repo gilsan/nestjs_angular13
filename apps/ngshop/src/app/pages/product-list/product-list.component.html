@@ -1,0 +1,34 @@
+ <!--
+   행삭제 Ctrl + X
+   행복사 Alt + Shift + 방향키(up/down)
+   Ctrl + Enter - 아래에 행 삽입
+   Ctrl + Shift + Enter - 위에 행 삽입
+   태그 랩핑하기 Alt + W
+   동일한 텍스트 선택
+    Ctrl + D - 순차적으로 하나씩 선택
+
+Ctrl + Shift + L - 한꺼번에 모두 선택
+ -->
+ <div class="product-lists">
+   <div class="grid">
+      <div class="col-3 category-box" *ngIf="!isCategory">
+        <h4>카테고리</h4>
+        <div>
+          <div class="p-field-checkbox" *ngFor="let category of categories; let i=index">
+            <p-checkbox [(ngModel)]="category.checked" [binary]="true" [inputId]="category.id"
+            (onChange)="categoryList()"></p-checkbox>
+            <label for="{{category.id}}">{{category.name}}</label>
+          </div>
+        </div>
+      </div>
+
+      <div [ngClass]="{'col-9': !isCategory, 'col-12': isCategory}">
+       <div class="grid" *ngIf="products">
+         <div [ngClass]="{'col-4':  !isCategory, 'col-3': isCategory}" *ngFor="let product of products">
+          <ngshop-product-item
+            [product]="product"></ngshop-product-item>
+         </div>
+        </div>
+      </div>
+   </div>
+ </div>

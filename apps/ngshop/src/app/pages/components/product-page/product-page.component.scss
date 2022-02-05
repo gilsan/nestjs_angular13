@@ -1,0 +1,57 @@
+.product {
+  &-page {
+    font-size: 18px;
+  }
+
+  &-name {
+    font-size: 14px;
+  }
+
+  &-rating {
+    margin: 10px 0;
+  }
+
+  &-price {
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--surface-300);
+    padding: 25px 0;
+
+    .price-before {
+      font-size: 14px;
+      margin-left: 20px;
+      font-weight: 200;
+      color: var(--surface-500);
+      text-decoration: line-through;
+    }
+  }
+
+  &-quantity {
+    margin: 10px 0;
+
+    label {
+      font-size: 16px;
+    }
+
+    .p-button {
+      background-color: yellow;
+      border: 0;
+    }
+  }
+
+  &-actions {
+    .p-button {
+      background-color: #857cd4;
+      border: 0;
+      margin: 0 10px 0 10px;
+    }
+
+    button:hover {
+      background-color: yellowgreen;
+    }
+  }
+
+
+
+
+}

@@ -1,0 +1,23 @@
+<div class="course" *ngIf="(course$ | async) as course">
+  <h2>{{course?.description}}</h2>
+  <img class="course-thumbnail" [src]="course?.iconUrl">
+
+  <p-table [value]="lessons" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>description</th>
+            <th>duration</th>
+            <th>seqNo</th>
+
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-lesson>
+        <tr>
+            <td>{{lesson.description}}</td>
+            <td>{{lesson.duration}}</td>
+            <td>{{lesson.seqNo}}</td>
+
+        </tr>
+    </ng-template>
+  </p-table>
+</div>

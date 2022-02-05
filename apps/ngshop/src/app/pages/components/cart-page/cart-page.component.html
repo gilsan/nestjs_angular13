@@ -1,0 +1,59 @@
+<div class="cart-page">
+  <div class="grid">
+    <div class="col-8">
+      <div>
+        <p-button
+          label="계속 쇼핑"
+          icon="pi pi-arrow-left"
+          (onClick)="backToShow()"
+        ></p-button>
+      </div>
+      <div>
+        <h4>
+          내 카드: {{ count}} 개 상품
+        </h4>
+      </div>
+      <div class="cart-shipping p-mb-5">
+          인도시간: 결재후, 1일
+      </div>
+      <div class="cart-item mb-2"  *ngFor="let item of cartProducts; let i =index;">
+          <div class="grid  p-fluid">
+            <div class="col-2 cart-item-image">
+              <img [src]="item.image" alt="">
+            </div>
+            <div class="col-7">
+              <div class="cart-item-name">{{item.name}}</div>
+              <div class="cart-item-price">{{item.price | currency: 'KRW'}}</div>
+              <div class="cart-item-remove btn">
+                <p-button
+                  icon="pi pi-trash"
+                  (onClick)="deleteCartItem(item, i)"
+                ></p-button>
+              </div>
+            </div>
+
+            <div class="col-3">
+                <div class="field cart-item-quantity">
+                  <p-inputNumber  mode="decimal" [showButtons]="true"    [(ngModel)] ="item.quantity"
+                  (onInput)="changeQuantity($event,item, i)"
+                    [min]="1" [max]="100">
+                  </p-inputNumber>
+                </div>
+                <div class="cart-item-subtotal">
+                  합계:
+                  <span class="cart-item-subtotal-value">
+                    {{ item.totalprice | currency:'KRW'}}
+                  </span>
+                </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="col-4">
+        <order-order-summary [marginTop]="120"
+        [totalPrice]="grandTotal"></order-order-summary>
+    </div>
+  </div>
+</div>
+
+<p-toast position="bottom-center"></p-toast>

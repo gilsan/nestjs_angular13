@@ -1,0 +1,25 @@
+<div class="product-item" *ngIf="product">
+  <div class="product-item-wraper">
+    <img  [routerLink]="'/products/' + product.id" [src]="product.image" class="image" alt="">
+    <h4 class="name">{{product.name}}</h4>
+    <h5 class="price">{{product.price | currency: 'KRW'}}</h5>
+    <!-- <p-button
+      styleClass="p-mt-3 add-to-cart"
+      label="상품추가"
+      icon="pi pi-shopping-cart"
+    ></p-button> -->
+
+    <button pButton
+    type="button"
+    label="상품추가"
+    (click)="addProductToCart(product)"
+    class="p-mt-4 add-to-cart"
+    icon="pi pi-shopping-cart"
+    iconPos="right"
+     ></button>
+  </div>
+</div>
+<p-toast position="bottom-center"></p-toast>
+
+
+

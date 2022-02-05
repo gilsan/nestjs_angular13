@@ -1,0 +1,25 @@
+<div class="courses-panel" >
+
+  <div class="header">
+
+    <h2 class="title">전체과정</h2>
+
+    <button pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded"></button>
+
+  </div>
+
+  <div class="counters">
+    <p>In Promo</p>
+  </div>
+
+  <p-tabView>
+    <p-tabPanel header="기본과정">
+      <courses-card-list  [courses]="beginner$ | async" ></courses-card-list>
+    </p-tabPanel>
+    <p-tabPanel header="고급과정">
+      <courses-card-list   [courses]="advanced$ | async"  ></courses-card-list>
+    </p-tabPanel>
+  </p-tabView>
+
+
+</div>

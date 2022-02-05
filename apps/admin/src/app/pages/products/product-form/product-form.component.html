@@ -1,0 +1,129 @@
+<div class="admin-page">
+  <mat-card>
+    <mat-card-title *ngIf="editMode; else editcategory">제품 추가</mat-card-title>
+    <ng-template #editcategory>
+      <mat-card-title >제품 편집</mat-card-title>
+    </ng-template>
+    <mat-card-subtitle>제품목록 추가/편집하기</mat-card-subtitle>
+    <div>
+
+          <mat-grid-list cols="12" rowHeight="70px">
+            <mat-toolbar fxLayout="row" fxLayoutAlign="end center" fxLayoutGap= "10px">
+
+              <button mat-raised-button color="primary" aria-label="추가"   (click)="add()" *ngIf="editMode; else editbutton">
+                <mat-icon>add</mat-icon>추가
+              </button>
+
+              <ng-template #editbutton>
+                <button mat-raised-button color="primary" aria-label="저장"   (click)="update()">
+                  <mat-icon>add</mat-icon>수정
+                </button>
+              </ng-template>
+
+              <button mat-raised-button color="warn" aria-label="추가"   (click)="cancel()">
+                <mat-icon>remove</mat-icon>나가기
+              </button>
+            </mat-toolbar>
+          </mat-grid-list>
+    </div>
+    <div>
+      <form [formGroup]="form">
+        <mat-grid-list cols="3" rowHeight="70px">
+
+          <mat-grid-tile>
+            <mat-form-field appearance="outline" >
+              <mat-label>상품명</mat-label>
+              <input matInput type="text"   formControlName="name" id="name">
+              <mat-error *ngIf="form.controls['name'].invalid && isSubmited" style="color:red">상품명은 필수 입니다</mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-form-field appearance="outline" >
+              <mat-label>브랜드</mat-label>
+              <input matInput type="text"   formControlName="brand">
+              <mat-error *ngIf="form.controls['brand'].invalid" style="color:red">상품명은 필수 입니다</mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-form-field appearance="outline" >
+              <mat-label>가격</mat-label>
+              <input matInput type="text"   formControlName="price">
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-form-field appearance="outline" >
+              <mat-label>재고</mat-label>
+              <input matInput type="text"   formControlName="countInStock" id="name">
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-form-field appearance="outline" >
+              <mat-label>범주</mat-label>
+              <input type="text"
+                     placeholder="선택"
+                     matInput
+                     formControlName="category"
+                     [matAutocomplete]="auto">
+              <mat-autocomplete #auto="matAutocomplete" (optionSelected)= "selectedItem(form.get('category')?.value)">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option.name">
+                  {{option.name}}
+                </mat-option>
+              </mat-autocomplete>
+
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile >
+              <div fxLayout="column" fxLayoutAlign="space-between start" class="isfeatured">
+              <div><mat-label>좋아함</mat-label>
+              </div>
+              <div class="description"><mat-slide-toggle formControlName="isFeatured"></mat-slide-toggle>
+              </div>
+            </div>
+
+          </mat-grid-tile>
+
+        </mat-grid-list>
+        <mat-grid-list cols="1">
+          <mat-form-field appearance="outline" style="width: 100%;" class="description">
+            <mat-label>제품안내</mat-label>
+            <textarea matInput type="text"   formControlName="description" rows="2"></textarea>
+          </mat-form-field>
+        </mat-grid-list>
+
+        <mat-grid-list cols="1">
+          <mat-form-field appearance="outline" style="width: 100%;" class="description">
+            <mat-label>제품설명</mat-label>
+            <textarea matInput type="text"   formControlName="richDescription" rows="2"></textarea>
+            <mat-error *ngIf="form.controls['image'].invalid && isSubmited" style="color:red">이미지는  필수 입니다</mat-error>
+          </mat-form-field>
+        </mat-grid-list>
+
+        <mat-grid-list cols="12">
+            <mat-grid-tile>
+              <mat-label>사진올리기</mat-label>
+            </mat-grid-tile>
+            <mat-grid-tile>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="3" fxLayout="row" fxLayoutAlign="start center">
+              <input  type="file" class="input-box"   (change)="onImageFileUpload($event)">
+
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2">
+              <img [src]="imageDisplay" width="80" height="80" >
+            </mat-grid-tile>
+        </mat-grid-list>
+
+
+      </form>
+
+
+    </div>
+  </mat-card>
+
+</div>
+

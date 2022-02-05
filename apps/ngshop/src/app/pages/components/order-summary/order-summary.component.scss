@@ -1,0 +1,39 @@
+.summary {
+  &-order {
+
+    margin-left: 20px;
+    background-color: #fff;
+    padding: 15px 15px;
+
+    .checkout-button {
+      button {
+        width: 100%;
+
+        &:hover {
+          background-color: lightcoral;
+        }
+      }
+
+
+    }
+
+
+
+  }
+
+  &-price {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+
+      &.free {
+        color: green;
+      }
+    }
+  }
+
+
+}
