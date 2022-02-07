@@ -1,0 +1,35 @@
+.container {
+  height: 600px;
+  margin-top: 20px;
+  margin-right: 20px;
+  padding: 20px 20px;
+  border: 1px solid black;
+  transform: translate(0%, 20%);
+}
+
+.msg-container {
+  height: 600px;
+  margin-top: 20px;
+  margin-right: 20px;
+  padding: 20px 20px;
+  transform: translate(0%, 35%);
+}
+
+.signin-image {
+  height: 100%;
+  width: 100%;
+  border: 2px solid white;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px gray;
+
+}
+
+.join {
+  padding: 10px 0px;
+}
+
+.small_font {
+  margin: -20px 10px 20px 10px;
+
+
+}
