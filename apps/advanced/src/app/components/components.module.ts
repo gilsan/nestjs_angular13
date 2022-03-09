@@ -4,6 +4,8 @@ import { TabsComponent } from './tabs/tabs.component';
 import { TabPanelComponent } from './tab-panel/tab-panel.component';
 import { TabComponent } from './tab/tab.component';
 import { InputboxComponent } from './inputbox/inputbox.component';
+import { AuFaInputComponent } from './au-fa-input/au-fa-input.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -12,10 +14,12 @@ import { InputboxComponent } from './inputbox/inputbox.component';
     TabsComponent,
     TabPanelComponent,
     TabComponent,
-    InputboxComponent
+    InputboxComponent,
+    AuFaInputComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class ComponentsModule { }
