@@ -1,5 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
+import { SocketioService } from '../socket-io.service';
+
 
 
 @Component({
@@ -28,10 +31,17 @@ export class HomeComponent implements OnInit {
 
 
   @ViewChild('inputcode', { static: true }) inputcode: ElementRef;
-  constructor() { }
+  constructor(
+    private router: Router,
+
+
+  ) { }
 
   ngOnInit(): void {
+
   }
+
+
 
   logout() {
 
@@ -47,7 +57,7 @@ export class HomeComponent implements OnInit {
 
   newMeeting() {
     const six_d_value = Math.floor(Math.random() * 1000000);
-    console.log(six_d_value);
+    this.router.navigate(['/screen'], { queryParams: { meetingID: six_d_value } });
   }
 
 }

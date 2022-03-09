@@ -84,6 +84,8 @@ input:focus {
 }
 
 .g-right-details-wrap {
+  display: none;
+  z-index: 1;
   flex-basis: 25%;
 }
 
@@ -221,6 +223,10 @@ input:focus {
 .end-call-wrap {
   -ms-transform: rotate(135deg);
   transform: rotate(135deg);
+
+  .pi-phone {
+    color: red;
+  }
 }
 
 .top-remote-video-show-wrap {
@@ -287,4 +293,8 @@ video {
 
 .top-box-show {
   display: none;
+}
+
+.log-out:hover {
+  cursor: pointer;
 }

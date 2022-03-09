@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { PrimengModule } from './primeng.module';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -9,6 +9,9 @@ import { AppRoutingModule } from './app.routing.module';
 import { ScreenComponent } from './home/components/screen/screen.component';
 import { RtcwindowComponent } from './home/components/rtcwindow/rtcwindow.component';
 
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { EntityDataModule } from '@ngrx/data';
 @NgModule({
   declarations: [AppComponent, HomeComponent, ScreenComponent, RtcwindowComponent],
   imports: [
@@ -16,9 +19,15 @@ import { RtcwindowComponent } from './home/components/rtcwindow/rtcwindow.compon
     PrimengModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
+    EntityDataModule.forRoot({}),
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+
+}

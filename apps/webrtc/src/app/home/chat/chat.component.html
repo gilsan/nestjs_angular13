@@ -1,0 +1,168 @@
+
+<div class="grid ml-1">
+  <div class="col-3 container_box">
+    <div class="dashboard_container">
+      <div class="logo_container">
+        <img src="/assets/images/logo.png" alt="">
+      </div>
+      <div class="description_container">
+        <p class="description_container_paragraph">
+          Talk with other user by passing his personal code or talk with stranger!
+        </p>
+      </div>
+      <div class="personal_code_container">
+        <div class="personal_code_title_container">
+          <p class="personal_code_title_paragraph">
+            Your personal code
+          </p>
+        </div>
+        <div class="personal_code_value_container">
+          <p class="personal_code_value_paragraph_container">
+              {{personalCode}}
+          </p>
+          <button class="personal_code_copy_button" (click)="personalCodeCopy()" >
+            <img src="/assets/images/copyButton.png" alt="">
+          </button>
+        </div>
+      </div>
+      <div class="personal_code_connecting_container">
+        <p class="personal_code_connecting_paragraph">Personal Code</p>
+        <div class="personal_code_connecting_input_container">
+          <input type="text" class="personal_code_input" #calleeSocketID />
+        </div>
+        <div class="personal_code_connecting_buttons_container">
+          <button class="connecting_button" (click)="personalCodeChat(calleeSocketID.value)">
+            <img src="/assets/images/chatButton.png" alt="" class="connenting_buttons_image">
+          </button>
+          <button class="connecting_button" (click)="personalCodeVideoCall(calleeSocketID.value)">
+            <img src="/assets/images/videoButton.png" alt="" class="connenting_buttons_image">
+          </button>
+        </div>
+      </div>
+      <div class="stranger_connecting_container">
+        <p class="stranger_title_container">Stranger</p>
+        <div class="stranger_buttons_container">
+          <button class="connecting_button" (click)="connectingChat()">
+            <img src="/assets/images/chatButton.png" alt="" class="connecting_buttons_image">
+          </button>
+          <button class="connecting_button" (click)="connectingVideoCall()">
+            <img src="/assets/images/videoButton.png" alt="" class="connecting_buttons_image">
+          </button>
+        </div>
+      </div>
+      <div class="checkbox_container">
+        <div class="checkbox_connection">
+          <img src="/assets/images/check.png" alt="">
+        </div>
+        <p class="checkbox_container_paragraph">
+          Allow connection from strangers
+        </p>
+      </div>
+      <div class="dashboard_blur" *ngIf="dashboard_blur"></div>
+    </div>
+
+
+  </div>
+  <div class="col-6 ml-1 mr-1 container_box">
+    <div class="call_container">
+      <div class="videos_container">
+        <div class="videos_placeholder"  *ngIf="videoPlaceholder">
+          <img src="/assets/images/logo.png" alt="">
+        </div>
+        <video   class="remote_video" muted autoplay *ngIf="videoDom" #remoteVideo id="remote_video"></video>
+        <div class='local_video_container'>
+          <video class='local_video' id='local_video' muted autoplay  #localVideo></video>
+        </div>
+        <div class="call_buttons_container" *ngIf="videoDom">
+          <button class="call_button_small">
+            <img src="/assets/images/mic.png" alt="">
+          </button>
+          <button class="call_button_small">
+            <img src="/assets/images/camera.png" alt="">
+          </button>
+          <button class="call_button_large">
+            <img src="/assets/images/hangUp.png" alt="">
+          </button>
+          <button class="call_button_small">
+            <img src="/assets/images/switchCameraScreenSharing.png" alt="">
+          </button>
+          <button class="call_button_small">
+            <img src="/assets/images/recordingStart.png" alt="">
+          </button>
+        </div>
+        <div class="finish_chat_button_container"  *ngIf="chatDom">
+          <button class="call_button_large">
+            <img src="/assets/images/hangUp.png" alt="">
+          </button>
+        </div>
+        <div class="video_recording_buttons_container  display_none">
+          <button>
+            <img src="/assets/images/pause.png" alt="">
+          </button>
+          <button>
+            <img src="/assets/images/resume.png" alt="" class=" display_none">
+          </button>
+          <button>Stop recording</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-3 mx-0 container_box">
+
+    <div class="messenger_container">
+      <div class="messages_container"></div>
+
+      <div class="new_message_container" *ngIf="messageDom">
+        <input type="text" class="new_message_input" placeholder="Type your message...">
+        <button class="send_message_button">
+          <img src="/assets/images/sendMessageButton.png" alt="">
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  <div class="dialog_wrapper" *ngIf="dialogShow">
+    <div class="dialog_content">
+      <p  class="dialog_title">Incoming {{callTitle}} Call</p>
+      <div class="dialog_image_container">
+        <img src="assets/images/dialogAvatar.png" alt="">
+      </div>
+      <div class="dialog_button_container">
+        <button class="dialog_accept_call_button" (click)="calleeAccepted()">
+          <img src="/assets/images/acceptCall.png" alt="" class="dialog_button_image">
+        </button>
+        <button class="dialog_reject_call_button" (click)="calleeRejected()">
+          <img src="/assets/images/rejectCall.png" alt="" class="dialog_button_image">
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="dialog_wrapper" *ngIf="callerDialog">
+    <div class="dialog_content">
+      <p  class="dialog_title">{{callerTitle}}</p>
+      <div class="dialog_image_container">
+        <img src="assets/images/dialogAvatar.png" alt="">
+      </div>
+      <div class="dialog_button_container">
+        <button class="dialog_reject_call_button" (click)="callerRejected()">
+          <img src="/assets/images/rejectCall.png" alt="" class="dialog_button_image">
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="dialog_wrapper" *ngIf="errorDialog">
+    <div class="dialog_content">
+      <p  class="dialog_title">{{errorTitle}}</p>
+      <div class="dialog_image_container">
+        <img src="assets/images/dialogAvatar.png" alt="">
+      </div>
+      <p class="dialog_description">{{errorDescription}}</p>
+    </div>
+  </div>
+
