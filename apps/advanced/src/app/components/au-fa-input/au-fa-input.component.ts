@@ -1,17 +1,23 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ContentChild, Input, OnInit, AfterContentInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-au-fa-input',
   templateUrl: './au-fa-input.component.html',
   styleUrls: ['./au-fa-input.component.scss']
 })
-export class AuFaInputComponent implements OnInit {
+export class AuFaInputComponent implements OnInit, AfterContentInit {
 
   @Input() icon: string;
+
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterContentInit(): void {
+
   }
 
   get classes() {
