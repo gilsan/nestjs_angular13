@@ -1,0 +1,13 @@
+app-progress-bar {
+  width: 70%;
+}
+
+button {
+  padding: 5px;
+  width: 70%;
+  color: blue;
+
+  &:hover {
+    color: red;
+  }
+}

@@ -1,0 +1,64 @@
+import { Injectable } from "@angular/core";
+import { BehaviorSubject, Subject } from "rxjs";
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class TimerService {
+
+  private countdownTimerRef: any = null;
+  public countdown: number = 0;
+  public paused = true;
+  endSubject$ = new BehaviorSubject<number>(0);
+  countdownEndSubject$ = this.endSubject$.asObservable();
+
+  destroy(): void {
+    this.clearTimeout();
+  }
+
+  restartCountdown(init?) {
+    if (init && init > 0) {
+      this.paused = true;
+      this.clearTimeout();
+      this.countdown = init;
+      this.endSubject$.next(init);
+    }
+  }
+
+  toogleCountdown() {
+    this.paused = !this.paused;
+    if (this.paused === false) {
+      this.doCountdown();
+    } else {
+      this.clearTimeout();
+    }
+  }
+
+  private doCountdown() {
+    this.countdownTimerRef = setTimeout(() => {
+      // this.countdown = this.countdown - 1;
+      this.endSubject$.next(this.endSubject$.getValue() - 1);
+      this.processCountdown();
+    }, 1000);
+  }
+
+  private processCountdown() {
+    if (this.endSubject$.getValue() == 0) {
+      this.endSubject$.next(0);
+      console.log("--countdown end--");
+    }
+    else {
+      this.doCountdown();
+    }
+  }
+
+  private clearTimeout() {
+    if (this.countdownTimerRef) {
+      clearTimeout(this.countdownTimerRef);
+      this.countdownTimerRef = null;
+    }
+  }
+
+
+}

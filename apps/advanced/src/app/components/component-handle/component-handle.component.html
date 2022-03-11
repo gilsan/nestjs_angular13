@@ -1,0 +1,18 @@
+<h1>
+  <app-progress-bar
+   [progress]="counterProgress"></app-progress-bar>
+</h1>
+
+<div>
+  <app-countdown #countdown
+    [init]="totalCountdown"
+    (onComplete)="countdownFinished()"
+    (onDecrease)="updateProgress($event)">
+  </app-countdown>
+  <div class="initInput">
+    <label for="totalCountdown">초기값</label>
+    <input type="text" id="totalCountdown" [(ngModel)]="totalCountdown">
+  </div>
+
+   <button (click)="countdown.startCountdown(); counterProgress = 0;">시작</button>
+</div>
