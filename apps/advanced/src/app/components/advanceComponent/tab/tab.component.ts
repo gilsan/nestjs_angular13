@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+// import { TabsComponentComponent } from '../tabs/tabs.component';
 import { Tab } from "./tab.interface";
 
 @Component({
@@ -11,9 +12,12 @@ export class TabComponentComponent implements OnInit, Tab {
   @Input() title: string;
   public isActive: boolean = false;
 
-  constructor() { }
+  constructor(
+    // public tabs: TabsComponentComponent
+  ) { }
 
   ngOnInit() {
+    // this.tabs.addTab(this)
   }
 
 }

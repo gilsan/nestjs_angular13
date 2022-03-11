@@ -1,22 +1,23 @@
 :host {
   position: fixed;
   z-index: 100;
-  left: 100px;
-  top: 100px;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
 }
 
 .background {
   background: black;
   opacity: 0.5;
-  width: 50vw;
-  height: 50vh;
+  width: 100vw;
+  height: 100vh;
 }
 
 .card {
   position: absolute;
   z-index: 100;
   background: white;
-  width: 80%;
+  width: 50%;
   padding: 20px;
   margin-left: calc(10% - 20px);
   top: 50%;

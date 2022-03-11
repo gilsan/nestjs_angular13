@@ -8,12 +8,13 @@
     </div>
 
     <div class="message">
-      <<ng-content></ng-content>
+      <ng-content></ng-content>
     </div>
 
     <div class="footer">
-      <button (click)="onCancel.emit()" class="cancel-button">Cancel</button>
-      <button (click)="onSubmit.emit()">Ok</button>
+      <ng-content  select="button"></ng-content>
+      <!-- <button (click)="onCancel.emit()" class="cancel-button">Cancel</button>
+      <button (click)="onSubmit.emit()">Ok</button> -->
     </div>
   </div>
 

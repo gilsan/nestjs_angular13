@@ -30,6 +30,11 @@ export class TimerComponent implements OnInit, OnDestroy {
       });
 
     }
+
+    this.service.endCountdown$.subscribe(() => {
+      this.onComplete.emit();
+
+    })
   }
 
   ngOnDestroy(): void {
@@ -37,9 +42,11 @@ export class TimerComponent implements OnInit, OnDestroy {
   }
 
   get progress() {
-
     return (this.init - this.countdown) / this.init * 100
   }
+
+
+
 
 
 

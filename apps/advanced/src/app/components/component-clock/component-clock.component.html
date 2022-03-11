@@ -1,7 +1,11 @@
 <div>
-  <h1>Timer</h1>
-  <app-timer init="3"></app-timer>
-  <app-timer init="20"></app-timer>
+  <app-tabstabs>
+    <app-tab-tab title="Timers"></app-tab-tab>
+    <app-tab-tab title="Crono"></app-tab-tab>
+    <app-tab-tab title="Alarm"></app-tab-tab>
+  </app-tabstabs>
+
+  <app-timer *ngFor="let timer of timers" init="{{timer}}" (onComplete)="timerFinish()"></app-timer>
 
   <button class="add" (click)="showAddTimer()">+</button>
 
@@ -9,7 +13,18 @@
       (onCancel)="hideAddTimer()"
       (onSubmit)="hideAddTimer()"
   >
-  <label>Set the number of seconds for your timer</label>
-  <input [(ngModel)]="time" type="number">
+      <label>Set the number of seconds for your timer</label>
+      <input [(ngModel)]="time" type="number"  #inputTimer>
+      <button (click)="hideAddTimer()" class="cancel-button">Cancel</button>
+      <button (click)="submitAddTimer()">Ok</button>
   </app-alert-view>
+
+  <app-alert-view [hidden]="isCountdownEnd">
+  <label>타이머가 종료</label>
+  <button (click)="submitEndTimer()">Ok</button>
+</app-alert-view>
+
+
+
+
 </div>

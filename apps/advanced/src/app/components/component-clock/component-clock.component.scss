@@ -3,6 +3,15 @@
   font-weight: bold;
   padding: 10px;
   background-color: lightcoral;
-  border-radius: 50%;
+  border-radius: 40%;
 
+}
+
+.cancel-button {
+  margin-right: 10px;
+  background-color: #777;
+
+  &:active {
+    background-color: #444;
+  }
 }

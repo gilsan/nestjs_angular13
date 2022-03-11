@@ -12,6 +12,9 @@ export class TimerService {
   endSubject$ = new BehaviorSubject<number>(0);
   countdownEndSubject$ = this.endSubject$.asObservable();
 
+  countdownEnd$ = new Subject<void>();
+  endCountdown$ = this.countdownEnd$.asObservable();
+
   destroy(): void {
     this.clearTimeout();
   }
@@ -46,7 +49,9 @@ export class TimerService {
 
   private processCountdown() {
     if (this.endSubject$.getValue() == 0) {
+      this.countdownEnd$.next();
       this.endSubject$.next(0);
+      this.paused = true;
       console.log("--countdown end--");
     }
     else {
