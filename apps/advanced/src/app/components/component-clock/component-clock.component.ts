@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { TimerService } from '../advanceComponent/timer/timer.service';
 import { SubSink } from 'subsink';
 
 @Component({
@@ -10,22 +9,27 @@ import { SubSink } from 'subsink';
 })
 export class ComponentClockComponent implements OnInit, OnDestroy {
 
-  // endSubject$: Observable<number>;
-
   private subs = new SubSink();
-
+  isAddTimerVisible = false;
+  time = 0;
   constructor(
-    private service: TimerService
+
   ) { }
 
   ngOnInit(): void {
-    this.subs.sink = this.service.countdownEndSubject$.subscribe((data) => {
-      // console.log('[]', data);
-    });
+
   }
 
   ngOnDestroy(): void {
     this.subs.unsubscribe();
+  }
+
+  showAddTimer() {
+    this.isAddTimerVisible = true;
+  }
+
+  hideAddTimer() {
+    this.isAddTimerVisible = false;
   }
 
 }

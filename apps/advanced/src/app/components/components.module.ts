@@ -41,6 +41,9 @@ import { AlertViewComponent } from './advanceComponent/alert-view/alert-view.com
   imports: [
     CommonModule,
     FormsModule
+  ],
+  entryComponents: [
+    AlertViewComponent
   ]
 })
 export class ComponentsModule { }

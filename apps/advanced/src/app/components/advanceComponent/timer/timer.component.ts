@@ -5,7 +5,7 @@ import { TimerService } from './timer.service';
   selector: 'app-timer',
   templateUrl: './timer.component.html',
   styleUrls: ['./timer.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush
+  providers: [TimerService]
 })
 export class TimerComponent implements OnInit, OnDestroy {
 
@@ -19,12 +19,16 @@ export class TimerComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    // this.startCountdown();
+    if (this.init) {
+      this.countdown = this.init;
+    }
+
     if (this.init && this.init > 0) {
       this.service.restartCountdown(this.init);
       this.service.countdownEndSubject$.subscribe(data => {
         this.countdown = data;
       });
+
     }
   }
 
