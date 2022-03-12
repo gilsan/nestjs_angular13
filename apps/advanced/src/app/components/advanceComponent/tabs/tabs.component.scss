@@ -1,5 +1,5 @@
 :host {
-  width: 100%;
+  width: 70%;
 }
 
 ul {
@@ -11,7 +11,7 @@ ul {
   margin: 0;
   padding: 20px 10px 2px 10px !important;
   position: fixed;
-  width: 80%;
+  width: 50%;
   background-color: #f8f8f8;
 
   li {
@@ -21,6 +21,14 @@ ul {
     font-weight: 600;
     color: #333;
     opacity: 0.5;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: lightblue;
+    color: white;
+    margin-right: 10px;
 
     &.active {
       border-bottom: 4px solid #333;

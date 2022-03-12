@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'advance', component: ComponentHandleComponent },
   { path: 'tabs', component: TabPanelComponent },
   { path: 'inputbox', component: InputboxComponent },
+  { path: 'movice', loadChildren: () => import('./movice/movice.module').then((m) => m.MoviceModule) },
   { path: '**', redirectTo: 'advance', pathMatch: 'full' }
 
 ]
