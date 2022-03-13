@@ -9,6 +9,8 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MoviesComponent } from './pages/movies/movies.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { ItemsBannerComponent } from './components/items-banner/items-banner.component';
+import { MovieItemComponent } from './components/movie-item/movie-item.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, MoviceRoutingModule],
@@ -19,6 +21,8 @@ import { SliderComponent } from './components/slider/slider.component';
     HomeComponent,
     MoviesComponent,
     SliderComponent,
+    ItemsBannerComponent,
+    MovieItemComponent,
   ],
 })
 export class MoviceModule {}

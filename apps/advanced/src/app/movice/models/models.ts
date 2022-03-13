@@ -1,12 +1,12 @@
-export interface movie {
+export interface MOVIE {
   dates: { maximun: string; minimum: string };
   page: number;
-  results: result[];
+  results: Movie[];
   total_pages: number;
   total_results: number;
 }
 
-export interface result {
+export interface Movie {
   adult: string;
   backdrop_path: string;
   genre_ids: number[];
