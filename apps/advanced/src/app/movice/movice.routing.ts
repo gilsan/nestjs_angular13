@@ -12,6 +12,7 @@ const routes: Routes = [
     path: '',
     component: MoviceComponent,
     children: [
+      { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
       { path: 'movies', component: MoviesComponent },
     ],
