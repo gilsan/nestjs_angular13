@@ -1,32 +1,38 @@
-import { Component, OnInit } from '@angular/core';
-import { Movie } from '../../models/models';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Movie, TV } from '../../models/models';
 import { MoviesService } from '../../services/movies.service';
-
+import { SubSink } from 'subsink';
+import { filter, Observable } from 'rxjs';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
-  popularMovies: Movie[] = [];
-  topRatedMovies: Movie[] = [];
-  upcomingMovies: Movie[] = [];
+export class HomeComponent implements OnInit, OnDestroy {
+  popularMovies$: Observable<Movie[]>;
+  topRatedMovies$: Observable<Movie[]>;
+  upcomingMovies$: Observable<Movie[]>;
+  popularTVs$: Observable<TV[]>;
+
+  private subs = new SubSink();
   constructor(private moviesService: MoviesService) {}
 
   ngOnInit(): void {
-    this.moviesService.getMovies('popular').subscribe((response) => {
-      this.popularMovies = response.results;
-      console.log(this.popularMovies);
-    });
+    this.initLoad();
+  }
 
-    this.moviesService.getMovies('top_rated').subscribe((response) => {
-      this.topRatedMovies = response.results;
-      console.log(this.topRatedMovies);
-    });
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
+  }
 
-    this.moviesService.getMovies('upcoming').subscribe((response) => {
-      this.upcomingMovies = response.results;
-      console.log(this.upcomingMovies);
+  initLoad() {
+    this.subs.sink = this.moviesService.getConfigure().subscribe((data) => {
+      // console.log(data);
     });
+    this.popularMovies$ = this.moviesService.getMovies('popular');
+    this.topRatedMovies$ = this.moviesService.getMovies('top_rated');
+    this.upcomingMovies$ = this.moviesService.getMovies('upcoming');
+
+    this.popularTVs$ = this.moviesService.getTV().pipe(filter((data) => !!data));
   }
 }

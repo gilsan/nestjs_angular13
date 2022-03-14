@@ -1,2 +1,5 @@
-<app-slider [items]="popularMovies"></app-slider>
-<app-items-banner></app-items-banner>
+<app-slider [items]="popularMovies$ | async"></app-slider>
+
+<app-items-banner [items]="topRatedMovies$ | async" title="Top Rated Movie"></app-items-banner>
+<app-items-banner [items]="upcomingMovies$ | async" title="Upcoming Movie"></app-items-banner>
+<app-items-banner [tvItems]="popularTVs$ | async" title="Popular TV"></app-items-banner>

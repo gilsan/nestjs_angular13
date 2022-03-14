@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { MoviceComponent } from './movice.component';
 import { MoviceRoutingModule } from './movice.routing';
 import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
+
 import { HomeComponent } from './pages/home/home.component';
 import { MoviesComponent } from './pages/movies/movies.component';
 import { SliderComponent } from './components/slider/slider.component';
@@ -17,7 +17,7 @@ import { MovieItemComponent } from './components/movie-item/movie-item.component
   declarations: [
     MoviceComponent,
     HeaderComponent,
-    FooterComponent,
+
     HomeComponent,
     MoviesComponent,
     SliderComponent,
