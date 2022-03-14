@@ -11,9 +11,10 @@ import { MoviesComponent } from './pages/movies/movies.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { ItemsBannerComponent } from './components/items-banner/items-banner.component';
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
+import { PrimengModule } from '../primeng.module';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, MoviceRoutingModule],
+  imports: [CommonModule, FormsModule, MoviceRoutingModule, PrimengModule],
   declarations: [
     MoviceComponent,
     HeaderComponent,

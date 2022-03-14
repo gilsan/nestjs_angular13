@@ -14,7 +14,7 @@ export class MoviesService {
   getMovies(type: string = 'popular', count: number = 12): Observable<Movie[]> {
     return this.http.get<MOVIE>(`${this.baseUrl}movie/${type}?api_key=${this.apiKey}`).pipe(
       switchMap((data) => {
-        return of(data.results.slice(0, 12));
+        return of(data.results.slice(0, count));
       })
     );
   }
@@ -23,6 +23,14 @@ export class MoviesService {
     return this.http.get<TVLIST>(`${this.baseUrl}tv/${type}?api_key=${this.apiKey}`).pipe(
       switchMap((data) => {
         return of(data.results.slice(0, 12));
+      })
+    );
+  }
+
+  searchMovies(page: number): Observable<Movie[]> {
+    return this.http.get<MOVIE>(`${this.baseUrl}movie/popular?page=${page}&api_key=${this.apiKey}`).pipe(
+      switchMap((data) => {
+        return of(data.results);
       })
     );
   }
