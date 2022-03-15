@@ -83,4 +83,5 @@ export class MoviesService {
       })
     );
   }
+  getMovieByGenreId(id: number) {}
 }
