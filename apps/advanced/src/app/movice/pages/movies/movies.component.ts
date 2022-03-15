@@ -11,12 +11,14 @@ import { MoviesService } from '../../services/movies.service';
 })
 export class MoviesComponent implements OnInit {
   movies: Movie[] = [];
+  genreId: string | null = null;
   constructor(private route: ActivatedRoute, private moviesService: MoviesService) {}
 
   ngOnInit(): void {
     this.route.params.pipe(take(1)).subscribe(({ genreid }) => {
       if (genreid) {
-        this.getMovieByGenreId(genreid);
+        this.genreId = genreid;
+        this.getMovieByGenreId(genreid, 1);
       } else {
         this.getPageMovie(1);
       }
@@ -29,9 +31,24 @@ export class MoviesComponent implements OnInit {
     });
   }
 
-  getMovieByGenreId(id: number) {}
+  getMovieByGenreId(genreid: string, page: number) {
+    this.moviesService.getMovieByGenreId(genreid, page).subscribe((data) => {
+      this.movies = data;
+    });
+  }
 
   paginate(event: any) {
-    this.getPageMovie(event.page + 1);
+    const page = event.page + 1;
+    if (this.genreId) {
+      this.getMovieByGenreId(this.genreId, page);
+    } else {
+      this.getPageMovie(page);
+    }
+  }
+
+  searchChange(title: string) {
+    this.moviesService.searcMovice(title).subscribe((data) => {
+      this.movies = data;
+    });
   }
 }

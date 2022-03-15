@@ -83,5 +83,21 @@ export class MoviesService {
       })
     );
   }
-  getMovieByGenreId(id: number) {}
+  getMovieByGenreId(id: string, page: number) {
+    return this.http
+      .get<MOVIE>(`${this.baseUrl}discover/movie?with_genres=${id}&page=${page}&api_key=${this.apiKey}`)
+      .pipe(
+        switchMap((data) => {
+          return of(data.results);
+        })
+      );
+  }
+
+  searcMovice(title: string) {
+    return this.http.get<MOVIE>(`${this.baseUrl}search/movie?query=${title}&api_key=${this.apiKey}`).pipe(
+      switchMap((data) => {
+        return of(data.results);
+      })
+    );
+  }
 }

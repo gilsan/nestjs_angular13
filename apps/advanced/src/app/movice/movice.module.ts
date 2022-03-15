@@ -15,6 +15,7 @@ import { PrimengModule } from '../primeng.module';
 import { MovieComponent } from './pages/movie/movie.component';
 import { VideoEmbedComponent } from './components/video-embed/video-embed.component';
 import { GenrneComponent } from './pages/genrne/genrne.component';
+import { TvshowsComponent } from './pages/tvshows/tvshows.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, MoviceRoutingModule, PrimengModule],
@@ -30,6 +31,7 @@ import { GenrneComponent } from './pages/genrne/genrne.component';
     MovieComponent,
     VideoEmbedComponent,
     GenrneComponent,
+    TvshowsComponent,
   ],
 })
 export class MoviceModule {}
