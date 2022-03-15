@@ -2,7 +2,7 @@
   <h1>Movies Genres</h1>
   <div class="grid">
     <div *ngFor="let genre of genres" class="col-6 md:col-3 lg:col-3">
-      <a [routerLink]="'/movice/genres/' + genre.id" class="genre-link">{{ genre.name }}</a>
+      <a [routerLink]="'/movice/movies/' + genre.id" class="genre-link">{{ genre.name }}</a>
     </div>
   </div>
 </div>

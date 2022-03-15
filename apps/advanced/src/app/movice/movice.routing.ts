@@ -18,6 +18,7 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'movies', component: MoviesComponent },
       { path: 'movie/:id', component: MovieComponent },
+      { path: 'movies/:genreid', component: MoviesComponent },
       { path: 'genres', component: GenrneComponent },
     ],
   },
