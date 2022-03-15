@@ -12,6 +12,9 @@ import { SliderComponent } from './components/slider/slider.component';
 import { ItemsBannerComponent } from './components/items-banner/items-banner.component';
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
 import { PrimengModule } from '../primeng.module';
+import { MovieComponent } from './pages/movie/movie.component';
+import { VideoEmbedComponent } from './components/video-embed/video-embed.component';
+import { GenrneComponent } from './pages/genrne/genrne.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, MoviceRoutingModule, PrimengModule],
@@ -24,6 +27,9 @@ import { PrimengModule } from '../primeng.module';
     SliderComponent,
     ItemsBannerComponent,
     MovieItemComponent,
+    MovieComponent,
+    VideoEmbedComponent,
+    GenrneComponent,
   ],
 })
 export class MoviceModule {}

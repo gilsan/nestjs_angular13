@@ -4,10 +4,12 @@
       <app-movie-item [itemData]="movie"></app-movie-item>
     </div>
   </div>
+  <div>
+    <p-paginator
+      [rows]="20"
+      [totalRecords]="10000"
+      (onPageChange)="paginate($event)"
+      [rowsPerPageOptions]="[10, 20, 30]"
+    ></p-paginator>
+  </div>
 </div>
-<p-paginator
-  [rows]="10"
-  [totalRecords]="120"
-  (onPageChange)="paginate($event)"
-  [rowsPerPageOptions]="[10, 20, 30]"
-></p-paginator>
