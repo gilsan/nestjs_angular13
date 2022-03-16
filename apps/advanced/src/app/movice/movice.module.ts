@@ -16,13 +16,14 @@ import { MovieComponent } from './pages/movie/movie.component';
 import { VideoEmbedComponent } from './components/video-embed/video-embed.component';
 import { GenrneComponent } from './pages/genrne/genrne.component';
 import { TvshowsComponent } from './pages/tvshows/tvshows.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, MoviceRoutingModule, PrimengModule],
   declarations: [
     MoviceComponent,
     HeaderComponent,
-
+    FooterComponent,
     HomeComponent,
     MoviesComponent,
     SliderComponent,
