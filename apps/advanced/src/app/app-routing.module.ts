@@ -6,7 +6,7 @@ import { InputboxComponent } from './components/inputbox/inputbox.component';
 import { TabPanelComponent } from './components/tab-panel/tab-panel.component';
 
 const routes: Routes = [
-  { path: '', component: ComponentHandleComponent },
+  { path: '', loadChildren: () => import('./movice/movice.module').then((m) => m.MoviceModule) },
   { path: 'component', component: ComponentClockComponent },
   { path: 'advance', component: ComponentHandleComponent },
   { path: 'tabs', component: TabPanelComponent },
