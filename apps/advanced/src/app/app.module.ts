@@ -10,9 +10,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PrimengModule } from './primeng.module';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, NavComponent],
+  declarations: [AppComponent, HeaderComponent, NavComponent, ModalComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
