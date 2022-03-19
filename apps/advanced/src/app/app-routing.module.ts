@@ -4,11 +4,10 @@ import { ComponentClockComponent } from './components/component-clock/component-
 import { ComponentHandleComponent } from './components/component-handle/component-handle.component';
 import { InputboxComponent } from './components/inputbox/inputbox.component';
 import { TabPanelComponent } from './components/tab-panel/tab-panel.component';
-import { ModalComponent } from './modal/modal.component';
 
 const routes: Routes = [
   { path: '', loadChildren: () => import('./movice/movice.module').then((m) => m.MoviceModule) },
-  { path: 'modal', component: ModalComponent },
+
   { path: 'component', component: ComponentClockComponent },
   { path: 'advance', component: ComponentHandleComponent },
   { path: 'tabs', component: TabPanelComponent },
