@@ -83,10 +83,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/admin/src/**/*.ts",
-              "apps/admin/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/admin/src/**/*.ts", "apps/admin/src/**/*.html"]
           }
         },
         "test": {
@@ -256,10 +253,7 @@
             "polyfills": "apps/advanced/src/polyfills.ts",
             "tsConfig": "apps/advanced/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "apps/advanced/src/favicon.ico",
-              "apps/advanced/src/assets"
-            ],
+            "assets": ["apps/advanced/src/favicon.ico", "apps/advanced/src/assets"],
             "styles": ["apps/advanced/src/styles.scss"],
             "scripts": []
           },
@@ -317,10 +311,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/advanced/src/**/*.ts",
-              "apps/advanced/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/advanced/src/**/*.ts", "apps/advanced/src/**/*.html"]
           }
         },
         "test": {
@@ -436,10 +427,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/ngrx/src/**/*.ts",
-              "apps/ngrx/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/ngrx/src/**/*.ts", "apps/ngrx/src/**/*.html"]
           }
         },
         "test": {
@@ -559,10 +547,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/ngshop/src/**/*.ts",
-              "apps/ngshop/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/ngshop/src/**/*.ts", "apps/ngshop/src/**/*.html"]
           }
         },
         "test": {
@@ -622,10 +607,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/orders/src/**/*.ts",
-              "libs/orders/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/orders/src/**/*.ts", "libs/orders/src/**/*.html"]
           }
         }
       },
@@ -648,10 +630,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/products/src/**/*.ts",
-              "libs/products/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/products/src/**/*.ts", "libs/products/src/**/*.html"]
           }
         }
       },
@@ -697,10 +676,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/users/src/**/*.ts",
-              "libs/users/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/users/src/**/*.ts", "libs/users/src/**/*.html"]
           }
         }
       },
@@ -780,10 +756,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/webrtc/src/**/*.ts",
-              "apps/webrtc/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/webrtc/src/**/*.ts", "apps/webrtc/src/**/*.html"]
           }
         },
         "test": {
@@ -841,10 +814,7 @@
             "polyfills": "apps/webrtc-socketio/src/polyfills.ts",
             "tsConfig": "apps/webrtc-socketio/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "apps/webrtc-socketio/src/favicon.ico",
-              "apps/webrtc-socketio/src/assets"
-            ],
+            "assets": ["apps/webrtc-socketio/src/favicon.ico", "apps/webrtc-socketio/src/assets"],
             "styles": ["apps/webrtc-socketio/src/styles.scss"],
             "scripts": []
           },
@@ -902,10 +872,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/webrtc-socketio/src/**/*.ts",
-              "apps/webrtc-socketio/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/webrtc-socketio/src/**/*.ts", "apps/webrtc-socketio/src/**/*.html"]
           }
         },
         "test": {
@@ -946,6 +913,122 @@
       },
       "tags": [],
       "implicitDependencies": ["webrtc-socketio"]
+    },
+    "ztm": {
+      "projectType": "application",
+      "root": "apps/ztm",
+      "sourceRoot": "apps/ztm/src",
+      "prefix": "ngshop",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/ztm",
+            "index": "apps/ztm/src/index.html",
+            "main": "apps/ztm/src/main.ts",
+            "polyfills": "apps/ztm/src/polyfills.ts",
+            "tsConfig": "apps/ztm/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": ["apps/ztm/src/favicon.ico", "apps/ztm/src/assets"],
+            "styles": ["apps/ztm/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/ztm/src/environments/environment.ts",
+                  "with": "apps/ztm/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ztm:build:production"
+            },
+            "development": {
+              "browserTarget": "ztm:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ztm:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/ztm/src/**/*.ts", "apps/ztm/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/ztm"],
+          "options": {
+            "jestConfig": "apps/ztm/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "ztm-e2e": {
+      "root": "apps/ztm-e2e",
+      "sourceRoot": "apps/ztm-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/ztm-e2e/cypress.json",
+            "devServerTarget": "ztm:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ztm:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/ztm-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["ztm"]
     }
   }
 }
