@@ -9,6 +9,9 @@
       class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
       placeholder="이름"
     />
+    <ng-container *ngIf="formGroup.controls.name.touched">
+      <p *ngIf="formGroup.controls.name.errors?.required" class="text-red-400">필수항목입니다.</p>
+    </ng-container>
   </div>
   <!-- Email -->
   <div class="mb-3">
@@ -63,7 +66,8 @@
   <button
     type="submit"
     (click)="submit()"
-    class="block w-full bg-indigo-400 text-white py-1.5 px-3 rounded transition hover:bg-indigo-500"
+    [disabled]="formGroup.invalid"
+    class="block w-full bg-indigo-400 text-white font-bold py-1.5 px-3 rounded transition hover:bg-indigo-500 disabled:opacity-50 disabled:bg-indigo-500"
   >
     확인
   </button>
