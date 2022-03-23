@@ -10,6 +10,7 @@ import { NavComponent } from './home/nav/nav.component';
 import { AboutModule } from './about/about.module';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 @NgModule({
   declarations: [AppComponent, HomeComponent, NavComponent],
   imports: [
@@ -18,6 +19,7 @@ import { environment } from '../environments/environment';
     UserModule,
     AboutModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
