@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+
+import { MessageService } from 'primeng/api';
+import { AuthService } from '../../../services/auth.service';
 @Component({
   selector: 'ngshop-register',
   templateUrl: './register.component.html',
@@ -9,7 +11,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 export class RegisterComponent implements OnInit {
   formGroup: FormGroup;
 
-  constructor(private fb: FormBuilder, private auth: AngularFireAuth) {}
+  constructor(private fb: FormBuilder, private messageService: MessageService, private authService: AuthService) {}
 
   ngOnInit(): void {
     this.loadForm();
@@ -28,12 +30,13 @@ export class RegisterComponent implements OnInit {
 
   async submit() {
     console.log(this.formGroup);
-    const { email, password } = this.formGroup.value;
+
     try {
-      const cred = await this.auth.createUserWithEmailAndPassword(email, password);
-      console.log(cred);
+      await this.authService.createUser(this.formGroup.value);
+      this.messageService.add({ severity: 'success', summary: '등록', detail: '등록하였습니다.' });
     } catch (e) {
       console.error(e);
+      this.messageService.add({ severity: 'error', summary: '실패', detail: '등록실패' });
       return;
     }
   }

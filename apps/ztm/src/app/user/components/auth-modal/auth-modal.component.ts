@@ -9,5 +9,7 @@ import { ModalService } from '../../../services/modal.service';
 export class AuthModalComponent implements OnInit {
   constructor(private modalService: ModalService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.modalService.toggle();
+  }
 }
