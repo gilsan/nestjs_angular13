@@ -8,18 +8,23 @@
       <!-- Primary Navigation -->
       <ul class="flex flex-row mt-1 cursor-pointer">
         <!-- Navigation Links -->
-        <li>
-          <a class="px-2" routerLink="auth">로그인 / 등록</a>
+        <li *ngIf="!(auth.isAuthenticated$ | async); else mainMenu">
+          <a class="px-2" (click)="openModal($event)">로그인 / 등록</a>
         </li>
-        <li>
-          <a class="px-2" href="#">관리</a>
-        </li>
-        <li>
-          <a class="px-2" href="#">올리기</a>
-        </li>
-        <li>
-          <a class="px-2" routerLink="/about">안내</a>
-        </li>
+        <ng-template #mainMenu>
+          <li>
+            <a class="px-2" href="#">관리</a>
+          </li>
+          <li>
+            <a class="px-2" href="#">올리기</a>
+          </li>
+          <li>
+            <a class="px-2" routerLink="/about">안내</a>
+          </li>
+          <li>
+            <a class="px-2" (click)="logout()">로그아웃</a>
+          </li>
+        </ng-template>
       </ul>
       <!-- Language Switcher -->
       <ul class="flex flex-row ml-auto">

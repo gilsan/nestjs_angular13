@@ -9,24 +9,18 @@ import { AuthService } from '../../../services/auth.service';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  formGroup: FormGroup;
+  formGroup: FormGroup = this.fb.group({
+    name: ['', [Validators.required, Validators.minLength(3)]],
+    email: ['', [Validators.required]],
+    age: [''],
+    password: ['', [Validators.required]],
+    confirmPassword: ['', [Validators.required]],
+    phoneNumber: [''],
+  });
 
   constructor(private fb: FormBuilder, private messageService: MessageService, private authService: AuthService) {}
 
-  ngOnInit(): void {
-    this.loadForm();
-  }
-
-  loadForm() {
-    this.formGroup = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
-      email: ['', [Validators.required]],
-      age: [''],
-      password: ['', [Validators.required]],
-      confirmPassword: ['', [Validators.required]],
-      phoneNumber: [''],
-    });
-  }
+  ngOnInit(): void {}
 
   async submit() {
     console.log(this.formGroup);

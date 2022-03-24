@@ -257,4 +257,4 @@
   </div>
 </section>
 
-<ngshop-auth-modal></ngshop-auth-modal>
+<ngshop-auth-modal *ngIf="!(auth.isAuthenticated$ | async)"></ngshop-auth-modal>
