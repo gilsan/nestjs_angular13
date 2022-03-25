@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   async submit() {
-    console.log(this.formGroup);
     try {
       await this.authService.login(this.formGroup.value);
       // this.modal.toggle();

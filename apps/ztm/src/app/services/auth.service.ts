@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ILoginForm, IUser } from '../models/user.model';
@@ -12,7 +13,7 @@ export class AuthService {
   private userCollection: AngularFirestoreCollection<IUser>;
   public isAuthenticated$: Observable<boolean>;
 
-  constructor(private auth: AngularFireAuth, private db: AngularFirestore) {
+  constructor(private auth: AngularFireAuth, private db: AngularFirestore, private router: Router) {
     this.userCollection = db.collection('users');
     this.isAuthenticated$ = auth.user.pipe(map((data) => !!data));
   }
@@ -43,11 +44,13 @@ export class AuthService {
 
   async login(form: ILoginForm) {
     const cred = await this.auth.signInWithEmailAndPassword(form.email, form.password);
-    console.log(cred);
+
     return cred;
   }
 
   async logout() {
     await this.auth.signOut();
+    // await this.afauth.signOut();
+    await this.router.navigate(['/']);
   }
 }

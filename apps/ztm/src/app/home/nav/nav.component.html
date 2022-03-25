@@ -2,7 +2,7 @@
 <header id="header" class="bg-secondary text-gray-300">
   <nav class="container mx-auto flex justify-start items-center py-8 px-4">
     <!-- App Name -->
-    <a class="text-3xl text-indigo-400 font-bold uppercase mr-4" href="index.html">Clipz</a>
+    <a class="text-3xl text-indigo-400 font-bold uppercase mr-4" routerLink="/">Clipz</a>
 
     <div class="flex flex-grow items-center">
       <!-- Primary Navigation -->
@@ -13,18 +13,31 @@
         </li>
         <ng-template #mainMenu>
           <li>
-            <a class="px-2" href="#">관리</a>
+            <a
+              class="px-2"
+              routerLink="/manage"
+              routerLinkActive="text-indigo-400"
+              [routerLinkActiveOptions]="{ exact: true }"
+              [queryParams]="{ sort: '1' }"
+              >관리</a
+            >
           </li>
           <li>
-            <a class="px-2" href="#">올리기</a>
-          </li>
-          <li>
-            <a class="px-2" routerLink="/about">안내</a>
+            <a
+              class="px-2"
+              routerLink="/upload"
+              routerLinkActive="text-indigo-400"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >올리기</a
+            >
           </li>
           <li>
             <a class="px-2" (click)="logout()">로그아웃</a>
           </li>
         </ng-template>
+        <li>
+          <a class="px-2" routerLink="/about">안내</a>
+        </li>
       </ul>
       <!-- Language Switcher -->
       <ul class="flex flex-row ml-auto">

@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { ModalService } from '../../services/modal.service';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+
 @Component({
   selector: 'ngshop-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
-  constructor(private modalService: ModalService, public auth: AuthService, private afauth: AngularFireAuth) {}
+  constructor(private modalService: ModalService, public auth: AuthService) {}
 
   ngOnInit(): void {}
 
@@ -18,6 +18,6 @@ export class NavComponent implements OnInit {
   }
 
   async logout() {
-    await this.afauth.signOut();
+    await this.auth.logout();
   }
 }
