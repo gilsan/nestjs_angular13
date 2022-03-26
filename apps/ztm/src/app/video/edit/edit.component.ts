@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 
 import { IClip } from '../../models/user.model';
@@ -13,6 +13,8 @@ import { MessageService } from 'primeng/api';
 })
 export class EditComponent implements OnInit, OnDestroy, OnChanges {
   @Input() clip: IClip | null = null;
+  @Output() updated = new EventEmitter();
+
   formGroup: FormGroup = this.fb.group({
     docID: [''],
     title: [''],
@@ -39,11 +41,16 @@ export class EditComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   async update() {
-    console.log(this.formGroup.value);
+    if (!this.clip) {
+      return;
+    }
     try {
       await this.clipService.updateClip(this.formGroup.get('docID')?.value, this.formGroup.get('title')?.value);
       this.modalService.toggle('VIDEOEDIT');
       this.messageService.add({ severity: 'info', summary: '수정', detail: '수정했습니다.' });
+      this.clip.title = this.formGroup.get('title')?.value;
+
+      this.updated.emit(this.clip);
     } catch (e) {
       this.messageService.add({ severity: 'error', summary: '실패', detail: '수정못했습니다.' });
     }

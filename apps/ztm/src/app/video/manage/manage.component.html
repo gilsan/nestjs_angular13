@@ -44,7 +44,11 @@
         >
           <span class="material-icons text-base">build</span>
         </a>
-        <a href="#" class="flex-1 p-2 rounded-br-2xl transition hover:text-indigo-400 text-white">
+        <a
+          href="#"
+          (click)="delete($event, clip)"
+          class="flex-1 p-2 rounded-br-2xl transition hover:text-indigo-400 text-white"
+        >
           <span class="material-icons text-base">delete</span>
         </a>
       </div>
@@ -52,4 +56,4 @@
   </div>
 </div>
 
-<ngshop-edit [clip]="currentClip"></ngshop-edit>
+<ngshop-edit [clip]="currentClip" (updated)="updated($event)"></ngshop-edit>

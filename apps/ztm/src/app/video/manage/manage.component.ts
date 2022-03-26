@@ -3,7 +3,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { IClip } from '../../models/user.model';
 import { ClipService } from '../../services/clip.service';
 import { ModalService } from '../../services/modal.service';
-
+import { MessageService } from 'primeng/api';
 @Component({
   selector: 'ngshop-manage',
   templateUrl: './manage.component.html',
@@ -15,7 +15,8 @@ export class ManageComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private modalService: ModalService,
-    private clipSerive: ClipService
+    private clipSerive: ClipService,
+    private messageService: MessageService
   ) {}
 
   clips: IClip[] = [];
@@ -29,6 +30,7 @@ export class ManageComponent implements OnInit {
       data.forEach((list) => {
         this.clips.push({ docID: list.id, ...list.data() });
       });
+      console.log(this.clips);
     });
   }
 
@@ -45,5 +47,32 @@ export class ManageComponent implements OnInit {
     event.preventDefault();
     this.modalService.toggle('VIDEOEDIT');
     this.currentClip = clip;
+  }
+
+  updated(data: IClip) {
+    this.clips.forEach((clip, index) => {
+      if (clip.docID === data.docID) {
+        clip.title = data.title;
+      }
+    });
+  }
+
+  async delete(event: Event, data: IClip) {
+    event.preventDefault();
+    if (!data.docID) {
+      return;
+    }
+    try {
+      await this.clipSerive.deleteClip(data);
+      this.messageService.add({ severity: 'success', summary: '삭제', detail: '삭제했습니다.' });
+      // this.clips = this.clips.filter((clip) => clip.docID !== data.docID);
+      this.clips.forEach((clip, index) => {
+        if (clip.docID === data.docID) {
+          this.clips.splice(index, 1);
+        }
+      });
+    } catch (e) {
+      this.messageService.add({ severity: 'error', summary: '실패', detail: '삭제실패' });
+    }
   }
 }
