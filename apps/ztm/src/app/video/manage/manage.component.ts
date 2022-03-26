@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { IClip } from '../../models/user.model';
+import { ClipService } from '../../services/clip.service';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'ngshop-manage',
@@ -8,11 +11,24 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 })
 export class ManageComponent implements OnInit {
   videoOrder = '';
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private modalService: ModalService,
+    private clipSerive: ClipService
+  ) {}
 
+  clips: IClip[] = [];
+  currentClip: IClip | null = null;
   ngOnInit(): void {
     this.route.queryParams.subscribe((params: Params) => {
       this.videoOrder = params['sort'];
+    });
+
+    this.clipSerive.getUserClip().subscribe((data) => {
+      data.forEach((list) => {
+        this.clips.push({ docID: list.id, ...list.data() });
+      });
     });
   }
 
@@ -23,5 +39,11 @@ export class ManageComponent implements OnInit {
       relativeTo: this.route,
       queryParams: { sort: value },
     });
+  }
+
+  openModal(event: Event, clip: IClip) {
+    event.preventDefault();
+    this.modalService.toggle('VIDEOEDIT');
+    this.currentClip = clip;
   }
 }

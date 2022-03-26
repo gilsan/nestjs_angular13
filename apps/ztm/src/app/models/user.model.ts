@@ -13,9 +13,15 @@ export interface ILoginForm {
 }
 
 export interface IClip {
+  docID?: string;
   uid: string;
   displayName?: string;
   title: string;
   filename: string;
   url: string;
+}
+
+export interface IModal {
+  id: string;
+  visible: boolean;
 }
