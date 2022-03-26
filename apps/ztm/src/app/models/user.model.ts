@@ -11,3 +11,11 @@ export interface ILoginForm {
   email: string;
   password: string;
 }
+
+export interface IClip {
+  uid: string;
+  displayName?: string;
+  title: string;
+  filename: string;
+  url: string;
+}

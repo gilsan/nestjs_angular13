@@ -17,6 +17,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { InputTextModule } from 'primeng/inputtext';
 
 import { PaginatorModule } from 'primeng/paginator';
+import { ProgressBarModule } from 'primeng/progressbar';
 import { RatingModule } from 'primeng/rating';
 import { TabViewModule } from 'primeng/tabview';
 import { TableModule } from 'primeng/table';
@@ -41,6 +42,7 @@ import { ToolbarModule } from 'primeng/toolbar';
     InputSwitchModule,
     InputTextModule,
     PaginatorModule,
+    ProgressBarModule,
     RatingModule,
     TabViewModule,
     TableModule,
@@ -64,6 +66,7 @@ import { ToolbarModule } from 'primeng/toolbar';
     InputSwitchModule,
     InputTextModule,
     PaginatorModule,
+    ProgressBarModule,
     RatingModule,
     TabViewModule,
     TableModule,

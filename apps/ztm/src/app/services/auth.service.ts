@@ -28,6 +28,7 @@ export class AuthService {
       throw new Error('등록된 사용자가 없습니다.');
     }
     console.log(cred);
+    // cred.user['displayName'] = userData.name;
     await this.userCollection.doc(cred.user.uid).set({
       name: userData.name,
       email: userData.email,

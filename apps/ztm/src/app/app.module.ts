@@ -12,8 +12,10 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { ClipComponent } from './clip/clip.component';
 import { VideoModule } from './video/video.module';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [AppComponent, HomeComponent, NavComponent, ClipComponent],
   imports: [
@@ -24,6 +26,8 @@ import { VideoModule } from './video/video.module';
     AngularFireAuthModule,
     BrowserAnimationsModule,
     AngularFirestoreModule,
+    AngularFireStorageModule,
+    ReactiveFormsModule,
     VideoModule,
     AppRoutingModule,
   ],
