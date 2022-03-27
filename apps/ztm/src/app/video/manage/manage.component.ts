@@ -4,6 +4,7 @@ import { IClip } from '../../models/user.model';
 import { ClipService } from '../../services/clip.service';
 import { ModalService } from '../../services/modal.service';
 import { MessageService } from 'primeng/api';
+import { BehaviorSubject } from 'rxjs';
 @Component({
   selector: 'ngshop-manage',
   templateUrl: './manage.component.html',
@@ -21,16 +22,17 @@ export class ManageComponent implements OnInit {
 
   clips: IClip[] = [];
   currentClip: IClip | null = null;
+  sort$: BehaviorSubject<string> = new BehaviorSubject<string>(this.videoOrder);
+
   ngOnInit(): void {
     this.route.queryParams.subscribe((params: Params) => {
       this.videoOrder = params['sort'];
     });
-
-    this.clipSerive.getUserClip().subscribe((data) => {
+    // ztm 229 참조
+    this.clipSerive.getUserClip(this.sort$).subscribe((data) => {
       data.forEach((list) => {
         this.clips.push({ docID: list.id, ...list.data() });
       });
-      console.log(this.clips);
     });
   }
 
@@ -65,7 +67,7 @@ export class ManageComponent implements OnInit {
     try {
       await this.clipSerive.deleteClip(data);
       this.messageService.add({ severity: 'success', summary: '삭제', detail: '삭제했습니다.' });
-      // this.clips = this.clips.filter((clip) => clip.docID !== data.docID);
+
       this.clips.forEach((clip, index) => {
         if (clip.docID === data.docID) {
           this.clips.splice(index, 1);

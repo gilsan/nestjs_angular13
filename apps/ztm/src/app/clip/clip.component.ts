@@ -16,7 +16,5 @@ export class ClipComponent implements OnInit {
 
   init() {
     this.id = this.route.snapshot.params['id'];
-
-    console.log(this.id);
   }
 }
