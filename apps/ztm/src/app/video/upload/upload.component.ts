@@ -4,12 +4,13 @@ import { MessageService } from 'primeng/api';
 import { Observable, of } from 'rxjs';
 import { last, switchMap } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/compat/storage';
 import firebase from 'firebase/compat/app';
 import { StorageService } from '../../services/storage.service';
 import { ClipService } from '../../services/clip.service';
 import { IClip } from '../../models/user.model';
-import { Router } from '@angular/router';
+
 @Component({
   selector: 'ngshop-upload',
   templateUrl: './upload.component.html',
