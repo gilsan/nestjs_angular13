@@ -10,6 +10,7 @@ import firebase from 'firebase/compat/app';
 import { StorageService } from '../../services/storage.service';
 import { ClipService } from '../../services/clip.service';
 import { IClip } from '../../models/user.model';
+import { FfmpegService } from '../../services/ffmpeg.service';
 
 @Component({
   selector: 'ngshop-upload',
@@ -36,12 +37,16 @@ export class UploadComponent implements OnInit, OnDestroy {
     private auth: AngularFireAuth,
     private storage: AngularFireStorage,
     private clipService: ClipService,
-    private router: Router
+    private router: Router,
+    public ffmpegService: FfmpegService
   ) {
     auth.user.subscribe((user) => (this.user = user));
+    // this.ffmpegService.init();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.ffmpegService.init();
+  }
   ngOnDestroy(): void {
     this.task?.cancel();
   }

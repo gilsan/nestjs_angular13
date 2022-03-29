@@ -18,6 +18,7 @@ import { InputTextModule } from 'primeng/inputtext';
 
 import { PaginatorModule } from 'primeng/paginator';
 import { ProgressBarModule } from 'primeng/progressbar';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { RatingModule } from 'primeng/rating';
 import { TabViewModule } from 'primeng/tabview';
 import { TableModule } from 'primeng/table';
@@ -43,6 +44,7 @@ import { ToolbarModule } from 'primeng/toolbar';
     InputTextModule,
     PaginatorModule,
     ProgressBarModule,
+    ProgressSpinnerModule,
     RatingModule,
     TabViewModule,
     TableModule,
@@ -67,6 +69,7 @@ import { ToolbarModule } from 'primeng/toolbar';
     InputTextModule,
     PaginatorModule,
     ProgressBarModule,
+    ProgressSpinnerModule,
     RatingModule,
     TabViewModule,
     TableModule,

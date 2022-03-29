@@ -930,7 +930,15 @@
             "polyfills": "apps/ztm/src/polyfills.ts",
             "tsConfig": "apps/ztm/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["apps/ztm/src/favicon.ico", "apps/ztm/src/assets"],
+            "assets": [
+              "apps/ztm/src/favicon.ico",
+              "apps/ztm/src/assets",
+              {
+                "input": "node_modules/@ffmpeg/core/dist",
+                "output": "node_modules/@ffmpeg/core/dist",
+                "glob": "*"
+              }
+            ],
             "styles": ["apps/ztm/src/styles.scss"],
             "scripts": []
           },
@@ -974,7 +982,11 @@
               "browserTarget": "ztm:build:production"
             },
             "development": {
-              "browserTarget": "ztm:build:development"
+              "browserTarget": "ztm:build:development",
+              "headers": {
+                "Cross-Origin-Opener-Policy": "same-origin",
+                "Cross_Origin-Embedder-Policy": "require-corp"
+              }
             }
           },
           "defaultConfiguration": "development"
