@@ -1,3 +1,5 @@
+import firebase from 'firebase/compat/app';
+
 export interface IUser {
   name: string;
   email: string;
@@ -19,6 +21,7 @@ export interface IClip {
   title: string;
   filename: string;
   url: string;
+  timestamp: firebase.firestore.FieldValue;
 }
 
 export interface IModal {

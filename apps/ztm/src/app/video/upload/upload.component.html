@@ -4,7 +4,7 @@
     <div class="font-bold mb-6">Video 파일올리기</div>
 
     <p-progressSpinner *ngIf="ffmpegService.isReady"></p-progressSpinner>
-    <ng-container *ngIf="ffmpegService.isReady">
+    <ng-container *ngIf="!ffmpegService.isReady">
       <!-- Upload Dropbox -->
       <ng-container *ngIf="!nextStep; else uploadFormContainer">
         <div

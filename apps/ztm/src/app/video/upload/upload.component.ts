@@ -41,7 +41,7 @@ export class UploadComponent implements OnInit, OnDestroy {
     public ffmpegService: FfmpegService
   ) {
     auth.user.subscribe((user) => (this.user = user));
-    // this.ffmpegService.init();
+    this.ffmpegService.init();
   }
 
   ngOnInit(): void {
@@ -93,6 +93,7 @@ export class UploadComponent implements OnInit, OnDestroy {
             title: this.file?.name.split('.')[0] as string,
             filename: this.file?.name.split('.')[0] + '.mp4',
             url,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
           };
 
           const docRef = await this.clipService.addClip(clip);
