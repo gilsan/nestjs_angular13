@@ -55,7 +55,7 @@ export class ClipService {
     const { length } = this.pageClips;
     if (length) {
       const lastDocID = this.pageClips[length - 1].docID;
-      this.clipCollection
+      await this.clipCollection
         .doc(lastDocID)
         .get()
         .forEach((doc) => {
