@@ -353,6 +353,122 @@
       "tags": [],
       "implicitDependencies": ["advanced"]
     },
+    "ngfire": {
+      "projectType": "application",
+      "root": "apps/ngfire",
+      "sourceRoot": "apps/ngfire/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/ngfire",
+            "index": "apps/ngfire/src/index.html",
+            "main": "apps/ngfire/src/main.ts",
+            "polyfills": "apps/ngfire/src/polyfills.ts",
+            "tsConfig": "apps/ngfire/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": ["apps/ngfire/src/favicon.ico", "apps/ngfire/src/assets"],
+            "styles": ["apps/ngfire/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/ngfire/src/environments/environment.ts",
+                  "with": "apps/ngfire/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "ngfire:build:production"
+            },
+            "development": {
+              "browserTarget": "ngfire:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngfire:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/ngfire/src/**/*.ts", "apps/ngfire/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/ngfire"],
+          "options": {
+            "jestConfig": "apps/ngfire/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "ngfire-e2e": {
+      "root": "apps/ngfire-e2e",
+      "sourceRoot": "apps/ngfire-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/ngfire-e2e/cypress.json",
+            "devServerTarget": "ngfire:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ngfire:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/ngfire-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["ngfire"]
+    },
     "ngrx": {
       "projectType": "application",
       "root": "apps/ngrx",
