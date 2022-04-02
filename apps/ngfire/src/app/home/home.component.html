@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="header">
+    <h2 class="title">전체과정</h2>
+
+    <button pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded"></button>
+  </div>
+
+  <p-tabMenu [model]="items" [activeItem]="activeItem"> </p-tabMenu>
+  <app-courses-card-list *ngIf="index === 0"></app-courses-card-list>
+  <app-courses-card-list *ngIf="index === 1"></app-courses-card-list>
+</div>
