@@ -5,6 +5,8 @@ import { catchError, map } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
+import { CoursesService } from '../services/courses.service';
+import { ICOURSE } from '../models/course.model';
 
 @Component({
   selector: 'home',
@@ -16,13 +18,14 @@ export class HomeComponent implements OnInit {
   barItems: MenuItem[];
   activeItem: MenuItem;
   index = 0;
+  courses: ICOURSE[] = [];
   courses$: Observable<Course[]>;
 
   beginnersCourses$: Observable<Course[]>;
 
   advancedCourses$: Observable<Course[]>;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, public service: CoursesService) {}
 
   ngOnInit() {
     this.items = [
@@ -45,6 +48,18 @@ export class HomeComponent implements OnInit {
     ];
 
     this.activeItem = this.items[0];
+
+    this.getAllCourse();
+  }
+
+  getAllCourse() {
+    this.service.getAllCourses().subscribe((data) => {
+      data.forEach((snap) => {
+        const id = snap.id;
+        const data = snap.data;
+        this.courses.push({ id, data });
+      });
+    });
   }
 
   tabContent(item: MenuItem) {
