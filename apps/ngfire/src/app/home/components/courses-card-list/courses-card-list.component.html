@@ -1,1 +1,22 @@
-<p>courses-card-list works!</p>
+<div *ngFor="let course of courses" class="mt-3 flex align-items-center justify-content-center">
+  <p-card [header]="course.description" [style]="{ width: '450px' }" styleClass="p-card-shadow">
+    <ng-template pTemplate="header">
+      <img alt="이미지" [src]="course.iconUrl" />
+    </ng-template>
+    <p>
+      {{ course.longDescription }}
+    </p>
+    <ng-template pTemplate="footer">
+      <div class="flex align-items-center justify-content-center">
+        <p-button label="내용보기" icon="pi pi-check" [routerLink]="['courses', course.id]"></p-button>
+        <p-button
+          label="편집"
+          icon="pi pi-pencil"
+          styleClass="p-button-secondary"
+          [style]="{ 'margin-left': '.5em' }"
+          (click)="editCourse(course)"
+        ></p-button>
+      </div>
+    </ng-template>
+  </p-card>
+</div>

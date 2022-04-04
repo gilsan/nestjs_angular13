@@ -1,5 +1,5 @@
 export class ICOURSE {
-  id?: number;
+  id?: string;
   description: string;
   longDescription: string;
   iconUrl: string;

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { CoursesComponent } from './courses/courses.component';
 import { HomeComponent } from './home/home.component';
+import { CourseResolver } from './services/course.resolver';
 // import {AboutComponent} from './about/about.component';
 // import {CourseComponent} from './course/course.component';
 // import {LoginComponent} from './login/login.component';
@@ -22,6 +23,13 @@ const routes: Routes = [
   {
     path: 'courses',
     component: CoursesComponent,
+  },
+  {
+    path: 'courses/:id',
+    component: CoursesComponent,
+    resolve: {
+      course: CourseResolver,
+    },
   },
   /*
   {

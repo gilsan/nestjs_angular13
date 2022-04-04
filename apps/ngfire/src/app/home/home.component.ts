@@ -19,13 +19,12 @@ export class HomeComponent implements OnInit {
   activeItem: MenuItem;
   index = 0;
   courses: ICOURSE[] = [];
-  courses$: Observable<Course[]>;
 
-  beginnersCourses$: Observable<Course[]>;
+  beginnersCourses$: Observable<ICOURSE[]>;
 
-  advancedCourses$: Observable<Course[]>;
+  advancedCourses$: Observable<ICOURSE[]>;
 
-  constructor(private router: Router, public service: CoursesService) {}
+  constructor(private router: Router, public courseService: CoursesService) {}
 
   ngOnInit() {
     this.items = [
@@ -49,17 +48,12 @@ export class HomeComponent implements OnInit {
 
     this.activeItem = this.items[0];
 
-    this.getAllCourse();
+    this.getCourse();
   }
 
-  getAllCourse() {
-    this.service.getAllCourses().subscribe((data) => {
-      data.forEach((snap) => {
-        const id = snap.id;
-        const data = snap.data;
-        this.courses.push({ id, data });
-      });
-    });
+  getCourse() {
+    this.beginnersCourses$ = this.courseService.loadCoursesByCategory('BEGINNER');
+    this.advancedCourses$ = this.courseService.loadCoursesByCategory('ADVANCED');
   }
 
   tabContent(item: MenuItem) {

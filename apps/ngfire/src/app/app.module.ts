@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AboutComponent } from './about/about.component';
 import { HomeModule } from './home/home.module';
 import { HeaderComponent } from './shared/header/header.component';
+import { CourseResolver } from './services/course.resolver';
 
 @NgModule({
   declarations: [AppComponent, AboutComponent, HeaderComponent],
@@ -29,7 +30,7 @@ import { HeaderComponent } from './shared/header/header.component';
 
     HomeModule,
   ],
-  providers: [],
+  providers: [CourseResolver],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -6,6 +6,6 @@
   </div>
 
   <p-tabMenu [model]="items" [activeItem]="activeItem"> </p-tabMenu>
-  <app-courses-card-list *ngIf="index === 0"></app-courses-card-list>
-  <app-courses-card-list *ngIf="index === 1"></app-courses-card-list>
+  <app-courses-card-list *ngIf="index === 0" [courses]="beginnersCourses$ | async"></app-courses-card-list>
+  <app-courses-card-list *ngIf="index === 1" [courses]="advancedCourses$ | async"></app-courses-card-list>
 </div>
