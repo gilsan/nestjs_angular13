@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
-import { CoursesComponent } from './courses/courses.component';
+import { CoursesComponent } from './home/components/courses/courses.component';
+import { CreateCourseComponent } from './home/components/create-course/create-course.component';
 import { HomeComponent } from './home/home.component';
 import { CourseResolver } from './services/course.resolver';
 // import {AboutComponent} from './about/about.component';
@@ -31,12 +32,12 @@ const routes: Routes = [
       course: CourseResolver,
     },
   },
-  /*
+
   {
     path: 'create-course',
-    component: CreateCourseComponent
-
+    component: CreateCourseComponent,
   },
+  /*
   {
     path: 'create-user',
     component: CreateUserComponent

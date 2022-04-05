@@ -1,0 +1,24 @@
+<div class="create-course">
+  <h3>Course</h3>
+  <div class="mb-3">
+    <input type="text" pInputText [value]="course.description" #description style="width: 100%;" placeholder="제목" />
+  </div>
+
+  <div class="mb-3">
+    <input type="text" pInputText [value]="course.url" #url style="width: 100%;" placeholder="Course url" />
+  </div>
+  <div class="mb-3">
+    <textarea
+      pInputTextarea
+      [value]="course.longDescription"
+      #longDescription
+      style="width: 100%;"
+      placeholder="Course description"
+    ></textarea>
+  </div>
+
+  <div class="flex justify-content-around justify-content-center mb-3">
+    <p-inputSwitch [(ngModel)]="course.promo"></p-inputSwitch>
+    <p>Course in promotion?</p>
+  </div>
+</div>

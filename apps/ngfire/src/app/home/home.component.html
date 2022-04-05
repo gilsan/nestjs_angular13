@@ -2,10 +2,30 @@
   <div class="header">
     <h2 class="title">전체과정</h2>
 
-    <button pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded"></button>
+    <button
+      pButton
+      pRipple
+      type="button"
+      icon="pi pi-plus"
+      class="p-button-rounded"
+      routerLink="/create-course"
+    ></button>
   </div>
 
-  <p-tabMenu [model]="items" [activeItem]="activeItem"> </p-tabMenu>
-  <app-courses-card-list *ngIf="index === 0" [courses]="beginnersCourses$ | async"></app-courses-card-list>
-  <app-courses-card-list *ngIf="index === 1" [courses]="advancedCourses$ | async"></app-courses-card-list>
+  <p-tabView>
+    <p-tabPanel header="기초과정" [selected]="true" leftIcon="pi pi-calendar">
+      <app-courses-card-list
+        [courses]="beginnersCourses$ | async"
+        (editcourse)="getCourse()"
+        (deletecourse)="getCourse()"
+      ></app-courses-card-list>
+    </p-tabPanel>
+    <p-tabPanel header="고급과정" leftIcon="pi pi-calendar">
+      <app-courses-card-list
+        [courses]="advancedCourses$ | async"
+        (editcourse)="getCourse()"
+        (deletecourse)="getCourse()"
+      ></app-courses-card-list>
+    </p-tabPanel>
+  </p-tabView>
 </div>

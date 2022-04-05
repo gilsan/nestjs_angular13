@@ -13,10 +13,51 @@
           label="편집"
           icon="pi pi-pencil"
           styleClass="p-button-secondary"
-          [style]="{ 'margin-left': '.5em' }"
+          [style]="{ 'margin-left': '.5em', 'margin-right': '.5em' }"
           (click)="editCourse(course)"
         ></p-button>
+        <button
+          pButton
+          pRipple
+          type="button"
+          icon="pi pi-trash"
+          class="p-button-rounded"
+          (click)="deleteCourse(course.id, $event)"
+        ></button>
+        <p-confirmPopup></p-confirmPopup>
       </div>
     </ng-template>
   </p-card>
+</div>
+<p-toast position="bottom-center"></p-toast>
+<div>
+  <p-dialog [(visible)]="display" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+    <!-- <app-course-edit [course]="course"></app-course-edit> -->
+    <div class="create-course">
+      <h3>Course</h3>
+      <div class="mb-3">
+        <input type="text" pInputText [(ngModel)]="course.description" style="width: 100%;" placeholder="제목" />
+      </div>
+
+      <div class="mb-3">
+        <input type="text" pInputText [(ngModel)]="course.url" style="width: 100%;" placeholder="Course url" />
+      </div>
+      <div class="mb-3">
+        <textarea
+          pInputTextarea
+          [(ngModel)]="course.longDescription"
+          style="width: 100%;"
+          placeholder="Course description"
+        ></textarea>
+      </div>
+
+      <div class="flex justify-content-around justify-content-center mb-3">
+        <p-inputSwitch [(ngModel)]="course.promo"></p-inputSwitch>
+        <p>Course in promotion?</p>
+      </div>
+    </div>
+    <ng-template pTemplate="footer">
+      <p-button icon="pi pi-check" (click)="saveCourse()" label="저장" styleClass="p-button-text"></p-button>
+    </ng-template>
+  </p-dialog>
 </div>

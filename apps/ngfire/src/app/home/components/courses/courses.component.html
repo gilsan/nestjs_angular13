@@ -1,0 +1,26 @@
+<div class="course">
+  <h2>{{ course?.description }}</h2>
+
+  <img [src]="course?.iconUrl" class="course-thumbnail" />
+
+  <div class="spinner-container" *ngIf="loading">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+
+  <p-table [value]="lessons" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>#</th>
+        <th>내용</th>
+        <th>시간</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-lesson>
+      <tr>
+        <td>{{ lesson.seqNo }}</td>
+        <td>{{ lesson.description }}</td>
+        <td>{{ lesson.duration }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
