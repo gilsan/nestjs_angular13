@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
 
 import { ICOURSE } from '../../../models/course.model';
 import { CoursesService } from '../../../services/courses.service';
@@ -48,16 +50,25 @@ export class CoursesCardListComponent implements OnInit {
   }
 
   deleteCourse(courseId: string, event) {
-    console.log(event);
     this.confirmationService.confirm({
       target: event.target,
       message: '삭제 하시겠습니까?',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
-        this.courseService.deleteCourse(courseId).subscribe(() => {
-          this.deletecourse.emit('');
-          this.messageService.add({ severity: 'info', summary: '삭제', detail: '삭제 하였습니다.' });
-        });
+        this.courseService
+          .deleteCourseAndLessons(courseId)
+          .pipe(
+            tap(() => {
+              this.deletecourse.emit('');
+            }),
+            catchError((err) => {
+              this.messageService.add({ severity: 'info', summary: '에러', detail: '삭제실패.' });
+              return throwError(() => new Error(err));
+            })
+          )
+          .subscribe(() => {
+            this.messageService.add({ severity: 'info', summary: '삭제', detail: '삭제 하였습니다.' });
+          });
       },
       reject: () => {
         return;

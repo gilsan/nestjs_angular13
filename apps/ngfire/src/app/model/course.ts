@@ -13,3 +13,10 @@ export interface Course {
   promo: boolean;
   promoStartAt: Timestamp;
 }
+
+export interface PAGE {
+  first: number;
+  page: number;
+  pageCount: number;
+  rows: number;
+}

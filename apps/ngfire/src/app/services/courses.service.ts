@@ -2,8 +2,11 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { from, Observable, of } from 'rxjs';
 import { concatMap, map, shareReplay, tap } from 'rxjs/operators';
+import firebase from 'firebase/compat/app';
 import { ICOURSE } from '../models/course.model';
 import { ILESSON } from '../models/lesson.model';
+import { convertSnaps } from './db-utils';
+import OrderByDirection = firebase.firestore.OrderByDirection;
 
 @Injectable({
   providedIn: 'root',
@@ -49,6 +52,7 @@ export class CoursesService {
           return result.docs.map((snap) => {
             const id = snap.id;
             const data = snap.data();
+
             return { id, ...(<any>data) };
           });
         })
@@ -94,5 +98,51 @@ export class CoursesService {
 
   deleteCourse(courseId: string): Observable<any> {
     return from(this.db.doc(`courses/${courseId}`).delete());
+  }
+
+  deleteCourseAndLessons(courseId: string): Observable<any> {
+    return this.db
+      .collection(`courses/${courseId}/lessons`)
+      .get()
+      .pipe(
+        concatMap((results) => {
+          const lessons = results.docs.map((snap) => {
+            return { lessonsid: snap.id, ...(<any>snap.data()) };
+          });
+          const courseRef = this.db.doc(`courses/${courseId}`).ref;
+          const batch = this.db.firestore.batch();
+          batch.delete(courseRef);
+          for (let lesson of lessons) {
+            const lessonRef = this.db.doc(`courses/${courseId}/lessons/${lesson.lessonsid}`).ref;
+            batch.delete(lessonRef);
+          }
+          return from(batch.commit());
+        })
+      );
+  }
+
+  findLessonsPage(
+    courseId: string,
+    page = 0,
+    pagesize = 3,
+    sortOrder: OrderByDirection = 'asc'
+  ): Observable<ILESSON[]> {
+    return this.db
+      .collection(`courses/${courseId}/lessons`, (ref) =>
+        ref
+          .orderBy('seqNo', sortOrder)
+          .limit(3)
+          .startAfter(page * pagesize)
+      )
+      .get()
+      .pipe(
+        map((results) => {
+          return results.docs.map((snap) => {
+            const id = snap.id;
+            const data = snap.data();
+            return { id, ...(<any>data) };
+          });
+        })
+      );
   }
 }
