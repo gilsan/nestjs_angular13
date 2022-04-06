@@ -1,7 +1,9 @@
 <p-sidebar [(visible)]="display" [style]="{ width: '10em' }">
   <div class="flex flex-column justify-content-center mb-4 align-content-center">
-    <p-button label="로그인" styleClass="mr-2 mb-2" (click)="login()"></p-button>
-    <p-button label="교육" styleClass="mr-2 mb-2" (click)="course()"></p-button>
+    <button pButton pRipple type="button" label="로그인" class="p-button-text" (click)="login()"></button>
+    <button pButton pRipple type="button" label="교육" class="p-button-text" (click)="course()"></button>
+    <button pButton pRipple type="button" label="등록" class="p-button-text" (click)="createUser()"></button>
+    <button pButton pRipple type="button" label="로그아웃" class="p-button-text" (click)="logout()"></button>
   </div>
 </p-sidebar>
 <p-toolbar>

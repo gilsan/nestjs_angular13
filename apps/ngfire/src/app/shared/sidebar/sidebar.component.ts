@@ -25,4 +25,14 @@ export class SidebarComponent implements OnInit {
     this.display = false;
     this.router.navigate(['/home']);
   }
+
+  createUser() {
+    this.display = false;
+    this.router.navigate(['/create-user']);
+  }
+
+  logout() {
+    this.display = false;
+    this.router.navigate(['/login']);
+  }
 }

@@ -1,18 +1,23 @@
 <div class="wrapper">
-  <h3>등록</h3>
+  <h3 class="text-center text-pink-400">등록</h3>
   <div>
     <form>
-      <div>
-        <span class="p-float-label">
-          <input id="float-input" type="text" pInputText />
-          <label for="float-input">Username</label>
-        </span>
-      </div>
-      <div>
-        <span class="p-float-label">
-          <input id="float-input" type="text" pInputText />
-          <label for="float-input">Username</label>
-        </span>
+      <div class="flex flex-column justify-content-around align-items-center">
+        <div class="mb-3">
+          <span class="p-float-label">
+            <input id="float-input" type="text" pInputText />
+            <label for="float-input">이메일</label>
+          </span>
+        </div>
+        <div class="mb-3">
+          <span class="p-float-label">
+            <input id="float-input" type="text" pInputText />
+            <label for="float-input">패스워드</label>
+          </span>
+        </div>
+        <div>
+          <p-button label="확인"></p-button>
+        </div>
       </div>
     </form>
   </div>
