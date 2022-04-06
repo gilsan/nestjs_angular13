@@ -15,9 +15,12 @@ import { AboutComponent } from './about/about.component';
 import { HomeModule } from './home/home.module';
 import { HeaderComponent } from './shared/header/header.component';
 import { CourseResolver } from './services/course.resolver';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { LoginComponent } from './login/login.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
 
 @NgModule({
-  declarations: [AppComponent, AboutComponent, HeaderComponent],
+  declarations: [AppComponent, AboutComponent, HeaderComponent, CreateUserComponent, LoginComponent, SidebarComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

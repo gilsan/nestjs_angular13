@@ -1,20 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 import { CoursesComponent } from './home/components/courses/courses.component';
 import { CreateCourseComponent } from './home/components/create-course/create-course.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 import { CourseResolver } from './services/course.resolver';
-// import {AboutComponent} from './about/about.component';
-// import {CourseComponent} from './course/course.component';
-// import {LoginComponent} from './login/login.component';
-// import {CreateCourseComponent} from './create-course/create-course.component';
+
 // import {AngularFireAuthGuard, hasCustomClaim, redirectUnauthorizedTo} from '@angular/fire/auth-guard';
-// import {CreateUserComponent} from './create-user/create-user.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent,
   },
   {
@@ -37,19 +35,17 @@ const routes: Routes = [
     path: 'create-course',
     component: CreateCourseComponent,
   },
-  /*
+
   {
     path: 'create-user',
-    component: CreateUserComponent
-
+    component: CreateUserComponent,
   },
 
   {
-    path: 'login',
-    component: LoginComponent
+    path: '',
+    component: LoginComponent,
   },
 
-  */
   {
     path: '**',
     redirectTo: '/',
