@@ -1,22 +1,22 @@
 <div class="wrapper">
   <h3 class="text-center text-pink-400">로그인</h3>
   <div>
-    <form>
+    <form [formGroup]="form">
       <div class="flex flex-column justify-content-around align-items-center">
-        <div class="mb-3">
+        <div class="mb-5">
           <span class="p-float-label">
-            <input id="float-input" type="text" pInputText />
+            <input id="float-input" type="text" pInputText formControlName="email" />
             <label for="float-input">이메일</label>
           </span>
         </div>
         <div class="mb-3">
           <span class="p-float-label">
-            <input id="float-input" type="text" pInputText />
+            <input id="float-input" type="text" pInputText formControlName="password" />
             <label for="float-input">패스워드</label>
           </span>
         </div>
         <div>
-          <p-button label="확인"></p-button>
+          <p-button label="확인" [disabled]="!form.valid" (click)="login()"></p-button>
         </div>
       </div>
     </form>
