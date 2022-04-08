@@ -7,3 +7,10 @@
   transform: translate(200%, 50%);
   background-color: lightcyan;
 }
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}

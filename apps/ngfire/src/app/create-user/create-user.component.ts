@@ -26,6 +26,7 @@ export class CreateUserComponent implements OnInit {
       .register(email, password)
       .pipe(
         tap((data) => {
+          console.log(data);
           if (data.user) {
             this.router.navigate(['/home']);
           }
