@@ -4,7 +4,7 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { catchError, finalize, last, switchMap, tap } from 'rxjs/operators';
 import { CoursesService } from '../../../services/courses.service';
 
 import firebase from 'firebase/compat/app';
@@ -22,6 +22,7 @@ export class CreateCourseComponent implements OnInit {
   percentageChanges$: Observable<number>;
   courseId: string;
   stateOptions: any[];
+  downloadURL: Observable<string>;
   value1: string = 'off';
   // nodes = ['BEGINNER', 'INTERMEDIATE', 'ADVANCED'];
   nodes = [{ label: 'BEGINNER' }, { label: 'INTERMEDIATE' }, { label: 'ADVANCED' }];
@@ -34,6 +35,7 @@ export class CreateCourseComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.courseId = this.afs.createId();
     this.formGroup = this.fb.group({
       description: ['', [Validators.required]],
       category: ['BEGINNER'],
@@ -48,7 +50,21 @@ export class CreateCourseComponent implements OnInit {
     ];
   }
 
-  uploadThumbnail(event: Event) {}
+  uploadThumbnail(event) {
+    const file: File = event.target.files[0];
+    const fileRef = this.storage.ref(`courses/${this.courseId}/${file.name}`);
+    const task = this.storage.upload(`courses/${this.courseId}/${file.name}`, file);
+    this.percentageChanges$ = task.percentageChanges();
+    task
+      .snapshotChanges()
+      .pipe(
+        last(),
+        switchMap(() => fileRef.getDownloadURL())
+      )
+      .subscribe((url) => {
+        this.iconUrl = url;
+      });
+  }
 
   onCreateCourse() {
     const course = this.formGroup.value;

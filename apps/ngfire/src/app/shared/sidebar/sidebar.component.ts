@@ -38,4 +38,9 @@ export class SidebarComponent implements OnInit {
       this.router.navigate(['/login']);
     });
   }
+
+  csscourse() {
+    this.display = false;
+    this.router.navigate(['learncss']);
+  }
 }

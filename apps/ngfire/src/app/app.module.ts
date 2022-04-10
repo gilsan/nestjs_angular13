@@ -19,9 +19,10 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { LoginComponent } from './login/login.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LearncssComponent } from './learncss/learncss.component';
 
 @NgModule({
-  declarations: [AppComponent, AboutComponent, HeaderComponent, CreateUserComponent, LoginComponent, SidebarComponent],
+  declarations: [AppComponent, AboutComponent, HeaderComponent, CreateUserComponent, LoginComponent, SidebarComponent, LearncssComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -35,7 +36,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 
     HomeModule,
   ],
-  providers: [CourseResolver],
+  providers: [
+    CourseResolver],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
