@@ -5,6 +5,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { CoursesComponent } from './home/components/courses/courses.component';
 import { CreateCourseComponent } from './home/components/create-course/create-course.component';
 import { HomeComponent } from './home/home.component';
+
 import { LoginComponent } from './login/login.component';
 import { CourseResolver } from './services/course.resolver';
 
@@ -42,10 +43,13 @@ const routes: Routes = [
   },
 
   {
-    path: '',
+    path: 'login',
     component: LoginComponent,
   },
-
+  {
+    path: '',
+    loadChildren: () => import('./learncss/learncss.module').then((m) => m.LearncssModule),
+  },
   {
     path: '**',
     redirectTo: '/',

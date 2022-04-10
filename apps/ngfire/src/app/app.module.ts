@@ -19,10 +19,9 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { LoginComponent } from './login/login.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LearncssComponent } from './learncss/learncss.component';
 
 @NgModule({
-  declarations: [AppComponent, AboutComponent, HeaderComponent, CreateUserComponent, LoginComponent, SidebarComponent, LearncssComponent],
+  declarations: [AppComponent, AboutComponent, HeaderComponent, CreateUserComponent, LoginComponent, SidebarComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -36,8 +35,7 @@ import { LearncssComponent } from './learncss/learncss.component';
 
     HomeModule,
   ],
-  providers: [
-    CourseResolver],
+  providers: [CourseResolver],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

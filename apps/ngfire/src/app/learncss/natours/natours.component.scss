@@ -1,0 +1,148 @@
+:host {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*
+ Light green: #7ed56f
+ Medium green: #55c57a
+ Dark green: #28b485
+*/
+.header {
+  height: 90vh;
+  background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.3)),
+    url('/assets/img/hero.jpg');
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0%, 100% 0%, 100% 75%, 0% 100%);
+  position: relative;
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 30px;
+}
+
+.text-box {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.heading-primary {
+  color: white;
+
+  &-main {
+    display: block;
+    font-size: 100px;
+    letter-spacing: 15px;
+    animation: moveInLeft;
+    animation-duration: 3s;
+  }
+
+  &-sub {
+    display: block;
+    letter-spacing: 17px;
+    animation: moveInRight 3s ease-out;
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.btn {
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(-2px);
+  }
+
+  &:link,
+  &:visited {
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 23px;
+    position: relative;
+  }
+}
+
+.btn--white {
+  background-color: white;
+  color: #777;
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn::after:hover {
+  content: 'AAAA';
+  position: absolute;
+  top: -12px;
+  left: -15px;
+  display: inline-block;
+  background-color: red;
+  padding: 25px 81px;
+  z-index: -1;
+  border-radius: 35px;
+}
+
+.btn-animation {
+  animation: moveUpAndDown 2s ease-in-out;
+}
+
+@keyframes moveUpAndDown {
+  0% {
+    transform: translateY(200px);
+  }
+
+  50% {
+    transform: translateY(100px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
