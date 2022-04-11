@@ -4,9 +4,17 @@
     <button pButton pRipple type="button" label="교육" class="p-button-text" (click)="course()"></button>
     <button pButton pRipple type="button" label="등록" class="p-button-text" (click)="createUser()"></button>
     <button pButton pRipple type="button" label="로그아웃" class="p-button-text" (click)="logout()"></button>
-    <button pButton pRipple type="button" label="CSS" class="p-button-text" (click)="csscourse()"></button>
+    <!-- <button pButton pRipple type="button" label="CSS" class="p-button-text" (click)="csscourse()"></button> -->
   </div>
 </p-sidebar>
 <p-toolbar>
-  <p-button icon="pi pi-align-justify" (click)="toggle()"></p-button>
+  <div class="p-toolbar-group-left">
+    <p-button
+      icon="pi pi-align-justify"
+      (click)="toggle()"
+      [style]="{ 'margin-left': '.5em', 'margin-right': '.5em' }"
+    ></p-button>
+    <button #btn type="button" pButton label="CSS예제" class="p-button-text" (click)="menu.toggle($event)"></button>
+    <p-tieredMenu #menu [model]="items" [popup]="true"></p-tieredMenu>
+  </div>
 </p-toolbar>

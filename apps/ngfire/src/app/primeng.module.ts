@@ -26,6 +26,7 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { TableModule } from 'primeng/table';
 import { TabViewModule } from 'primeng/tabview';
 import { TagModule } from 'primeng/tag';
+import { TieredMenuModule } from 'primeng/tieredmenu';
 import { ToastModule } from 'primeng/toast';
 import { ToolbarModule } from 'primeng/toolbar';
 import { TreeSelectModule } from 'primeng/treeselect';
@@ -57,6 +58,7 @@ import { TreeSelectModule } from 'primeng/treeselect';
     TableModule,
     TabViewModule,
     TagModule,
+    TieredMenuModule,
     ToastModule,
     ToolbarModule,
     TreeSelectModule,
@@ -87,6 +89,7 @@ import { TreeSelectModule } from 'primeng/treeselect';
     TabViewModule,
     TableModule,
     TagModule,
+    TieredMenuModule,
     ToastModule,
     ToolbarModule,
     TreeSelectModule,
