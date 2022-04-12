@@ -1,20 +1,30 @@
+/*
+행삭제 Ctrl + X
+행복사 Alt + Shift + 방향키(up/down)
+Ctrl + Enter - 아래에 행 삽입
+Ctrl + Shift + Enter - 위에 행 삽입
+태그 랩핑하기 Alt + W
+동일한 텍스트 선택
+ Ctrl + D - 순차적으로 하나씩 선택
+
+Ctrl + Shift + L - 한꺼번에 모두 선택
+*/
+
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+
+@import 'base/colors.scss';
+@import 'base/animations';
+
+@import 'pages/_home';
+
 :host {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 62.5%;
 }
-/*
- Light green: #7ed56f
- Medium green: #55c57a
- Dark green: #28b485
-*/
-$color-primary: #55c57a;
-$color-primary-light: #7ed56f;
-$color-primary-dark: #28b485;
-
-$color-gray-dark: #777;
-$color-white: #fff;
-$color-black: #000;
 
 .header {
   height: 90vh;
@@ -26,14 +36,14 @@ $color-black: #000;
   position: relative;
 }
 
-.logo-box {
-  position: absolute;
-  top: 40px;
-  left: 40px;
-}
-
 .logo {
   height: 30px;
+
+  &-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+  }
 }
 
 .text-box {
@@ -59,38 +69,6 @@ $color-black: #000;
     display: block;
     letter-spacing: 17px;
     animation: moveInRight 3s ease-out;
-  }
-}
-
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-
-  80% {
-    transform: translateX(20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-
-  80% {
-    transform: translateX(-20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
   }
 }
 
@@ -131,31 +109,17 @@ $color-black: #000;
     border-radius: 23px;
     transition: all 0.2s;
   }
-}
 
-.btn--white {
-  background-color: $color-white;
-  color: $color-gray-dark;
-
-  &::after {
+  &--white {
     background-color: $color-white;
-  }
-}
+    color: $color-gray-dark;
 
-.btn-animation {
-  animation: moveUpAndDown 2s ease-in-out;
-}
-
-@keyframes moveUpAndDown {
-  0% {
-    transform: translateY(200px);
+    &::after {
+      background-color: $color-white;
+    }
   }
 
-  50% {
-    transform: translateY(100px);
-  }
-
-  100% {
-    transform: translateY(0);
+  &-animation {
+    animation: moveUpAndDown 2s ease-in-out;
   }
 }
