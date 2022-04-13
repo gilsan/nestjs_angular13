@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { MenuItem } from 'primeng/api';
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -11,7 +12,7 @@ export class SidebarComponent implements OnInit {
   display = false;
   items: MenuItem[];
   constructor(private router: Router, private authService: AuthService) {}
-
+  @Output() sidebarshow = new EventEmitter<boolean>();
   ngOnInit(): void {
     this.menuList();
   }
@@ -69,5 +70,13 @@ export class SidebarComponent implements OnInit {
   csscourse() {
     this.display = false;
     this.router.navigate(['learncss']);
+  }
+
+  onShow() {
+    this.sidebarshow.emit(false);
+  }
+
+  onHide() {
+    this.sidebarshow.emit(true);
   }
 }

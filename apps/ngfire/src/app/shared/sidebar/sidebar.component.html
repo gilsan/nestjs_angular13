@@ -1,4 +1,4 @@
-<p-sidebar [(visible)]="display" [style]="{ width: '10em' }">
+<p-sidebar [(visible)]="display" [style]="{ width: '10em' }" (onShow)="onShow()" (onHide)="onHide()">
   <div class="flex flex-column justify-content-center mb-4 align-content-center">
     <button pButton pRipple type="button" label="로그인" class="p-button-text" (click)="login()"></button>
     <button pButton pRipple type="button" label="교육" class="p-button-text" (click)="course()"></button>
@@ -7,6 +7,7 @@
     <!-- <button pButton pRipple type="button" label="CSS" class="p-button-text" (click)="csscourse()"></button> -->
   </div>
 </p-sidebar>
+
 <p-toolbar>
   <div class="p-toolbar-group-left">
     <p-button

@@ -13,11 +13,13 @@ Ctrl + Shift + L - 한꺼번에 모두 선택
 @import 'abstracts/functions';
 @import 'abstracts/mixins';
 @import 'abstracts/variables';
+@import 'abstracts/typography';
 
-@import 'base/colors.scss';
+@import 'base/colors';
 @import 'base/animations';
+@import 'base/utility';
 
-@import 'pages/_home';
+@import 'pages/home';
 
 @import 'components/button';
 
@@ -37,6 +39,9 @@ Ctrl + Shift + L - 한꺼번에 모두 선택
     position: absolute;
     top: 40px;
     left: 40px;
+    &:hover {
+      transform: skewX(4deg) skewY(5deg) scale(1.2);
+    }
   }
 }
 
