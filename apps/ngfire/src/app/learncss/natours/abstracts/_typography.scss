@@ -16,3 +16,17 @@
     text-shadow: 5px 4px $color-gray-dark;
   }
 }
+
+.heading-tertiary {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.paragraph {
+  font-size: 1.4rem;
+  &:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+}
