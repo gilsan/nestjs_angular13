@@ -1,0 +1,27 @@
+@import '../abstracts/variables';
+
+.feature-box {
+  top: 0%;
+  background-color: rgba($color-white, 0.8);
+  font-size: 1rem;
+  padding: 2rem 0 2rem 0;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+  transition: transform 0.2s;
+
+  &__icon {
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    background-clip: text;
+    color: transparent;
+  }
+
+  &:hover {
+    transform: translateY(-1.5rem);
+  }
+
+  &__text {
+  }
+}
