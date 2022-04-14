@@ -3,6 +3,9 @@
 
 .composition {
   position: relative;
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.9);
+  }
 
   &__photo {
     box-shadow: 0 5px 20px rgba($color-primary-dark, 0.4);
