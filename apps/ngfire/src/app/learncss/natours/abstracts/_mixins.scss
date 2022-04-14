@@ -1,0 +1,6 @@
+@mixin image-hover {
+  padding: $default-font-size;
+  border: 10px solid $color-primary-dark;
+  border-radius: 20px;
+  z-index: 5;
+}

@@ -26,7 +26,28 @@
 
 .paragraph {
   font-size: 1.4rem;
+  margin: 0 20px;
   &:not(:last-child) {
     margin-bottom: 4rem;
+  }
+}
+
+.btn-text {
+  font-size: $default-font-size;
+  font-weight: 600;
+  color: $color-primary-light;
+  text-decoration: none;
+  display: inline-block;
+  border-bottom: 1px solid $color-primary-light;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $color-primary-light;
+    color: $color-white;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 5px 5px;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+    transform: translateY(-3px);
   }
 }

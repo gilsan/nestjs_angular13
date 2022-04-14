@@ -1,0 +1,33 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.composition {
+  position: relative;
+
+  &__photo {
+    box-shadow: 0 5px 20px rgba($color-primary-dark, 0.4);
+    border-radius: 3px;
+
+    &:hover {
+      @include image-hover;
+    }
+
+    &--p1 {
+      position: absolute;
+      top: 0;
+      left: 10%;
+    }
+
+    &--p2 {
+      position: absolute;
+      top: 2rem;
+      left: 35%;
+    }
+
+    &--p3 {
+      position: absolute;
+      top: 10rem;
+      left: 20%;
+    }
+  }
+}
