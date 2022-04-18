@@ -8,8 +8,9 @@ import { CreateCourseComponent } from './components/create-course/create-course.
 import { ReactiveFormsModule } from '@angular/forms';
 import { CourseEditComponent } from './components/course-edit/course-edit.component';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { CourseComponent } from './components/course/course.component';
 @NgModule({
-  declarations: [HomeComponent, CoursesCardListComponent, CoursesComponent, CreateCourseComponent, CourseEditComponent],
+  declarations: [HomeComponent, CoursesCardListComponent, CoursesComponent, CreateCourseComponent, CourseEditComponent, CourseComponent],
   imports: [CommonModule, PrimengModule, ReactiveFormsModule],
   providers: [ConfirmationService, MessageService],
 })

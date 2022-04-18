@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { CourseComponent } from './home/components/course/course.component';
 import { CoursesComponent } from './home/components/courses/courses.component';
 import { CreateCourseComponent } from './home/components/create-course/create-course.component';
 import { HomeComponent } from './home/home.component';
@@ -24,6 +25,10 @@ const routes: Routes = [
     path: 'courses',
     component: CoursesComponent,
   },
+  {
+    path: 'unitcourse',
+    component: CourseComponent,
+ },
   {
     path: 'courses/:id',
     component: CoursesComponent,

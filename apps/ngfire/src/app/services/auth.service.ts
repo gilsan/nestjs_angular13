@@ -12,7 +12,7 @@ export class AuthService {
   isLoggedOut$: Observable<boolean>;
   constructor(private afa: AngularFireAuth, private router: Router) {
     this.isLoggedIn$ = afa.authState.pipe(
-      tap((data) => console.log('authState:', data)),
+    //  tap((data) => console.log('authState:', data)),
       map((data) => !!data)
     );
     this.isLoggedOut$ = this.isLoggedIn$.pipe(map((data) => !data));

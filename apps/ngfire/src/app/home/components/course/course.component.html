@@ -1,0 +1,36 @@
+
+
+<div class="course">
+    <div   class="mt-8 flex align-items-center justify-content-center">
+      <p-card   [style]="{ width: '450px' }" styleClass="p-card-shadow">
+        <ng-template pTemplate="header">
+          <img alt="이미지"   />
+        </ng-template>
+        <p>
+
+        </p>
+        <ng-template pTemplate="footer">
+          <div class="flex align-items-center justify-content-center">
+            <p-button label="내용보기" icon="pi pi-check" ></p-button>
+            <p-button
+              label="편집"
+              icon="pi pi-pencil"
+              styleClass="p-button-secondary"
+              [style]="{ 'margin-left': '.5em', 'margin-right': '.5em' }"
+
+            ></p-button>
+            <button
+              pButton
+              pRipple
+              type="button"
+              icon="pi pi-trash"
+              class="p-button-rounded"
+
+            ></button>
+            <p-confirmPopup></p-confirmPopup>
+          </div>
+        </ng-template>
+      </p-card>
+    </div>
+</div>
+

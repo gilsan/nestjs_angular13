@@ -24,5 +24,16 @@
 
 .section-stories {
   padding: 15rem 0;
+  position: relative;
+}
 
+.section-book {
+  padding: 3rem;
+  background-color: $color-primary;
+  .row {
+    background: $color-white;
+    border: 1px solid black;
+    background-image: url('/assets/img/nat-10.jpg');
+    background-size: cover;
+  }
 }

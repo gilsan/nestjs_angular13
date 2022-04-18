@@ -55,6 +55,11 @@ export class SidebarComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 
+  unitcourse() {
+    this.display = false;
+    this.router.navigate(['/unitcourse']);
+  }
+
   createUser() {
     this.display = false;
     this.router.navigate(['/create-user']);

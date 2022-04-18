@@ -19,9 +19,10 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { LoginComponent } from './login/login.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HighlightedDirective } from './directives/highlighted.directive';
 
 @NgModule({
-  declarations: [AppComponent, AboutComponent, HeaderComponent, CreateUserComponent, LoginComponent, SidebarComponent],
+  declarations: [AppComponent, AboutComponent, HeaderComponent, CreateUserComponent, LoginComponent, SidebarComponent, HighlightedDirective],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
