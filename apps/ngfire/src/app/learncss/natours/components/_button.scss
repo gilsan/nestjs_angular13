@@ -13,6 +13,7 @@
     transform: translateY(-2px);
   }
 
+  &,
   &:link,
   &:visited {
     text-decoration: none;
@@ -48,4 +49,6 @@
   &-animation {
     animation: moveUpAndDown 2s ease-in-out;
   }
+
+
 }
