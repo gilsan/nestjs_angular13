@@ -12,4 +12,8 @@ export class NatoursComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  radioButtonClick(button: string) {
+      console.log(button);
+  }
+
 }
