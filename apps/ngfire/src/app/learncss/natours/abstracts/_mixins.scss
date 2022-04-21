@@ -12,3 +12,39 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+// MEDIA QUERY MANAGER
+/****
+0 - 600px:       Phone
+600px - 900px:   Tablet portrat
+900px - 1200px:  Tablet landscape
+[1200 - 1800] Normal Style 적용
+1800px +:         Big DeskTop
+*/
+
+
+
+  @mixin respond($breakpoint) {
+
+    @if $breakpoint == phone {
+      @media (max-width: 600px) { @content};
+    }
+
+    @if $breakpoint == tap-port {
+      @media (max-width: 900px) { @content};
+    }
+
+    @if $breakpoint == tap-port {
+      @media (max-width: 1200px) { @content};
+    }
+
+    @if $breakpoint == tap-lan {
+      @media (max-width: 1200px) { @content};
+    }
+
+    @if $breakpoint == big-desktop {
+      @media (min-width: 1800px) { @content};
+     };
+  }
+
+

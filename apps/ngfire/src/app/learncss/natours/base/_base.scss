@@ -1,0 +1,19 @@
+@import '../abstracts/mixins';
+
+html {
+  font-size: 632.5%; // 1rem = 10px; 10px/16px = 62.5%
+
+  @include respond(tap-port) {
+    font-size: 50%; // 1rem = 8px, 8/16= 50%
+  }
+
+  @include respond(tab-land) {
+    font-size: 56.25%; // 1rem = 9px , 9/16 = 56.25%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; // 1rem = 12, 12/16
+  }
+}
+
+
