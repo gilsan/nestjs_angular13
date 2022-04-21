@@ -1,0 +1,114 @@
+
+@import '../abstracts/mixins';
+@import '../abstracts/variables';
+.navigation {
+  // margin-top: 12rem;
+  // width: 100%;
+  // height: 100%;
+  // background-image: linear-gradient(to left bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.3));
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    border: 1px solid black;
+    background-color: $color-white;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top:6.5rem;
+    right: 6rem;
+    z-index: 1000;
+
+  }
+
+  &__background {
+    background-image: radial-gradient($color-primary-light, $color-primary-dark);
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    z-index: 200;
+    // transform: scale(50);
+
+
+    &:active {
+      opacity: 1;
+    }
+  }
+
+  &__nav {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500;
+
+  }
+
+  &__list {
+    @include position-center;
+    list-style: none;
+
+    text-align: center;
+
+  }
+
+  &__item {
+    margin: 1rem;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+     // display: inline-block;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      color: $color-white;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all .5s;
+      background-size: 220%;
+      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+    }
+
+
+    &:hover,
+    &:active {
+      background-position: 100%;
+      color: $color-primary-light;
+      padding: 10px 15px 10px 15px;
+      transform : translateX(2rem);
+     // animation: movingbox 3s ease-in-out;
+    }
+    span {
+      margin-right: 10px;
+    }
+  }
+
+
+
+}
+
+@keyframes movingbox {
+  0% {
+    background-size: 200%;
+    background-image: linear-gradient(120deg, orangered 0%, orangered 100%, $color-white 0%);
+  }
+  50% {
+    background-image: linear-gradient(120deg, orangered 0%, orangered 50%, $color-white 50%);
+  }
+
+  100% {
+    background-image: linear-gradient(120deg, orangered 0%, orangered 0%, $color-white 100%);
+  }
+}
+
+// &__radio-input:checked ~ &__radio-label &__radio-button::after {
+//   opacity: 1;
+// }
