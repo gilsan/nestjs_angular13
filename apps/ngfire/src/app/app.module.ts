@@ -20,6 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HighlightedDirective } from './directives/highlighted.directive';
+import { CssAnimationModule } from './css-animation/css-animation.module';
 
 @NgModule({
   declarations: [AppComponent, AboutComponent, HeaderComponent, CreateUserComponent, LoginComponent, SidebarComponent, HighlightedDirective],
@@ -35,6 +36,7 @@ import { HighlightedDirective } from './directives/highlighted.directive';
     AngularFireStorageModule,
 
     HomeModule,
+     CssAnimationModule,
   ],
   providers: [CourseResolver],
   bootstrap: [AppComponent],
