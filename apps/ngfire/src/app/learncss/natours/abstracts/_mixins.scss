@@ -34,9 +34,6 @@
       @media (max-width: 900px) { @content};
     }
 
-    @if $breakpoint == tap-port {
-      @media (max-width: 1200px) { @content};
-    }
 
     @if $breakpoint == tap-lan {
       @media (max-width: 1200px) { @content};
