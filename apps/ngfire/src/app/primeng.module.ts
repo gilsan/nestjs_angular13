@@ -20,6 +20,7 @@ import { MenubarModule } from 'primeng/menubar';
 import { PaginatorModule } from 'primeng/paginator';
 import { RatingModule } from 'primeng/rating';
 import { SelectButtonModule } from 'primeng/selectbutton';
+import {SlideMenuModule} from 'primeng/slidemenu';
 import { SidebarModule } from 'primeng/sidebar';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { TabMenuModule } from 'primeng/tabmenu';
@@ -53,6 +54,7 @@ import { TreeSelectModule } from 'primeng/treeselect';
     RatingModule,
     SelectButtonModule,
     SidebarModule,
+    SlideMenuModule,
     SplitButtonModule,
     TabMenuModule,
     TableModule,
@@ -84,6 +86,7 @@ import { TreeSelectModule } from 'primeng/treeselect';
     RatingModule,
     SelectButtonModule,
     SidebarModule,
+    SlideMenuModule,
     SplitButtonModule,
     TabMenuModule,
     TabViewModule,

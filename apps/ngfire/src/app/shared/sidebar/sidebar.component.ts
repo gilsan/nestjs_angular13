@@ -11,10 +11,12 @@ import { MenuItem } from 'primeng/api';
 export class SidebarComponent implements OnInit {
   display = false;
   items: MenuItem[];
+  animationsItems: MenuItem[];
   constructor(private router: Router, private authService: AuthService) {}
   @Output() sidebarshow = new EventEmitter<boolean>();
   ngOnInit(): void {
     this.menuList();
+    this.animationsItemsList();
   }
 
   menuList() {
@@ -39,6 +41,21 @@ export class SidebarComponent implements OnInit {
         routerLink: '/fileupload',
       },
     ];
+  }
+
+  animationsItemsList() {
+    this.animationsItems = [
+      {
+        label: '2D Animation',
+        icon: 'pi pi-refresh',
+        routerLink: '/animation/2d',
+      },
+      {
+        label: '3D Animation',
+        icon: 'pi pi-refresh',
+        routerLink: '/animation/3d',
+      },
+    ]
   }
 
   toggle() {

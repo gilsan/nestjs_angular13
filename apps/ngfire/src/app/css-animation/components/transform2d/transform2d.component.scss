@@ -1,0 +1,40 @@
+.ani-box {
+  margin-top: 100px;
+}
+
+.box {
+	height: 100px;
+	width: 150px;
+	background-color: #40739e;
+	color: white;
+	line-height: 98px;
+	text-align: center;
+	font-size: 24px;
+	margin: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	transition: transform 1s;
+
+  & .scale:hover {
+    cursor: pointer;
+    transform: scale(1.3);
+  }
+
+  & .translate:hover {
+    cursor: pointer;
+    transform: translate(200px, 300px);
+  }
+
+  & .rotate:hover {
+    cursor: pointer;
+    transform: rotate(145deg);
+  }
+
+  & .skew:hover {
+    cursor: pointer;
+    transform: skewX(45deg);
+  }
+}
+
+
+

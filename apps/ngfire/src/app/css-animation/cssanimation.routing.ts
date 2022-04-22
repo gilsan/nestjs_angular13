@@ -1,29 +1,29 @@
+
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
+
 import { Transform2dComponent } from './components/transform2d/transform2d.component';
 import { Transform3dComponent } from './components/transform3d/transform3d.component';
 import { ButtonEffectsComponent } from './components/button-effects/button-effects.component';
 import { ImageEffectsComponent } from './components/image-effects/image-effects.component';
 import { MenuEffectsComponent } from './components/menu-effects/menu-effects.component';
 import { CardsEffectsComponent } from './components/cards-effects/cards-effects.component';
-import { CssAnimationRoutingModule } from './cssanimation.routing';
 import { HomeComponent } from './components/home/home.component';
 
 
+const routes: Routes = [
+   { path: '', component: HomeComponent,
+  children: [
+    { path: '2d', component: Transform2dComponent},
+    { path: '3d', component: Transform3dComponent},
+  ] }
+];
 
-@NgModule({
-  declarations: [
-    Transform2dComponent,
-    Transform3dComponent,
-    ButtonEffectsComponent,
-    ImageEffectsComponent,
-    MenuEffectsComponent,
-    CardsEffectsComponent,
-    HomeComponent
-  ],
-  imports: [
-    CommonModule,
-    CssAnimationRoutingModule
-  ]
-})
-export class CssAnimationModule { }
+
+ @NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+ })
+export class CssAnimationRoutingModule {
+
+}

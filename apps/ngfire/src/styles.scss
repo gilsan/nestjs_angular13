@@ -8,9 +8,19 @@
 
 @import './css/icon-font.css';
 
-html,
-body {
-  height: 100%;
+// html,
+// body {
+//
+//   height: 95%;
+// }
+.container-box {
+  margin-top: 6%;
+  height: 90vh;
+
+}
+
+.p-toolbar {
+  padding: 0.2rem 1.25rem !important;
 }
 
 body {

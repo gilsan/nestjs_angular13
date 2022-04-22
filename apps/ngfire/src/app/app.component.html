@@ -2,5 +2,8 @@
 <div class="toolbar" [ngClass]="toolBarClass()">
   <app-sidebar (sidebarshow)="sidebarshow($event)"></app-sidebar>
 </div>
+<div>
+  <router-outlet></router-outlet>
+</div>
 
-<router-outlet></router-outlet>
+
