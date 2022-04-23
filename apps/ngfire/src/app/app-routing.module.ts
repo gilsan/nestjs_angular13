@@ -56,6 +56,10 @@ const routes: Routes = [
     loadChildren: () => import('./learncss/learncss.module').then((m) => m.LearncssModule),
   },
   {
+    path: 'learncss',
+    loadChildren: () => import('./learncss/learncss.module').then((m) => m.LearncssModule),
+  },
+  {
     path: 'animation',
     loadChildren: () => import('./css-animation/css-animation.module').then((m) => m.CssAnimationModule),
   },

@@ -22,16 +22,17 @@ export class SidebarComponent implements OnInit {
   menuList() {
     this.items = [
       {
-        label: 'NaTours',
+        label: '여행안내',
         icon: 'pi pi-refresh',
-        routerLink: '/learncss',
+        routerLink: '/learncss/natours',
       },
       {
-        label: 'Delete',
+        label: '호텔안내',
         icon: 'pi pi-times',
+        routerLink: '/learncss/trillo',
       },
       {
-        label: 'Angular',
+        label: '주택안내',
         icon: 'pi pi-external-link',
         url: 'http://angular.io',
       },
