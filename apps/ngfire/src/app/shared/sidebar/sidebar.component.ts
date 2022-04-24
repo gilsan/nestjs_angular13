@@ -22,12 +22,12 @@ export class SidebarComponent implements OnInit {
   menuList() {
     this.items = [
       {
-        label: '여행안내',
+        label: '친절여행',
         icon: 'pi pi-refresh',
         routerLink: '/learncss/natours',
       },
       {
-        label: '호텔안내',
+        label: '라스팔마호텔',
         icon: 'pi pi-times',
         routerLink: '/learncss/trillo',
       },

@@ -1,0 +1,37 @@
+@import './base';
+
+.trillo {
+  margin: 3rem auto;
+  width: 80%;
+  height: 80vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform : translate(-50%, -58%);
+  background-color: $color-grey-light-2;
+  box-shadow: $shadow-dark;
+}
+
+
+.header {
+  height: 7rem;
+  background-color: #fff;
+  border-bottom: $color-grey-dark-2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+}
+
+.side-bar {
+  background-color: $color-grey-dark-1;
+  flex: 0 0 18%;
+}
+
+.hotel-view {
+  background-color: #fff;
+  flex: 1;
+}

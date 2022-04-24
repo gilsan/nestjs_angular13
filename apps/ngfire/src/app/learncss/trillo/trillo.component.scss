@@ -1,8 +1,17 @@
-:host  .trillo {
+@import './base';
 
-   margin-top: 47px;
-   width: 100%;
-   height: 90vh;
+.container-box {
+  font-size: 62.5%;
+  background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+  background-size: cover;
+  position: relative;
+  height: 94vh;
+}
+
+.hotel {
+
+  width: 100vw;
+  margin-top: -47px;
 }
 
 @import './base';
