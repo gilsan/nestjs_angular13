@@ -18,11 +18,14 @@ Ctrl + Shift + L - 한꺼번에 모두 선택
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba($color-black, 0.8);
-  z-index: 9999;
-  opacity: 0;
-  visibility: hidden;
+  background-color: rgba($color-black, 0.5);
+  z-index: 90;
+  // opacity: 0;
+  // visibility: hidden;
   transition: all .3s;
+
+  backdrop-filter: blur(3px);
+
   &:target {
     opacity: 1;
     visibility: visible;
@@ -58,16 +61,17 @@ Ctrl + Shift + L - 한꺼번에 모두 선택
   }
 
   &__close {
-    &:link,
-    &:visited {
       position: absolute;
       top: 3rem;
       right: 2rem;
       font-size: 2rem;
       text-decoration: none;
+      font-weight: bold;
       transition: all .3s;
-    }
+
     &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
       color: $color-primary-dark;
     }
 
@@ -80,3 +84,5 @@ Ctrl + Shift + L - 한꺼번에 모두 선택
     column-rule: 1px solid $color-gray-dark-2;
   }
 }
+
+
