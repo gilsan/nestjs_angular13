@@ -14,7 +14,7 @@
 
 
 .header {
-  height: 7rem;
+  height: 4rem;
   background-color: #fff;
   border-bottom: $color-grey-dark-2;
   display: flex;
@@ -24,9 +24,10 @@
 
 .content {
   display: flex;
+
 }
 
-.side-bar {
+.sidebar {
   background-color: $color-grey-dark-1;
   flex: 0 0 18%;
 }
