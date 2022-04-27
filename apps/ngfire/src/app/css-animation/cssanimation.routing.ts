@@ -16,6 +16,7 @@ const routes: Routes = [
   children: [
     { path: '2d', component: Transform2dComponent},
     { path: '3d', component: Transform3dComponent},
+    { path: 'menuHover', component: ButtonEffectsComponent},
   ] }
 ];
 

@@ -56,6 +56,11 @@ export class SidebarComponent implements OnInit {
         icon: 'pi pi-refresh',
         routerLink: '/animation/3d',
       },
+      {
+        label: '메뉴 HOVER',
+        icon: 'pi pi-refresh',
+        routerLink: '/animation/menuHover',
+      },
     ]
   }
 
