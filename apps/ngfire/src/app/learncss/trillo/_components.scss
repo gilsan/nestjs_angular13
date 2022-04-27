@@ -99,18 +99,7 @@
   }
 }
 
-.hotel-view {
 
-}
-
-.gallery {
-  display: flex;
-
-  &__item {
-      width: 100px;
-      height: 100px;
-  }
-}
 
 .sidebar {
   display: flex;
@@ -192,12 +181,128 @@
 }
 
 
-
-
-
-
 .legal {
   color: $color-grey-light-1;
   font-size: 0.5rem;
 }
+
+
+
+.gallery {
+  display: flex;
+
+  &__item {
+      width: 100%;
+
+      margin: 0;
+      display: block;
+  }
+
+  &__photo {
+    width: 100%;
+  }
+}
+
+.overview {
+  display: flex;
+  align-items: center;
+  background-color: $color-grey-light-3;
+  margin-top: -4px;
+
+
+  height: 3rem;
+  &__heading {
+     font-size: 1.4rem;
+     font-weight: 400;
+     text-transform: uppercase;
+     padding: 1.5rem 3rem;
+  }
+
+  &__stars {
+    display: flex;
+     margin-right : auto;
+  }
+
+  &__icon-star,
+  &__icon-location {
+    width: 1rem;
+    fill: $color-primary;
+    height: 3rem;
+    margin-right: 0.5rem;
+  }
+
+  &__location {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+  }
+
+  &__rating {
+    background-color: $color-primary;
+    color: #fff;
+    padding: 2px 5px;
+    height: 3rem;
+    align-self: stretch;
+    margin-left: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &-average {
+      font-size: 1.2rem;
+    }
+
+    &-count {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.btn-inline {
+  color: $color-primary;
+  border: none;
+  font-size: inherit;
+  border-bottom: 1px solid $color-primary;
+  background-color: transparent;
+  padding-bottom: 2px;
+  display: inline-block;
+  &:hover {
+    color: $color-grey-dark-3;
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulse 2s infinite;
+  }
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 1rem 3rem rgba(0,0,0, 0.5);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+}
+
+.hotel-view {
+
+}
+
+
+
+
 
