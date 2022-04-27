@@ -34,7 +34,7 @@ export class SidebarComponent implements OnInit {
       {
         label: '주택안내',
         icon: 'pi pi-external-link',
-        url: 'http://angular.io',
+        routerLink: '/learncss/nexter',
       },
       {
         label: 'Router',

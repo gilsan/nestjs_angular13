@@ -47,6 +47,7 @@
         <nav class="sidebar">
             <ul class="side-nav">
                 <li class="side-nav__item side-nav__item--active" *ngFor="let item of menu; let i=index" (click)="whichactive(i)">
+
                     <div class="side-nav__link ">
                         <svg class="side-nav__icon">
                                 <use attr.xlink:href="{{item.img}}"></use>
