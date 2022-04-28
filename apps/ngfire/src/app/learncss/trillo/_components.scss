@@ -298,39 +298,61 @@
 
 }
 
-.hotel-view {
-
+//////////////////////////////
+// PARAGRAPH
+.paragraph:not(:last-child) {
+  margin-bottom: 2rem;
 }
 
-.swipe {
-  & {
-    color: #272727;
-    font-size: 20px;
-    position: relative;
-    overflow: hidden;
-    &:hover {
-      color: lightblue;
+.list {
+  list-style: none;
+  margin: 2rem 0;
+  padding: 2rem 0;
+  border-top: 1px solid $color-grey-dark-3;
+  border-bottom: 1px solid $color-grey-dark-3;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    flex: 0 0 50%;
+    margin-bottom: 0.6rem;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      height: 0.7rem;
+      width: 0.7rem;
+      margin-right: 0.7rem;
+
+      background-color: $color-primary;
+      mask-image: url(/assets/img/chevron-thin-right.svg);
+      mask-size: cover;
+
     }
   }
 
-  &::before {
-    content: "TEST";
-    position: absolute;
-    color: white;
-    top: 0;
-    left: 0;
-    background-color: #fff200;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    transform-origin: bottom left;
-    transform: translateX(-100%);
-    transition: transform 1s;
+}
+
+.recommend {
+  display: flex;
+  // justify-content: space-between;
+  &__count {
+    color: $color-grey-dark-3;
+    font-size: 0.8rem;
   }
 
-  &:hover::before {
-    transform: translateX(0%);
+  &__friends {
+     margin-left: 4rem;
+  }
 
+  &__photo {
+    box-sizing: content-box;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-right: -20px;
   }
 }
 
