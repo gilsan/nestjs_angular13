@@ -269,8 +269,14 @@
   background-color: transparent;
   padding-bottom: 2px;
   display: inline-block;
+  transition: transform 1s;
   &:hover {
-    color: $color-grey-dark-3;
+    color: black;
+    transform: scale(1.1);
+
+    span {
+      margin-left: 8px;
+    }
   }
 
   &:focus {
@@ -353,6 +359,99 @@
     border-radius: 50%;
     border: 3px solid #fff;
     margin-right: -20px;
+  }
+}
+
+////////////////////////
+// REVIEW
+.review {
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 0 1rem 3rem rgba(0,0,0, 0.5);
+  position: relative;
+  background-color: transparent;
+
+  &::before {
+    position: absolute;
+    top: -8rem;
+    left: 1rem;
+    content: "\201C";
+    font-size: 15rem;
+    z-index: 1;
+    color: $color-grey-light-2;
+  }
+
+  &__text {
+    font-size: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    z-index: 10;
+    position: relative;
+
+  }
+
+  &__user {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &-box {
+      padding: 1rem;
+    }
+
+    &-name {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    &-date {
+      margin: 0;
+      font-size: 0.8rem;
+    }
+  }
+
+  &__photo {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+  }
+
+  &__rating {
+    color: $color-primary;
+    font-size: 1.5rem;
+  }
+}
+
+///////////////////
+// CALL TO ACTION
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__book-now {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+
+
+  }
+
+}
+
+.btn {
+  padding: 2rem 3rem;
+  background-color: $color-primary;
+  font-size: 2rem;
+  border-radius: 50px;
+
+  &__visible {
+
+  }
+
+  &__invisible {
+    transform: translateY(100px);
   }
 }
 
