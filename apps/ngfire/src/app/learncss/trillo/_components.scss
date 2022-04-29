@@ -441,18 +441,44 @@
 }
 
 .btn {
-  padding: 2rem 3rem;
+  // padding: 1rem  ;
   background-color: $color-primary;
-  font-size: 2rem;
+  font-size: 1.5rem;
   border-radius: 50px;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  width: 20rem;
+  & > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all .3s;
+  }
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+
+  &:hover &__invisible {
+    top: 0;
+  }
 
   &__visible {
+
+    padding: 1rem 2rem;
+
 
   }
 
   &__invisible {
-    transform: translateY(100px);
+
+    position: absolute;
+    padding: 1rem 0rem ;
+    top: -100%;
+    left: 0;
   }
+
 }
 
 

@@ -139,8 +139,14 @@
     margin-left: 10px;
     margin-top: 10px;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     &:hover {
       color: lightblue;
+      transform: translateY(0);
+      font-size: 2rem;
     }
   }
 
@@ -149,18 +155,125 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #fff200;
+    background-color: #040425;
     height: 100%;
     width: 100%;
-    z-index: -1;
-    transform-origin: bottom left;
+    z-index: 1;
+
     transform: translateY(-100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: transform 1s;
   }
 
   &:hover::before {
     transform: translateY(0%);
 
+  }
+}
+
+.wiper {
+  & {
+    color: #fff;
+    font-size: 20px;
+    border: 1px solid #272726;
+    padding: 10px 20px;
+    position: relative;
+    overflow: hidden;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+
+
+    &:hover {
+      background-color: #F44336;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    height: 100%;
+    width: 50%;
+    z-index: 1;
+    transform: translateX(-100%) rotate(45deg);
+    transition: all .4s;
+  }
+
+  &:hover::before {
+    transform: translateX(200%) rotate(45deg);
+  }
+}
+
+.wiper-twoway {
+  & {
+    color: transparent;
+    font-size: 20px;
+    border: 1px solid #272726;
+    padding: 10px 20px;
+    position: relative;
+    overflow: hidden;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+
+
+    &:hover {
+      background-color: #F44336;
+    }
+  }
+
+  &::before {
+    content: "위치변동";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: yellow;
+    color: lightcoral;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .4s;
+  }
+
+  &:hover::before {
+    transform: translate(100%, -100%);
+  }
+
+  &::after {
+    content: "위치변동";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: yellow;
+    color: lightcoral;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .4s;
+    transform: translate(-100%, 100%);
+  }
+
+  &:hover::after {
+    transform: translate(0, 0);
   }
 }
 

@@ -37,9 +37,9 @@ export class SidebarComponent implements OnInit {
         routerLink: '/learncss/nexter',
       },
       {
-        label: 'Router',
+        label: 'Grid',
         icon: 'pi pi-upload',
-        routerLink: '/fileupload',
+        routerLink: '/learncss/grid',
       },
     ];
   }
