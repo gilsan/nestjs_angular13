@@ -5,3 +5,19 @@
   grid-column: 2 /10;
   background-color: lightcyan;
 }
+
+.feature {
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 2rem;
+
+  &__icon {
+    height: 2rem;
+
+  }
+
+  &__text {
+
+  }
+
+
+}
