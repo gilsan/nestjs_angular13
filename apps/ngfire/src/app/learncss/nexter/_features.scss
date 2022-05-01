@@ -2,13 +2,21 @@
 
 .features {
   grid-row: 2 /3;
-  grid-column: 2 /10;
+  grid-column: 3 /9;
   background-color: lightcyan;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: 2rem;
+  align-items: start;
 }
 
 .feature {
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  grid-gap: 2rem;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-gap: 1rem;
+
+
 
   &__icon {
     height: 2rem;
