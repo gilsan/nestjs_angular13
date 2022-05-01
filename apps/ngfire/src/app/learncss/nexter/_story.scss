@@ -1,0 +1,19 @@
+@import './base';
+
+.story {
+
+  &__pictures {
+   grid-row: 3 /4;
+   grid-column: 1/ 6;
+   background-color: lightgreen;;
+
+  }
+
+
+  &__content {
+    grid-row: 3 /4;
+    grid-column: 6/ 11;
+    background-color: lightpink;
+  }
+
+}

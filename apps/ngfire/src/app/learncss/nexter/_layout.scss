@@ -1,0 +1,9 @@
+
+@import './base';
+
+.container-box {
+  display: grid;
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-columns: 1fr repeat(8, minmax(min-content, 14rem)) 1fr;
+}
+

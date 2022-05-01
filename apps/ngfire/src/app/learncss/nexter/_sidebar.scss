@@ -1,0 +1,41 @@
+@import './base';
+
+.sidebar {
+  background-color: $color-primary;
+  grid-row: 1 / 6;
+  grid-column: 1/ 2;
+}
+
+.nav-btn {
+  position: relative;
+  top: 15px;
+  left: 13px;
+
+
+  &,
+  &::before,
+  &::after {
+    width: 1.5rem;
+    height: 2px;
+    background-color: $color-secondary;
+    display: inline-block;
+  }
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all .3s;
+    }
+
+   &::before {
+    top: 0.8rem;
+   }
+
+   &::after {
+     top: -0.8rem;
+   }
+
+
+  }
+
