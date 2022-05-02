@@ -5,15 +5,46 @@
   &__pictures {
    grid-row: 3 /4;
    grid-column: 1/ 6;
-   background-color: lightgreen;;
+   background-image: url(/assets/nexter/back.jpg);
+   background-size: cover;
+   position: relative;
+  }
+
+  &__img {
+    &--1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 300px;
+      width: 400px;
+
+    }
+
+    &--2 {
+      height: 150px;
+      width: 270px;
+      z-index: 10;
+      position: absolute;
+      top:65%;
+      left: 68%;
+    }
 
   }
+
 
 
   &__content {
     grid-row: 3 /4;
     grid-column: 6/ 11;
-    background-color: lightpink;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-grey-light-4;
+    padding: 3rem 4rem;
   }
+
+
+
+
 
 }
