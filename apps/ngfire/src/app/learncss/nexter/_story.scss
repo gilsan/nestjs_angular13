@@ -5,29 +5,31 @@
   &__pictures {
    grid-row: 3 /4;
    grid-column: 1/ 6;
-   background-image: url(/assets/nexter/back.jpg);
+   background-image:
+   linear-gradient( rgba($color-primary, 0.4),rgba($color-primary, 0.4) ),
+   url(/assets/nexter/back.jpg);
    background-size: cover;
-   position: relative;
+
+   display: grid;
+   grid-template-columns: repeat(6, 1fr);
+   grid-template-rows: repeat(6,1fr);
+   align-items: center;
   }
 
   &__img {
     &--1 {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      height: 300px;
-      width: 400px;
+      grid-row: 2/6;
+      grid-column: 2/6;
+      width: 100%;
 
     }
 
     &--2 {
-      height: 150px;
-      width: 270px;
-      z-index: 10;
-      position: absolute;
-      top:65%;
-      left: 68%;
+      grid-row: 4/6;
+      grid-column: 4/7;
+      width: 110%;
+      z-index: 2;
+
     }
 
   }
@@ -40,7 +42,16 @@
     justify-content: center;
     align-items: center;
     background-color: $color-grey-light-4;
-    padding: 3rem 4rem;
+    padding: 3rem 8vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    .heading-2,
+    .heading-3 {
+      margin: 0;
+    }
   }
 
 
