@@ -9,34 +9,64 @@ export class NexterComponent implements OnInit {
 
   homes = [
     {
-      svc: 'img/sprite.svg#icon-global',
-      header: 'World\'s best luxury homes',
-      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur distinctio necessitatibus pariatur voluptatibus.'},
-    {
-      svc:'img/sprite.svg#icon-trophy',
-      header: 'Only the best properties',
-      text: 'Voluptatum mollitia quae. Vero ipsum sapiente molestias accusamus rerum sed a eligendi aut quia.'
+      img: '/assets/nexter/house-1.jpeg',
+      like: '/assets/nexter/sprite.svg#icon-heart-full',
+      name: 'Beautiful Familiy House',
+      location: {svg: '/assets/nexter/sprite.svg#icon-map-pin', text: ''},
+      rooms: '/assets/nexter/sprite.svg#icon-profile-male',
+      area: '/assets/nexter/sprite.svg#icon-expand',
+      price: '/assets/nexter/sprite.svg#icon-key'
     },
     {
-      svc:'img/sprite.svg#icon-map-pin',
-      header: 'All homes in in top locations',
-      text: 'Tenetur distinctio necessitatibus pariatur voluptatibus quidem consequatur harum.'
+      img: '/assets/nexter/',
+      like: '/assets/nexter/',
+      name: '',
+      location: '/assets/nexter/',
+      rooms: '/assets/nexter/',
+      area: '/assets/nexter/',
+      price: '/assets/nexter/'
     },
     {
-      svc:'img/sprite.svg#icon-key',
-      header: 'New home in one week',
-      text: 'Vero ipsum sapiente molestias accusamus rerum. Lorem, ipsum dolor sit amet consectetur adipisicing elit.'
+      img: '/assets/nexter/',
+      like: '/assets/nexter/',
+      name: '',
+      location: '/assets/nexter/',
+      rooms: '/assets/nexter/',
+      area: '/assets/nexter/',
+      price: '/assets/nexter/'
     },
     {
-      svc:'img/sprite.svg#icon-presentation',
-      header: 'Top 1% realtors',
-      text: 'Quidem consequatur harum, voluptatum mollitia quae. Tenetur distinctio necessitatibus pariatur voluptatibus.'
+      img: '/assets/nexter/',
+      like: '/assets/nexter/',
+      name: '',
+      location: '/assets/nexter/',
+      rooms: '/assets/nexter/',
+      area: '/assets/nexter/',
+      price: '/assets/nexter/'
     },
     {
-      svc:'img/sprite.svg#icon-lock',
-      header: 'Secure payments on nexter',
-      text: 'Pariatur voluptatibus quidem consequatur harum, voluptatum mollitia quae.'
-    }
+      img: '/assets/nexter/',
+      like: '/assets/nexter/',
+      name: '',
+      location: '/assets/nexter/',
+      rooms: '/assets/nexter/',
+      area: '/assets/nexter/',
+      price: '/assets/nexter/'
+    },
+    {
+      img: '/assets/nexter/',
+      like: '/assets/nexter/',
+      name: '',
+      location: '/assets/nexter/',
+      rooms: '/assets/nexter/',
+      area: '/assets/nexter/',
+      price: '/assets/nexter/'
+    },
+
+
+
+
+
   ];
 
   constructor() { }

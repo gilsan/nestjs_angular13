@@ -4,4 +4,59 @@
   grid-row: 6 /7;
   grid-column: 1/ 12;
   background-color: lightslategray;
+
+  padding:  2rem 1re;
+  background-color: $color-secondary;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+}
+
+.nav {
+
+  grid-column: 1/-1;
+  grid-row: 1/2;
+
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 200px;
+  align-items: center;
+
+  &__item {
+    justify-self: center;
+
+  }
+
+  &__link {
+    color: $color-white;
+    font-size: 1rem;
+    text-decoration: none;
+
+    transition: all .5s;
+    &:hover {
+      padding: 1rem;
+      box-shadow: $shadow-light;
+      transform: translateY(-5px);
+      display: block;
+      background-color: rgba(#fff, 0.05);
+    }
+
+
+  }
+}
+
+.copyright {
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  color: $color-white;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  width: 70%;
 }
