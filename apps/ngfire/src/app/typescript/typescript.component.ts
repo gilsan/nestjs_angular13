@@ -10,6 +10,9 @@ export class TypescriptComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.init();
   }
+
+  init() {}
 
 }
