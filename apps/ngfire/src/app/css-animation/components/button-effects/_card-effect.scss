@@ -1,7 +1,49 @@
 @import './card';
 
 .textscaling {
-  @include card($content: "", $width: 100%);
+  @include card (#252626, $content: "크기변경", $width: 100%);
 
+  & {
+     transition: all 0.5s;
+  }
 
+  &::before {
+    background-color: #262626;
+    color: white;
+    transform: scale(5);
+    opacity: 0;
+    transition: all 0.5s;
+
+  }
+
+  &:hover::before {
+     transform: scale(1);
+     opacity: 1;
+  }
+
+}
+
+.circleSwapping {
+  @include card (tomato, $content: "", $width: 100%);
+
+  & {
+     cursor: pointer;
+     transition: all 0.5s;
+  }
+  &:hover {
+    color: #fff;
+  }
+
+  &::before {
+    background-color: tomato;
+    z-index: -1;
+    border-radius:0 0 50% 50%;
+    height: 0%;
+    transition: all 0.8s;
+  }
+
+  &:hover::before {
+     height: 100%;
+
+  }
 }

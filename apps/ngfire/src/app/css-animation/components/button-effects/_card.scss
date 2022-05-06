@@ -1,7 +1,7 @@
-@mixin card($content, $width) {
+@mixin card($color, $content, $width) {
 
   & {
-    color: transparent;
+    color: $color;
     font-size: 20px;
     border: 1px solid #272726;
     padding: 10px 20px;
@@ -13,7 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #222;
+
   }
 
   &:hover {
@@ -26,10 +26,12 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #fff;
   height: 100%;
   width: $width;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #222;
 }
 
 
