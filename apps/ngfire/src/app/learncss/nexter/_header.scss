@@ -6,6 +6,10 @@
   grid-column:  1 /8;
   background-color: lightblue;
 
+  @media only screen and (max-width: 750px) {
+    grid-column:  1 /-1;
+  }
+
   background-image: linear-gradient(rgba($color-secondary, 0.5), rgba($color-secondary, 0.95)), url(/assets/nexter/hero.jpeg);
   background-size: cover;
   background-position: center;

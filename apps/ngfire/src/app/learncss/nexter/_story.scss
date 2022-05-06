@@ -5,6 +5,9 @@
   &__pictures {
    grid-row: 3 /4;
    grid-column: 1/ 6;
+   @media only screen and (max-width: 750px) {
+    grid-row: 4 / 5;
+  }
    background-image:
    linear-gradient( rgba($color-primary, 0.4),rgba($color-primary, 0.4) ),
    url(/assets/nexter/back.jpg);

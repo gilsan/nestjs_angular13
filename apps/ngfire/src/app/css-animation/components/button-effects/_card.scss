@@ -1,0 +1,36 @@
+@mixin card($content, $width) {
+
+  & {
+    color: transparent;
+    font-size: 20px;
+    border: 1px solid #272726;
+    padding: 10px 20px;
+    position: relative;
+    overflow: hidden;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+  }
+
+  &:hover {
+    background-color: #F44336;
+  }
+
+
+&::before {
+  content: $content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  height: 100%;
+  width: $width;
+
+}
+
+
+}

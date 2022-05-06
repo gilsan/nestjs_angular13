@@ -5,6 +5,10 @@
   grid-column: 1/ 12;
   background-color: lightslategray;
 
+  @media only screen and (max-width: 750px) {
+    grid-row: 7 / 8;
+  }
+
   padding:  2rem 1re;
   background-color: $color-secondary;
 

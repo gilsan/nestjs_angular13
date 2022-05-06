@@ -7,6 +7,10 @@ figure {
   grid-column: 1/ 12;
   background-color: lightseagreen;
 
+  @media only screen and (max-width: 750px) {
+    grid-row: 6 / 7;
+  }
+
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(7, 5vw);
