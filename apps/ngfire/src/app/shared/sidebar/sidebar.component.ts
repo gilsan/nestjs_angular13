@@ -61,6 +61,11 @@ export class SidebarComponent implements OnInit {
         icon: 'pi pi-refresh',
         routerLink: '/animation/menuHover',
       },
+      {
+        label: 'TypeScript',
+        icon: 'pi pi-refresh',
+        routerLink: '/typescript',
+      },
     ]
   }
 

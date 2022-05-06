@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 
 import { LoginComponent } from './login/login.component';
 import { CourseResolver } from './services/course.resolver';
+import { TypescriptComponent } from './typescript/typescript.component';
 
 // import {AngularFireAuthGuard, hasCustomClaim, redirectUnauthorizedTo} from '@angular/fire/auth-guard';
 
@@ -46,7 +47,6 @@ const routes: Routes = [
     path: 'create-user',
     component: CreateUserComponent,
   },
-
   {
     path: 'login',
     component: LoginComponent,
@@ -62,6 +62,10 @@ const routes: Routes = [
   {
     path: 'animation',
     loadChildren: () => import('./css-animation/css-animation.module').then((m) => m.CssAnimationModule),
+  },
+  {
+    path: 'typescript',
+    component: TypescriptComponent,
   },
   {
     path: '**',
