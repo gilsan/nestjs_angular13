@@ -1,7 +1,7 @@
 @import './card';
 
 .textscaling {
-  @include card (#252626, $content: "크기변경", $width: 100%);
+  @include card (#252626,  "크기변경", "",  100%);
 
   & {
      transition: all 0.5s;
@@ -24,7 +24,7 @@
 }
 
 .circleSwapping {
-  @include card (tomato, $content: "", $width: 100%);
+  @include card (tomato,   "", "", $width: 100%);
 
   & {
      cursor: pointer;
@@ -46,4 +46,38 @@
      height: 100%;
 
   }
+}
+
+.rotating3layer {
+  @include card (#262626,  "삥삥돌려라", "돌려라",   100%);
+
+  & {
+    background-color: yellow;
+     transition: all 0.5s;
+     overflow: visible;
+  }
+  &:hover {
+
+  }
+
+  &::before {
+    background-color: #2ce771;
+    transition: all 0.8s;
+    transform: rotateX(270deg);
+    transform-origin: top;
+  }
+
+  &:hover::before, &:hover::after {
+    transform: rotateX(0deg)
+  }
+
+  &::after {
+    background-color: red;
+    transition: all 0.8s;
+    transform: rotateX(270deg);
+    transform-origin: bottom;
+    transition-delay: 0.4s;
+  }
+
+
 }
