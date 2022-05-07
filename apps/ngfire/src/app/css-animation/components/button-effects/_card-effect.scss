@@ -87,30 +87,79 @@
 
       & {
 
+        &:hover {
+          background-color: #fff;
+        }
       }
 
     &::before {
        color: #fff;
-       left: 100%;
-       transform: scale(0) rotateY(360deg);
-       opacity: 0;
+       background-color: #363636;
        transition: all 0.5s;
     }
 
     &:hover::before {
-      transform: scale(1) rotateY(0deg);
-      opacity: 1;
+      left: 100%;
+      transform: scale(0) rotateY(360deg);
+      opacity: 0;
     }
 
     &::after {
-      left: -100%;
+      color: #fff;
+      background-color: #363636;
+      transition: all 0.5s;
     }
 
     &:hover::after {
-
+      left: -100%;
+      transform: scale(0) rotateY(360deg);
+      opacity: 0;
     }
 
+}
 
+.two-circle-move {
+ // @include card (#262626,  "", "",   20px);
+
+ & {
+  color: #ff0;
+  font-size: 20px;
+  background-color: #272727;
+  padding: 10px 20px;
+  position: relative;
+ // overflow: hidden;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.5s;
+
+ }
+// 45864295118060
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #ff0;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: all 0.5s;
+  }
+
+  &::before {
+    left: 0;
+
+    box-shadow: -50px 0 0 #ff0;
+
+  }
+
+  &::after {
+    right: 0;
+    box-shadow: 100px 0 0 #ff0;
+  }
 
 
 }
