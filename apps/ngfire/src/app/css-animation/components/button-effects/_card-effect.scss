@@ -81,3 +81,36 @@
 
 
 }
+
+.swapping-button {
+      @include card (#262626,  "애니메이션", "애니메이션",   100%);
+
+      & {
+
+      }
+
+    &::before {
+       color: #fff;
+       left: 100%;
+       transform: scale(0) rotateY(360deg);
+       opacity: 0;
+       transition: all 0.5s;
+    }
+
+    &:hover::before {
+      transform: scale(1) rotateY(0deg);
+      opacity: 1;
+    }
+
+    &::after {
+      left: -100%;
+    }
+
+    &:hover::after {
+
+    }
+
+
+
+
+}
