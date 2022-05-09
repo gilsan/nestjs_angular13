@@ -278,3 +278,20 @@
   }
 }
 
+.opendoor {
+  & {
+    color: #201a1a;
+    font-size: 20px;
+    padding: 10px 20px;
+    position: relative;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+}
+
