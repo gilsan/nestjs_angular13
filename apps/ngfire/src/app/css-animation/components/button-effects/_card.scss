@@ -6,13 +6,10 @@
     border: 1px solid #272726;
     padding: 10px 20px;
     position: relative;
-    overflow: hidden;
     margin-left: 10px;
     margin-top: 10px;
     font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center
 
   }
 
@@ -28,10 +25,7 @@
   left: 0;
   height: 100%;
   width: $width;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #222;
+
 }
 
 &::after {
@@ -41,10 +35,77 @@
   left: 0;
   height: 100%;
   width: $width;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
 }
 
 
+}
+
+@mixin mainBox($color, $borderColor) {
+  & {
+    color: $color;
+    font-size: 20px;
+    border: 1px solid $borderColor;
+    padding: 10px 20px;
+    position: relative;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+  }
+}
+
+@mixin box($color, $borderColor) {
+  & {
+    color: $color;
+    font-size: 20px;
+    border: 1px solid $borderColor;
+    padding: 10px 20px;
+    position: relative;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center
+  }
+}
+
+@mixin boxbefore {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@mixin boxafter {
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+  }
 }

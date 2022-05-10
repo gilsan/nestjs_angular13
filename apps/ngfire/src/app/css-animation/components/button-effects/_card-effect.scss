@@ -233,6 +233,104 @@
 
 }
 
+.move_line {
+  @include mainBox(#FDC518, #272726);
+  & {
+    border: none;
+  }
+
+  &::before {
+    top: -12px;
+    border-left: 2px solid blue;
+    border-right: 2px solid blue;
+    height: 150%;
+    transition: all 0.5s;
+    transition-delay: 0.2s;
+  }
+
+  &::after {
+    left: -10px;
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+    width: 110%;
+    transition: all 0.5s;
+  }
+
+  &:hover::before {
+    transform: rotateY(180deg);
+  }
+
+  &:hover::after {
+    transform: rotateX(180deg);
+  }
+}
+
+.move-border {
+  @include box(#c47135, #c47135);
+  @include boxbefore;
+  @include boxafter;
+
+  &::before {
+    top: -5px;
+    left: -5px;
+    height: 30%;
+    width: 20%;
+    border-left: 2px solid #c47135;
+    border-top: 2px solid #c47135;
+    transition: all 0.5s;
+  }
+
+  &::after {
+    bottom: -5px;
+    right: -5px;
+    height: 30%;
+    width: 20%;
+    border-bottom: 2px solid #c47135;
+    border-right: 2px solid #c47135;
+    transition: all 0.5s;
+
+  }
+
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.square-rotate {
+  @include mainBox(#FDC518, #272726);
+
+  span {
+    color: transparent;
+    position: relative;
+  }
+  span::before {
+    content:"글";
+    position: absolute;
+    top: -2px;
+    left: 0;
+    color: #FDC518;
+    transition: all 0.5s;
+  }
+  &:hover span:before {
+    font-size: 40px;
+    transform: translate(-15px, -20px) rotate(360deg);
+  }
+
+  &::before {
+    background-color: #272726;
+    z-index: -1;
+    transition: all 0.5s;
+    opacity: 0;
+  }
+  &:hover::before {
+   opacity: 1;
+   transform: rotate(20deg);
+  }
+}
+
+
 
 
 
