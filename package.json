@@ -8,7 +8,8 @@
     "local-dev": "firebase emulators:start --only firestore,auth,functions --import test-data",
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "server": "./node_modules/.bin/ts-node -P ./server.tsconfig.json ./server.ts"
   },
   "private": true,
   "dependencies": {
