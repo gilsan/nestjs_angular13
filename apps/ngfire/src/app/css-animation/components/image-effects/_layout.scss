@@ -1,0 +1,10 @@
+.main-box {
+  height: 100%;
+  padding: 10px 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+}

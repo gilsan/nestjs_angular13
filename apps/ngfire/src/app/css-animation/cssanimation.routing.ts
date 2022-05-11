@@ -17,6 +17,7 @@ const routes: Routes = [
     { path: '2d', component: Transform2dComponent},
     { path: '3d', component: Transform3dComponent},
     { path: 'menuHover', component: ButtonEffectsComponent},
+    { path: 'images', component: ImageEffectsComponent},
   ] }
 ];
 
