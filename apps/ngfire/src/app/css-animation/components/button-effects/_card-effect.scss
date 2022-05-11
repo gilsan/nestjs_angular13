@@ -330,6 +330,86 @@
   }
 }
 
+.border-move {
+  @include box(#c47135, #c47135);
+  @include boxbefore;
+  @include boxafter;
+
+  & {
+    border-color: transparent;
+    letter-spacing: 10px;
+    overflow: hidden;
+  }
+
+  &::before {
+    height: 4px;
+    left: -100%;
+    border-top: 3px solid #c47135;
+    border-left: 3px solid #c47135;
+    opacity: 0;
+    transition: all 0.5s;
+  }
+
+  &::after {
+    height: 4px;
+    bottom: 0;
+    right: -100%;
+    border-bottom: 3px solid #c47135;
+    border-right: 3px solid #c47135;
+    opacity: 0;
+    transition: all 0.5s;
+  }
+
+
+  span::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    right: 0;
+    height: 100%;
+    width: 4px;
+    background-color: #c47135;
+    transition: all 0.5s;
+  }
+
+  span::after {
+    content: "";
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    height: 100%;
+    width: 4px;
+    background-color: #c47135;
+    transition: all 0.5s;
+  }
+
+  &:hover::before {
+    left: 0;
+    width: 98%;
+    opacity: 1;
+  }
+
+  &:hover::after {
+    right: 0;
+    width: 98%;
+    opacity: 1;
+  }
+
+  &:hover span:before {
+    top: 0;
+  }
+
+  &:hover span::after {
+    bottom: 0;
+  }
+}
+
+.letter-wave {
+  @include box(#c47135, #c47135);
+
+
+}
+
 
 
 
