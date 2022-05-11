@@ -10,7 +10,7 @@
   &::before {
     background-color: #262626;
     color: white;
-    transform: scale(5);
+    transform: scale(1.5);
     opacity: 0;
     transition: all 0.5s;
 
@@ -407,7 +407,227 @@
 .letter-wave {
   @include box(#c47135, #c47135);
 
+  & {
+    overflow: hidden;
+    transition: all 0.5s;
+  }
 
+  &:hover {
+    color: #fff;
+  }
+
+  .wave {
+    position: absolute;
+    top: calc(100% + 22px);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00aeff;
+    transition: all 0.5s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -22px;
+      left: 0;
+      width: 100%;
+      height: 22px;
+      background: url(../../../../assets/img/wave.png);
+      animation: wavy 0.5s linear infinite;
+    }
+  }
+
+  &:hover .wave {
+    top: 22px;
+    z-index: -1;
+  }
+
+}
+@keyframes wavy {
+  0% {
+    background-position-x: 0;
+  }
+
+  100% {
+    background-position-x: 118px;
+  }
+}
+
+.two-cut {
+  @include box(#c47135, #c47135);
+
+  & {
+    border: none;
+    overflow: hidden;
+    transition: all 0.3s;
+    &:hover {
+      color: white;
+    }
+  }
+  & span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    background-color: transparent;
+    z-index: -1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 8%;
+      height: 700%;
+      background-color: white;
+      transform: translate(-50%, -50%) rotate(-60deg);
+      border: 2px solid #fff;
+      transition: all 0.3s;
+    }
+  }
+
+  &:hover span::before {
+    width: 100%;
+    background-color: black;
+  }
+
+}
+
+.split-letter {
+  @include mainBox(#fff, #fff);
+
+  & {
+    border: none;
+    letter-spacing: 10px;
+  }
+
+  &::before {
+    width: 50%;
+    background-color: red;
+    z-index: -1;
+    transition: all 0.5s;
+  }
+
+  &::after {
+    left: 50%;
+    width: 50%;
+    background-color: blue;
+    z-index: -1;
+  }
+
+  &:hover::before {
+    left: 50%;
+    transform: skewX(15deg) translate(0, -10px) scaleY(1.2);
+  }
+
+  &:hover::after {
+    left: 0;
+    transform: skewX(15deg) translate(0, 10px) scaleY(1.2);
+  }
+}
+
+.shadow-effect {
+
+  & {
+    color: #fff;
+    background-color: lightgrey;
+    border-radius: 30px;
+    letter-spacing: 15px;
+    font-size: 20px;
+    border: none;
+    padding: 10px 20px;
+    position: relative;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+    background-color: #fff;
+    z-index: -1;
+    transition: all 0.5s;
+  }
+
+  &:hover::before {
+    transform: scaleX(1.3) scaleY(1.2);
+    opacity: 0;
+  }
+
+  &:hover  {
+    box-shadow: 0 2rem 5rem rgba(0,0,0, 0.4);
+    transform:  translateY(-3px);
+  }
+
+  &:active {
+    box-shadow: 0 1rem 2rem rgba(0,0,0, 0.4);
+    transform:  translateY(-1px);
+  }
+
+}
+
+.inner-split {
+  & {
+    color: black;
+    background-color: transparent;
+    letter-spacing: 15px;
+    font-size: 20px;
+    border: 2px solid black;
+    padding: 10px 20px;
+    position: relative;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    z-index: -1;
+    border-top: 26px solid red;
+    border-bottom: 30px solid green;
+    border-right: 26px solid transparent;
+    transition: all 1s;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateX(100%);
+    z-index: -1;
+    border-top: 26px solid red;
+    border-bottom: 30px solid green;
+    border-left: 26px solid transparent;
+    transition: all 1s;
+  }
+
+  &:hover {
+    color: #fff;
+  }
+
+  &:hover::before,&:hover::after {
+    transform: translateX(0);
+  }
 }
 
 
