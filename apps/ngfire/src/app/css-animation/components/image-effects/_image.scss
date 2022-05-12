@@ -1,11 +1,12 @@
 .image {
   position: relative;
   overflow: hidden;
-
+  height: 100%;
 
   &__one {
     &-img {
       width: 100%;
+      height: 100%;
       transition:all 0.5s;
     }
 
@@ -42,6 +43,7 @@
   &__two {
     &-img {
       width: 100%;
+      height: 100%;
       transition:all 0.5s;
     }
 
@@ -79,6 +81,7 @@
 &__three {
   &-img {
     width: 100%;
+    height: 100%;
     transition:all 0.8s;
   }
 
@@ -113,6 +116,7 @@
 &__four {
   &-img {
     width: 100%;
+    height: 100%;
     transition:all 0.8s;
   }
 
@@ -125,23 +129,27 @@
     color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     transition: all 0.8s;
     background: rgba(0,0,0);
-    transform: translateX(-100%);
+    transform: translateY(100%);
+
+    p { margin: 0; }
+
+    h3 { margin: 0 }
   }
 
 }
 
 &:hover &__four-caption {
-  transform: translateX(0);
+  transform: translateY(78%);
   background: rgba(0,0,0);
   cursor: pointer;
 }
 
 &:hover &__four-img {
-  transform: translateX(100%)
+  transform: translateY(-20%)
 }
 
 }
