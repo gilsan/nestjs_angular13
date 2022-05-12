@@ -1,0 +1,151 @@
+.image {
+  position: relative;
+  overflow: hidden;
+
+
+  &__one {
+    &-img {
+      width: 100%;
+      transition:all 0.5s;
+    }
+
+    &-caption {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: all 0.5s;
+      background: rgba(0,0,0,0);
+      transition: all 0.5s;
+    }
+
+  }
+
+  &:hover &__one-caption {
+    opacity: 1;
+    background: rgba(0,0,0,0.5);
+    padding: 0;
+    cursor: pointer;
+  }
+
+  &:hover &__one-img {
+    transform: scale(1.3) rotate(15deg);
+  }
+/////////////////////////////////////////
+  &__two {
+    &-img {
+      width: 100%;
+      transition:all 0.5s;
+    }
+
+    &-caption {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: all 0.8s;
+      background: rgba(0,0,0,0);
+      transform: translateY(-100%);
+    }
+
+  }
+
+  &:hover &__two-caption {
+    transform: translateY(0);
+    opacity: 1;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
+  }
+
+  &:hover &__two-img {
+    transform: scale(1.3) rotate(-15deg);
+  }
+//////////////////////////////////////////////////
+&__three {
+  &-img {
+    width: 100%;
+    transition:all 0.8s;
+  }
+
+  &-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.8s;
+    background: rgba(0,0,0);
+    transform: translateX(-100%);
+  }
+
+}
+
+&:hover &__three-caption {
+  transform: translateX(0);
+  background: rgba(0,0,0);
+  cursor: pointer;
+}
+
+&:hover &__three-img {
+  transform: translateX(100%);
+}
+///////////////////////////////////////////
+&__four {
+  &-img {
+    width: 100%;
+    transition:all 0.8s;
+  }
+
+  &-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.8s;
+    background: rgba(0,0,0);
+    transform: translateX(-100%);
+  }
+
+}
+
+&:hover &__four-caption {
+  transform: translateX(0);
+  background: rgba(0,0,0);
+  cursor: pointer;
+}
+
+&:hover &__four-img {
+  transform: translateX(100%)
+}
+
+}
+
+
+
+
