@@ -240,45 +240,153 @@
   &:hover::after {
    transform: translate(0,0)  rotate(45deg) scale(2);
   }
+   &:hover h3 {
+     transform: translate(0, 0);
+     transition-delay: 0.4s;
+   }
+   &:hover p {
+    transform: translate(0, 0);
+    transition-delay: 0.2s;
+   }
+
+   &:hover a {
+    transform: translate(0, 0);
+    transition-delay: 0.3s;
+   }
+
 
 
 
   &__seven {
-
     &-img {
       @extend .basicSize;
     }
 
     &-caption {
+       content: "";
+       position: absolute;
+       left: 0;
+       top: 0;
+       height: 100%;
+       width: 100%;
+       color: white;
+       z-index: 1;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-around;
 
+       h3 {
+         text-align: center;
+         padding: 1rem;
+         background-color: rgba(0,0,0,0.8);
+         transform: translate(200px, -200px);
+         transition: all 0.3s;
+       }
+
+       p {
+         text-align: center;
+         align-self: center;
+         transform: translate(-50px, 150px);
+         transition: all 0.3s;
+       }
+
+       a {
+         text-decoration: none;
+         color: white;
+         background-color: black;
+         padding: 0.4rem 0.6rem;
+         width: 100px;
+         align-self: center;
+         text-align: center;
+         transform: translate(-50px, 170px);
+         transition: all 0.3s;
+       }
     }
   }
 
-
-
-
-
-    &:hover &__seven-caption {}
-
-    &:hover &__seven-img {}
 }
 //////////////////////////////////////
 .image8 {
+  position: relative;
   @extend .basicSize;
   overflow: hidden;
-  &__eight {
 
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    transform: translate(120%,120%) rotate(45deg) scale(2);
+    transition: all 1s;
+  }
+
+  &:hover::after {
+   transform: translate(0,0)  rotate(45deg) scale(2);
+  }
+   &:hover h3 {
+     transform: translate(0, 0);
+     transition-delay: 0.4s;
+   }
+   &:hover p {
+    transform: translate(0, 0);
+    transition-delay: 0.2s;
+   }
+
+   &:hover a {
+    transform: translate(0, 0);
+    transition-delay: 0.3s;
+   }
+
+  &__eight {
     &-img {
       @extend .basicSize;
     }
 
     &-caption {
+       content: "";
+       position: absolute;
+       left: 0;
+       top: 0;
+       height: 100%;
+       width: 100%;
+       color: white;
+       z-index: 1;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-around;
 
+       h3 {
+         text-align: center;
+         padding: 1rem;
+         background-color: rgba(0,0,0,0.8);
+         transform: translate(200px, -200px);
+         transition: all 0.3s;
+       }
+
+       p {
+         text-align: center;
+         align-self: center;
+         transform: translate(-50px, 150px);
+         transition: all 0.3s;
+       }
+
+       a {
+         text-decoration: none;
+         color: white;
+         background-color: black;
+         padding: 0.4rem 0.6rem;
+         width: 100px;
+         align-self: center;
+         text-align: center;
+         transform: translate(-50px, 170px);
+         transition: all 0.3s;
+       }
     }
   }
-    &:hover &__eight-caption {}
-
-    &:hover &__eight-img {}
 
 }
 //////////////////////////////////////
