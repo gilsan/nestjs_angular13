@@ -116,8 +116,20 @@
 
 
 .menu__three {
-  background-color: $color-secondary;
+  background-color: $color-white;
   padding: 1rem;
+
+  ul {
+    li {
+      position: relative;
+
+      a {
+        font-size: 1.3rem;
+        padding: 1rem;
+        border: 1px solid red;
+      }
+    }
+  }
 }
 
 
