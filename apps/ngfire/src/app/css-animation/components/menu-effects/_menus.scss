@@ -335,40 +335,56 @@
 }
 
 .menu__six {
-  background-color: $color-grey-light-1;
-  padding: 1rem;
+  grid-column: 2/3;
+  grid-row: 4/6;
+  // background-color: $color-grey-light-1;
 
 
   ul {
+    flex-direction: column;
     li {
      position: relative;
+
 
      a {
       color: $color-text-1;
       padding: 5px 1rem;
       font-size: 1.2rem;
+      display: block;
+      overflow: hidden;
+      padding: 1.5rem 1rem;
+      height: 40px;
       transition: all 0.6s;
+      position: relative;
 
-      &::before {
-        content: "";
-        position: absolute;
+      span {
+        position: relative;
         width: 100%;
         height: 100%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      a:hover span:nth-child(1) {
+        transform: translateY(-100%);
+      }
+
+      a:hover span:nth-child(2) {
+        transform: translateY(-100%);
+      }
+      a:before {
+        content: "";
+        position: absolute;
         top: 0;
         left: 0;
+        width:100%;
+        height: 100%;
+        background-color: #16a985;
         z-index: -1;
-        background-color: #00bcd4;
+      }
 
-        transition: all 0.5s;
-       }
 
-       &:hover {
-
-       }
-
-       &:hover::before   {
-
-       }
 
      }
     }
