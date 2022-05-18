@@ -337,15 +337,13 @@
 .menu__six {
   grid-column: 2/3;
   grid-row: 4/6;
-  // background-color: $color-grey-light-1;
+  background-color: $color-grey-light-1;
 
 
   ul {
     flex-direction: column;
     li {
      position: relative;
-
-
      a {
       color: $color-text-1;
       padding: 5px 1rem;
@@ -362,18 +360,24 @@
         width: 100%;
         height: 100%;
         display:flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
       }
 
-      a:hover span:nth-child(1) {
-        transform: translateY(-100%);
+      & span:nth-child(2) {
+        transform: translateY(-300%);
       }
 
-      a:hover span:nth-child(2) {
-        transform: translateY(-100%);
+      &:hover span:nth-child(1) {
+        transform: translateY(-300%);
+        transition: all 0.5s;
       }
-      a:before {
+
+      &:hover span:nth-child(2) {
+        transform: translateY(0);
+      }
+      &::before {
         content: "";
         position: absolute;
         top: 0;
@@ -381,7 +385,13 @@
         width:100%;
         height: 100%;
         background-color: #16a985;
-        z-index: -1;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: all 0.5s;
+      }
+      &:hover::before {
+        transform: scaleX(1);
+        transition-delay: 0.2s;
       }
 
 
@@ -390,9 +400,156 @@
     }
   }
 
+}
+
+.menu__seven {
+  background-color: $color-grey-light-1;
+
+  ul {
+
+    li {
+      position: relative;
+      a {
+        color: $color-text-1;
+        padding: 5px 1rem;
+        font-size: 1.2rem;
+        transition: all 0.6s;
+
+        &::before {
+           content: "";
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 4px;
+           opacity: 0;
+           background-color: $color-secondary;
+           transition: all 0.5s;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 4px;
+          opacity: 0;
+          background-color: $color-secondary;
+          transition: all 0.5s;
+        }
+
+        &:hover {
+          background-color: $color-secondary;
+          color: $color-white;
+        }
+
+        &:hover::before {
+          opacity: 1;
+          top: -15px;
+        }
+
+        &:hover::after {
+          opacity: 1;
+          bottom: -15px;
+        }
+
+      }
+    }
+  }
+
+}
 
 
+.menu__eight {
+ // background-color: $color-grey-light-1;
+  padding: 1rem;
+
+  ul {
+    li {
+     position: relative;
+
+     a {
+      color: $color-text-1;
+      padding: 5px 1rem;
+      font-size: 1.2rem;
+      transition: all 0.6s;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        bottom: -1px;
+        left: -10px;
+        border-left: 2px solid   $color-red-1;
+        border-bottom: 2px solid $color-red-1;
+        border-width: 0 0 3px 3px;
+        z-index: -1;
+        transition: all 0.5s;
+       }
+
+       &::after {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        top: -10px;
+        left: -10px;
+        border-left: 2px solid $color-red-1;
+        border-top: 2px solid $color-red-1;
+        border-width: 3px 0 0 3px;
+        z-index: -1;
+        transition: all 0.5s;
+       }
+
+       span::before {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        top: -10px;
+        right: -10px;
+        border-top: 2px solid $color-red-1;
+        border-right: 2px solid $color-red-1;
+        border-width: 3px 3px 0 0;
+        z-index: -1;
+        transition: all 0.5s;
+       }
+
+       span::after {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        bottom: 0px;
+        right: -10px;
+        border-bottom: 2px solid $color-red-1;
+        border-right: 2px solid $color-red-1;
+        border-width: 0 3px 3px 0;
+        z-index: -1;
+        transition: all 0.5s;
+       }
 
 
+       &:hover {
+
+       }
+
+       &:hover::before   {
+
+       }
+
+       &::after {
+
+       }
+
+       &:hover::after   {
+
+       }
+
+     }
+    }
+  }
 
 }
