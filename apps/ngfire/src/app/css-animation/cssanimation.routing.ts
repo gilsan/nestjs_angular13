@@ -19,6 +19,7 @@ const routes: Routes = [
     { path: 'menuHover', component: ButtonEffectsComponent},
     { path: 'images', component: ImageEffectsComponent},
     { path: 'menus', component: MenuEffectsComponent},
+    { path: 'cards', component: CardsEffectsComponent}
   ] }
 ];
 

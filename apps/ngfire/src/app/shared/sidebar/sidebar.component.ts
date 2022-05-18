@@ -70,8 +70,12 @@ export class SidebarComponent implements OnInit {
         label: '메뉴처리',
         icon: 'pi pi-refresh',
         routerLink: '/animation/menus',
-      },     
-
+      },
+      {
+        label: '카드처리',
+        icon: 'pi pi-refresh',
+        routerLink: '/animation/cards',
+      },
       {
         label: 'TypeScript',
         icon: 'pi pi-refresh',
