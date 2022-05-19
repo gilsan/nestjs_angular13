@@ -1,0 +1,71 @@
+@import './base';
+.common {
+  position: relative;
+  width: 320px;
+  padding: 2px  1rem  15px 1rem;
+  background-color: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+
+  a {
+    text-decoration: none;
+    padding: 5px 10px;
+    font-weight: bold;
+  }
+}
+.card_one {
+  @extend .common;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: calc(-100% + 5px);
+    width: 100%;
+    height: 100%;
+    background-color: #ff56ac;
+    z-index: -1;
+    transition: all 0.5s;
+  }
+
+  &:hover .contents {
+    color: $color-white;
+  }
+
+
+  &:hover a {
+    background-color: $color-white;
+  }
+
+  &:hover::before {
+    bottom: 0;
+  }
+}
+
+.card_two {
+  @extend .common;
+}
+
+.card_three {
+  @extend .common;
+}
+
+
+.card_four {
+  @extend .common;
+}
+
+.card_five {
+  @extend .common;
+}
+
+.card_six {
+  @extend .common;
+}
+
+.card_seven {
+  @extend .common;
+}
