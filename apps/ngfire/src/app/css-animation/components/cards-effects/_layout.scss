@@ -3,29 +3,45 @@
   padding: 10px 2rem;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
-  grid-template-rows: repeat(6, 300px);
+  // grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  grid-template-columns: repeat(2, minmax(40rem, 1fr));
+  grid-template-rows: repeat(7, 1fr);
   grid-row-gap: 40px;
   grid-column-gap: 20px;
 
-  .card-one {
+  .card_one {
     grid-column: 1/2;
     grid-row: 1/2;
   }
 
-  .card-two {
+  .card_two {
     grid-column: 2/3;
     grid-row: 1/2;
   }
 
-  .card-three {
+  .card_three {
     grid-column: 1/2;
     grid-row: 2/3;
   }
 
-  .card-four {
+  .card_four {
     grid-column: 2/3;
     grid-row: 2/3;
+  }
+
+  .card_five {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+
+  .card_six {
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+
+  .card_seven {
+    grid-column: 1/2;
+    grid-row: 4/5;
   }
 
 }
