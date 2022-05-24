@@ -20,5 +20,7 @@
     <p-tieredMenu #menu [model]="items" [popup]="true"></p-tieredMenu>
     <button #btn2 type="button" pButton label="CSS Animation" class="p-button-text" (click)="animationsMenu.toggle($event)"></button>
     <p-tieredMenu #animationsMenu [model]="animationsItems" [popup]="true"></p-tieredMenu>
+    <button #btn3 type="button" pButton label="앵귤러예제" class="p-button-text" (click)="sampleAngularMenu.toggle($event)"></button>
+    <p-tieredMenu #sampleAngularMenu [model]="sampleAngularLists" [popup]="true"></p-tieredMenu>
   </div>
 </p-toolbar>

@@ -12,11 +12,14 @@ export class SidebarComponent implements OnInit {
   display = false;
   items: MenuItem[];
   animationsItems: MenuItem[];
+  sampleAngularLists: MenuItem[];
+
   constructor(private router: Router, private authService: AuthService) {}
   @Output() sidebarshow = new EventEmitter<boolean>();
   ngOnInit(): void {
     this.menuList();
     this.animationsItemsList();
+    this.ngSample();
   }
 
   menuList() {
@@ -93,6 +96,17 @@ export class SidebarComponent implements OnInit {
       },
     ]
   }
+
+  ngSample() {
+    this.sampleAngularLists  = [
+      {
+        label: 'Simple Book',
+        icon: 'pi pi-refresh',
+        routerLink: '/sample',
+      },
+    ]
+  }
+
 
   toggle() {
     this.display = true;

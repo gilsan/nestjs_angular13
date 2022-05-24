@@ -3,9 +3,7 @@
 .card_one {
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
   background-color: $color-background-2;
 
   .card {
@@ -29,4 +27,18 @@
   0% { transform: rotate(5deg);}
   100% { transform: rotate(-5deg)}
 
+}
+
+.card_two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .card {
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    border-radius: 10px;
+
+  }
 }
