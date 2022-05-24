@@ -1,0 +1,15 @@
+.main-box {
+  height: 100%;
+  padding: 10px 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-rows: repeat(3, 360px);
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+
+  .images {
+    padding: 1rem;
+
+  }
+}
