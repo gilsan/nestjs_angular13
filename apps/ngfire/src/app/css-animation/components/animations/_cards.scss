@@ -33,12 +33,92 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  perspective: 200px;
   .card {
     width: 100px;
     height: 100px;
     background-color: aqua;
     border-radius: 10px;
+    animation: loading 3s linear infinite;
+  }
+}
+
+@keyframes loading {
+  0% { transform: rotateX(0) rotateY(0);}
+  50% { transform: rotateX(0deg) rotateY(180deg);}
+  100% { transform: rotateX(180deg) rotateY(180deg);}
+}
+
+/* https://www.freepik.com/free-vector/city-at-night-and-day-illustration_829621.htm */
+.card_three {
+  margin:0;
+  padding: 0;
+  height: 100%;
+  background: url(../../../../assets/img/bg.jpg);
+  background-position: bottom left;
+  background-size: auto;
+  object-fit: cover;
+  position: relative;
+  animation: city 60s linear infinite;
+  .car {
+    position: absolute;
+    left: 50px;
+    bottom: -20px;
+    width: 100px;
+  }
+  .motorbike {
+    position: absolute;
+    left: 200px;
+    bottom: 50px;
+    width: 100px;
 
   }
+}
+
+@keyframes city {
+  from { background-position: bottom left;}
+  to { background-position: bottom right;}
+}
+
+.card_four {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: $color-pink-7;
+
+  span:before {
+    content: "배우자";
+    color: #1b1462;
+    animation: word-change 5s  infinite;
+  }
+}
+
+@keyframes word-change {
+  0% { content: "배우자";}
+  50% { content: "익히자"; color: $color-grey-dark-1; }
+  100% { content: "계속배우자"; color: $color-grey-dark-2; }
+}
+
+.card_five {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .card {
+    h1 {
+      padding: 1rem 2rem;
+      border: 2px solid $color-grey-dark-1;
+      color: $color-grey-dark-3;
+      transform: all 0.5s;
+      &:hover {
+        animation: word-rotate 3s linear infinite;
+        animation-direction: alternate;
+      }
+    }
+  }
+}
+@keyframes word-rotate {
+  0% { transform: rotate(5get)}
+  100% { transform: rotate(-5deg)}
 }
