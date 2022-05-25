@@ -1,0 +1,26 @@
+<div class="container-box">
+  <router-outlet></router-outlet>
+</div>
+<div class="container">
+  <div class="form-container">
+      <div class="title">로그인</div>
+      <form  class="form">
+        <div class="mt-1">
+          <span class="p-float-label" >
+            <input id="float-input" type="text" pInputText  [(ngModel)]="id" [ngModelOptions]="{standalone: true}" >
+            <label for="float-input">아이디</label>
+          </span>
+        </div>
+        <div class="mt-4">
+          <span class="p-float-label">
+            <input id="float-input" type="password" pInputText  [(ngModel)]="passwd" [ngModelOptions]="{standalone: true}" >
+            <label for="float-input">암호</label>
+          </span>
+        </div>
+      </form>
+      <div class="buttons-container  mt-5">
+        <p-button label="로그인" (click)="login()"></p-button>
+        <p-button label="계정생성" [routerLink]="['/sbook','register']"></p-button>
+      </div>
+  </div>
+</div>

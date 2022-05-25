@@ -6,7 +6,8 @@ import { NgModule } from "@angular/core";
 
 import { PrimengModule } from "../primeng.module";
 import { HomeComponent } from "./components/home/home.component";
-import { LoginComponent } from "./components/sbook/sbook-components/login/login.component";
+import { LoginComponent } from "./components/sbook/auth/login/login.component";
+import { RegisterComponent } from "./components/sbook/auth/register/register.component";
 import { ExListsRoutingModule } from "./exLists.routing";
 
 
@@ -14,7 +15,8 @@ import { ExListsRoutingModule } from "./exLists.routing";
 @NgModule({
   declarations: [
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,

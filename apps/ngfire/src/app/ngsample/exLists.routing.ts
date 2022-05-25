@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
-import { LoginComponent } from './components/sbook/sbook-components/login/login.component';
+import { LoginComponent } from './components/sbook/auth/login/login.component';
+import { RegisterComponent } from './components/sbook/auth/register/register.component';
 
 
 
@@ -10,7 +11,8 @@ import { LoginComponent } from './components/sbook/sbook-components/login/login.
 const routes: Routes = [
   { path: '', component:LoginComponent,
     children: [
-      { path: 'login', component: LoginComponent}
+      { path: 'login', component: LoginComponent},
+      { path: 'register', component: RegisterComponent}
     ] }
 ];
 

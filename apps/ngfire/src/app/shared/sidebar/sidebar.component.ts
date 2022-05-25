@@ -102,7 +102,7 @@ export class SidebarComponent implements OnInit {
       {
         label: 'Simple Book',
         icon: 'pi pi-refresh',
-        routerLink: '/sample',
+        routerLink: '/sbook',
       },
     ]
   }

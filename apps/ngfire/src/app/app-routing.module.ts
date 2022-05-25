@@ -64,7 +64,7 @@ const routes: Routes = [
     loadChildren: () => import('./css-animation/css-animation.module').then((m) => m.CssAnimationModule),
   },
   {
-    path: 'sample',
+    path: 'sbook',
     loadChildren: () => import('./ngsample/exLists.module').then((m) => m.ExListsModule),
   },
   {
