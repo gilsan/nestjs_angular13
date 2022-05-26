@@ -9,6 +9,8 @@ export class RegisterComponent implements OnInit {
 
   id: string | null = null;
   passwd: string | null = null;
+  confirm: string | null = null;
+
   constructor() { }
 
   ngOnInit(): void {

@@ -17,6 +17,12 @@
             <label for="float-input">암호</label>
           </span>
         </div>
+        <div class="mt-4">
+          <span class="p-float-label">
+            <input id="float-input" type="password" pInputText  [(ngModel)]="confirm" [ngModelOptions]="{standalone: true}" >
+            <label for="float-input">암호확인</label>
+          </span>
+        </div>
       </form>
       <div class="buttons-container  mt-5">
         <p-button label="확인" (click)="register()"></p-button>
