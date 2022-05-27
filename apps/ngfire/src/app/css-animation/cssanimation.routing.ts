@@ -11,6 +11,7 @@ import { CardsEffectsComponent } from './components/cards-effects/cards-effects.
 import { HomeComponent } from './components/home/home.component';
 import { SmokyComponent } from './components/smoky/smoky.component';
 import { AnimationsComponent } from './components/animations/animations.component';
+import { Animation2Component } from './components/animation2/animation2.component';
 
 
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
     { path: 'menus', component: MenuEffectsComponent},
     { path: 'cards', component: CardsEffectsComponent},
     { path: 'smoky', component: SmokyComponent},
-    { path: 'animate', component: AnimationsComponent}
+    { path: 'animate', component: AnimationsComponent},
+    { path: 'animate2', component: Animation2Component}
   ] }
 ];
 

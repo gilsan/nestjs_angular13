@@ -8,6 +8,7 @@ import { MenuEffectsComponent } from './components/menu-effects/menu-effects.com
 import { CardsEffectsComponent } from './components/cards-effects/cards-effects.component';
 import { CssAnimationRoutingModule } from './cssanimation.routing';
 import { HomeComponent } from './components/home/home.component';
+import { Animation2Component } from './components/animation2/animation2.component';
 
 
 
@@ -19,7 +20,8 @@ import { HomeComponent } from './components/home/home.component';
     ImageEffectsComponent,
     MenuEffectsComponent,
     CardsEffectsComponent,
-    HomeComponent
+    HomeComponent,
+    Animation2Component
   ],
   imports: [
     CommonModule,
