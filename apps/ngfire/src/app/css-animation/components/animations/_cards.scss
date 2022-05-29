@@ -1,11 +1,6 @@
 @import './base';
 @import './animation';
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@import '../common';
 
 .card_one {
   margin: 0;
@@ -29,8 +24,6 @@
 
   }
 }
-
-
 
 .card_two {
   @extend .center;
@@ -418,7 +411,38 @@
 }
 
 .card_14 {
+  @extend .center;
+  background-color: $color-background-3;
+  .card {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: $color-background-4;
+    border-radius: 50%;
+    @extend .center;
 
+    &::before, &::after{
+      position: absolute;
+      content: "";
+      top: -20px;
+      left: -20px;
+      bottom: -20px;
+      right: -20px;
+      border: 1px solid $color-background-4;
+      border-radius: 50%;
+      animation: pulsing 2s linear infinite;
+    }
+
+    &::after {
+      animation-delay: 0.5s;
+    }
+
+    i {
+      font-size: 3rem;
+      color:#efefef;
+
+    }
+  }
 }
 
 

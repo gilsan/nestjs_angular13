@@ -1,3 +1,31 @@
 
+@keyframes slide {
+  0% { background-image: url(../../../../assets/img/hotel-1.jpg);}
+  50% { background-image: url(../../../../assets/img/hotel-2.jpg);}
+  100% { background-image: url(../../../../assets/img/hotel-3.jpg);}
+}
+
+@keyframes bgchange {
+  0% { background-color: #272727}
+  20% { background-color: tomato }
+  40% { background-color: lightblue }
+  60% { background-color: lightgoldenrodyellow }
+  80% { background-color: lightcyan }
+  100% { background-color: lightgreen }
+}
 
 
+
+@keyframes left-arm {
+  0% { transform: rotate(0deg);}
+  25% { transform: rotate(60deg); }
+  50% { transform: rotate(0deg);}
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes right-arm {
+  0% { transform: rotate(0deg);}
+  25% { transform: rotate(-60deg); }
+  50% { transform: rotate(0deg);}
+  100% { transform: rotate(0deg); }
+}
