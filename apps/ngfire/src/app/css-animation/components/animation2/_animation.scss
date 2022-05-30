@@ -106,4 +106,22 @@
   }
 }
 
+@keyframes rolling {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+@keyframes line {
+  0% { transform: scale(0); transform-origin: left;}
+  49% { transform: scale(1); transform-origin: left;}
+  50% { transform: scale(1); transform-origin: right;}
+  100% { transform: scale(0); transform-origin: right;}
+}
+
+@keyframes music {
+  0% { transform: scaleY(0)}
+  50% { transform: scaleY(1)}
+  100%{ transform: scaleY(0)}
+}
+
 
