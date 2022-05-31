@@ -124,4 +124,26 @@
   100%{ transform: scaleY(0)}
 }
 
+@keyframes clock-wise {
+  0% { transform: rotate(0)}
+  100%{ transform: rotate(360deg)}
+}
+
+@keyframes clock-reverse {
+  0% { transform: rotate(0)}
+  100%{ transform: rotate(-360deg)}
+}
+
+@keyframes loading {
+  0%{ width: 100%; height: 100%;}
+  100% { width: 0; height: 0; }
+}
+
+@keyframes bar {
+  0%{ transfrom: scaleY(0.1);}
+  35% { transfrom: scaleY(1); }
+  60% { transfrom: scaleY(0.1);}
+  100% { transfrom: scaleY(0.1);}
+}
+
 

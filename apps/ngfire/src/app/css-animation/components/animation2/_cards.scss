@@ -274,22 +274,159 @@
 
 .card_10 {
   @extend .center;
+  background-color: $color-background-3;
+  .card {
+    @extend .center;
+    width: 150px;
+    height: 150px;
+    position: relative;
+
+    .outer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      border-top: 3px solid transparent;
+      border-left: 3px solid  blue;
+      border-right: 3px solid blue;
+      border-bottom: 3px solid transparent;
+      border-radius: 50%;
+      animation: clock-wise 2s linear infinite;
+    }
+
+    .middle {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      bottom: 20px;
+      right: 20px;
+      border-top: 3px solid transparent;
+      border-left: 3px solid #eb4d4b;
+      border-right: 3px solid #eb4d4b;
+      border-bottom: 3px solid transparent;
+      border-radius: 50%;
+      animation: clock-reverse 2s linear infinite;
+    }
+
+    .inner {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+      bottom: 40px;
+      right: 40px;
+      border-top: 3px solid transparent;
+      border-left: 3px solid #ccae62;
+      border-right: 3px solid #ccae62;
+      border-bottom: 3px solid transparent;
+      border-radius: 50%;
+      animation: clock-wise 2s linear infinite;
+    }
+    .dot {
+      position: absolute;
+      top: 60px;
+      left: 60px;
+      bottom: 60px;
+      right: 60px;
+      // width: 20px;
+      // height: 20px;
+      background-color: $color-white;
+      border-radius: 50%;
+
+    }
+  }
 
 }
 
 .card_11 {
   @extend .center;
+  background-color: $color-background-3;
+  .card {
+    @extend .center;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 
+    span {
+      width: 30px;
+      height: 30px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        animation: loading 1s linear infinite;
+      }
+    }
+
+    .s4::before,
+    .s5::before,
+    .s6::before {
+      animation-delay: 0.1s;
+    }
+
+    .s7:before,
+    .s8:before,
+    .s9:before {
+      animation-delay: 0.2s;
+    }
+  }
 
 }
 .card_12 {
   @extend .center;
+  background-color: $color-background-3;
+  .card {
+    @extend .center;
+    width: 70px;
+    span {
+      background-color: white;
+      width: 10px;
+      height: 50px;
+      margin: 0 2px;
+      animation: bar 1s easy-in-out infinite
+    }
+  }
 }
 .card_13 {
   @extend .center;
+  background-color: $color-background-3;
+  .card {
+    @extend .center;
+    color: white;
+  }
 }
 .card_14 {
   @extend .center;
+  background-color: $color-background-3;
+  .card {
+    @extend .center;
+    color: white;
+  }
+}
+
+.card_15 {
+  @extend .center;
+  background-color: $color-background-3;
+  .card {
+    @extend .center;
+    color: white;
+  }
+}
+.card_16 {
+  @extend .center;
+  background-color: $color-background-3;
+  .card {
+    @extend .center;
+    color: white;
+  }
 }
 
 
