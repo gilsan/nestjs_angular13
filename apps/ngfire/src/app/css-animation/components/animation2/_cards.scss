@@ -575,6 +575,24 @@
         padding: 5px 10px;
         color: #333;
         transition: all 0.5s;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: -100%;
+          width: 100%;
+          height: 4px;
+          background-color: #eb4d4b;
+          transform: translateY(-50%);
+          transition: 0.5s;
+        }
+
+        &:hover::before {
+          animation: lineheight 2s linear forward;
+        }
+
+
       }
     }
 
