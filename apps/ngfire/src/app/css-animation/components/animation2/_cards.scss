@@ -564,6 +564,7 @@
 
   ul {
     @extend .center;
+
     li {
       list-style: none;
       a {
@@ -575,6 +576,7 @@
         padding: 5px 10px;
         color: #333;
         transition: all 0.5s;
+        overflow: hidden;
 
         &::before {
           content: "";
@@ -588,10 +590,13 @@
           transition: 0.5s;
         }
 
-        &:hover::before {
-          animation: lineheight 2s linear forward;
-        }
 
+      }
+      a:hover {
+        color: white;
+      }
+      a:hover::before {
+       animation: lineheight 0.5s linear forwards;
 
       }
     }
@@ -604,6 +609,47 @@
   .card {
     @extend .center;
     color: white;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .box {
+      position: absolute;
+      top: 70%;
+      left: 40%;
+      width: 10px;
+      height: 10px;
+      border: 2px solid #003298;
+      transform: scale(0);
+      animation: boxes 10s linear infinite ;
+      &:nth-child(2) {
+        top: 30%;
+        left: 60%;
+        border: 2px solid #ccae62;
+        animation-delay: 2s;
+      }
+
+      &:nth-child(3) {
+        top: 20%;
+        left: 15%;
+        border: 2px solid #ccae62;
+        animation-delay: 4s;
+      }
+
+      &:nth-child(4) {
+        top: 80%;
+        left: 70%;
+        animation-delay: 5s;
+      }
+
+      &:nth-child(5) {
+        top: 70%;
+        left: 20%;
+        border: 2px solid #ccae62;
+        animation-delay: 4s;
+      }
+
+    }
   }
 }
 
