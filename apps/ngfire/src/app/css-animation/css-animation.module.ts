@@ -9,6 +9,7 @@ import { CardsEffectsComponent } from './components/cards-effects/cards-effects.
 import { CssAnimationRoutingModule } from './cssanimation.routing';
 import { HomeComponent } from './components/home/home.component';
 import { Animation2Component } from './components/animation2/animation2.component';
+import { ClipPathComponent } from './components/clip_path/clipPath.component';
 
 
 
@@ -21,7 +22,8 @@ import { Animation2Component } from './components/animation2/animation2.componen
     MenuEffectsComponent,
     CardsEffectsComponent,
     HomeComponent,
-    Animation2Component
+    Animation2Component,
+    ClipPathComponent
   ],
   imports: [
     CommonModule,
