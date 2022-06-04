@@ -92,7 +92,16 @@ export class SidebarComponent implements OnInit {
           { label: 'Part II', icon: 'pi pi-refresh',routerLink: '/animation/animate2'},
           { label: 'Part III', icon: 'pi pi-refresh',routerLink: '/animation/animate3'}
         ]
-
+      },
+      {
+        label: 'CSS 아트',
+        icon: 'pi pi-refresh',
+        items: [
+          { label: 'Part I', icon: 'pi pi-refresh',routerLink: '/animation/cssart1'},
+          { label: 'Part II', icon: 'pi pi-refresh',routerLink: '/animation/cssart2'},
+          { label: 'Part III', icon: 'pi pi-refresh',routerLink: '/animation/cssart3'},
+          { label: 'Part V', icon: 'pi pi-refresh',routerLink: '/animation/cssart4'}
+        ]
       },
       {
         label: 'TypeScript',

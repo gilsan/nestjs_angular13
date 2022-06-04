@@ -10,6 +10,9 @@ import { CssAnimationRoutingModule } from './cssanimation.routing';
 import { HomeComponent } from './components/home/home.component';
 import { Animation2Component } from './components/animation2/animation2.component';
 import { ClipPathComponent } from './components/clip_path/clipPath.component';
+import { CssartComponent } from './components/cssart/cssart.component';
+import { Cssart2Component } from './components/cssart2/cssart2.component';
+import { Cssart3Component } from './components/cssart3/cssart3.component';
 
 
 
@@ -23,7 +26,10 @@ import { ClipPathComponent } from './components/clip_path/clipPath.component';
     CardsEffectsComponent,
     HomeComponent,
     Animation2Component,
-    ClipPathComponent
+    ClipPathComponent,
+    CssartComponent,
+    Cssart2Component,
+    Cssart3Component
   ],
   imports: [
     CommonModule,

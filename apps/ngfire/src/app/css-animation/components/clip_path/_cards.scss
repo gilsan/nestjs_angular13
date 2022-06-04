@@ -184,3 +184,127 @@
     }
   }
 }
+
+.card_6 {
+  @extend .center;
+  background-color: $color-background-3;
+
+  .card {
+    @extend .center;
+    position: relative;
+    color: white;
+    width: 160px;
+    height: 60px;
+
+    span {
+      font-size: 1rem;
+      font-weight: bold;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #03a9f4;
+      text-align: center;
+      line-height: 60px;
+
+    }
+
+    span:nth-child(1):hover ~ span {
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%, 100% 0);
+
+    }
+
+    span:nth-child(2) {
+      background-color: white;
+      clip-path: polygon(75% 0, 100% 0, 100% 100%, 75% 100%, 50% 50%);
+      color: #4834d4;
+      transition: 0.5s;
+      &:hover {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 50%);
+      }
+    }
+  }
+
+}
+
+.card_7 {
+  @extend .center;
+
+  .card {
+    @extend .center;
+    position: relative;
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+    overflow: hidden;
+
+    span {
+      font-size: 2rem;
+      font-weight: bold;
+      position: relative;
+      width: 100%;
+      text-align: center;
+      line-height: 200px;
+      color: transparent;
+    }
+
+    span:before {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: 0.5s;
+      transition-delay: 0.25s;
+      color: #262626;
+      clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+    }
+
+    span:after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: #262626;
+      clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+      transition: 0.5s;
+
+    }
+
+    span:hover:before {
+        transform: translate(-10px, -10px);
+        color: #03a9f4;
+
+
+    }
+
+    span:hover:after {
+      transform: translate(10px, 10px);
+      color: blue;
+
+
+    }
+
+  }
+
+  .card:before {
+     content: "";
+     position: absolute;
+     top: 50%;
+     left: -100%;
+     transform: translateY(-50%);
+     width: 100%;
+     height: 2px;
+     transition: 0.5s;
+  }
+
+  .card:hover:before {
+    background-color: green;
+     left: 100%;
+  }
+}
+

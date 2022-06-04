@@ -21,21 +21,22 @@
     grid-row: 1/2;
   }
   .card_3 {
-    grid-column: 3/5;
+    grid-column: 3/4;
     grid-row: 1/2;
   }
   .card_4 {
+    grid-column: 4/5;
+    grid-row: 1/2;
+  }
+
+  .card_5 {
     grid-column: 1/2;
     grid-row: 2/3;
   }
 
-  .card_5 {
+  .card_6 {
     grid-column: 2/3;
     grid-row: 2/3;
-  }
-
-  .card_6 {
-
   }
 
   .card_7 {
@@ -48,45 +49,6 @@
     grid-row: 2/3;
   }
 
-  .card_9 {
-    grid-column: 1/2;
-    grid-row: 3/4;
-  }
-
-  .card_10 {
-    grid-column: 2/3;
-    grid-row: 3/4;
-  }
-
-  .card_11 {
-    grid-column: 3/4;
-    grid-row: 3/4;
-  }
-
-  .card_12 {
-    grid-column: 4/5;
-    grid-row: 3/4;
-  }
-
-  .card_13 {
-    grid-column: 1/2;
-    grid-row: 4/5;
-  }
-
-  .card_14 {
-    grid-column: 2/3;
-    grid-row: 4/5;
-  }
-
-  .card_15 {
-    grid-column: 3/4;
-    grid-row: 4/5;
-  }
-
-  .card_16 {
-    grid-column: 4/5;
-    grid-row: 4/5;
-  }
 
 
 
