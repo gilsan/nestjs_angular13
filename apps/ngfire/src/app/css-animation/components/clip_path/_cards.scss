@@ -316,7 +316,8 @@
     width: 200px;
     position: relative;
     border-radius: 50%;
-    border: 1px solid black;
+    transition: 3s;
+    animation: polar_rotate 3s linear infinite;
     &::before {
       content: "";
       position: absolute;
@@ -327,7 +328,7 @@
       background-color: red;
       border-top-left-radius: 100px;
       border-top-right-radius: 100px;
-      transition: all 2s;
+
       transform-origin: bottom;
       transform:rotate(33deg);
     }
@@ -336,7 +337,7 @@
       content: "";
       position: absolute;
       top: 50%;
-      // bottom: 100%;
+
       left: -32px;
       width:200px;
       height: 100px;
@@ -355,7 +356,7 @@
       border-bottom-left-radius: 100px;
       border-bottom-right-radius: 100px;
       z-index: 1;
-      transition: all 2s;
+
       transform-origin: center;
       transform:rotate(33deg);
     }
@@ -371,19 +372,8 @@
       z-index: 1;
       transform-origin: left;
       transform:rotate(33deg);
-      transition: 3s;
+
     }
-
-    // &:hover::before
-    //   {
-    //     transform: rotate(-180deg);
-    // }
-
-    &:hover .right {
-      transform: rotate(-180deg);
-    }
-
-
 
   }
 }

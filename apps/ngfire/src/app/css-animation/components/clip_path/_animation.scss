@@ -17,3 +17,9 @@
     clip-path: polygon(0% 38%, 21% 40%, 38% 51%, 54% 57%, 75% 57%, 100% 52%, 100% 100%, 0% 100%);
   }
 }
+
+@keyframes polar_rotate {
+  0% {transform: rotate(0deg); }
+
+  100% { transform: rotate(-360deg) }
+}
