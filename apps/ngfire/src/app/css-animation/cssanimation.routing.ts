@@ -14,6 +14,9 @@ import { AnimationsComponent } from './components/animations/animations.componen
 import { Animation2Component } from './components/animation2/animation2.component';
 import { ClipPathComponent } from './components/clip_path/clipPath.component';
 import { CssartComponent } from './components/cssart/cssart.component';
+import { Cssart2Component } from './components/cssart2/cssart2.component';
+import { Cssart3Component } from './components/cssart3/cssart3.component';
+import { Cssart4Component } from './components/cssart4/cssart4.component';
 
 
 const routes: Routes = [
@@ -29,7 +32,10 @@ const routes: Routes = [
     { path: 'animate', component: AnimationsComponent},
     { path: 'animate2', component: Animation2Component},
     { path: 'animate3', component: ClipPathComponent},
-    { path: 'cssart1', component: CssartComponent}
+    { path: 'cssart1', component: CssartComponent},
+    { path: 'cssart2', component: Cssart2Component},
+    { path: 'cssart3', component: Cssart3Component},
+    { path: 'cssart4', component: Cssart4Component}
 
   ] }
 ];

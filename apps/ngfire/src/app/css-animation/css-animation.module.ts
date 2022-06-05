@@ -13,6 +13,7 @@ import { ClipPathComponent } from './components/clip_path/clipPath.component';
 import { CssartComponent } from './components/cssart/cssart.component';
 import { Cssart2Component } from './components/cssart2/cssart2.component';
 import { Cssart3Component } from './components/cssart3/cssart3.component';
+import { Cssart4Component } from './components/cssart4/cssart4.component';
 
 
 
@@ -29,7 +30,8 @@ import { Cssart3Component } from './components/cssart3/cssart3.component';
     ClipPathComponent,
     CssartComponent,
     Cssart2Component,
-    Cssart3Component
+    Cssart3Component,
+    Cssart4Component
   ],
   imports: [
     CommonModule,
