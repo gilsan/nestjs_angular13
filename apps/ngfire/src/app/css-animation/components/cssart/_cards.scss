@@ -77,17 +77,17 @@
       left:0;
       width: 100%;
       height: 100%;
-      border-top: 50px solid #1fb67c;
-      border-right: 50px solid #20bc7d;
-      border-left: 50px solid #25c893;
-      border-bottom: 50px solid #55ddb9;
+      border-top: 50px solid #eee;
+      border-right: 50px solid #ddd;
+      border-left: 50px solid #ccc;
+      border-bottom: 50px solid #ccc;
     }
     span:nth-child(2) {
        position:absolute;
        top: 50%;
        left: 50%;
-       width: 30px;
-       height: 30px;
+       width: 20px;
+       height: 20px;
        background-color: red;
        transform: translate(-50%, -50%) rotate(45deg);
 
@@ -97,8 +97,8 @@
         position: absolute;
         top:0;
         left: 0;
-        width: 30px;
-       height: 30px;
+        width: 20px;
+        height: 20px;
         background-color: red;
         transform: translateY(-50%);
         border-radius: 50%;
@@ -109,8 +109,8 @@
         position: absolute;
         top:0;
         left: 0;
-        width: 30px;
-       height: 30px;
+        width: 20px;
+        height: 20px;
         background-color: red;
         transform: translateX(-50%);
         border-radius: 50%;
@@ -124,10 +124,41 @@
 
 .card_3 {
   @extend .center;
+  background-color: #1fb67c;
   .card {
     @extend .center;
+    width: 100px;
+    height: 100px;
+    background-color: #34588e;
+    border-radius: 50%;
+    border: 5px solid $color-grey-dark-3;
+    position:relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: white;
+      top: -22px;
+      left: -39px;
+      width: 125px;
+      height: 98px;
+      border-radius: 36%;
+      transform: rotate(-19deg);
+    }
 
 
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: red;
+      top: -137px;
+      left: -79px;
+      width: 188px;
+      height: 200px;
+      border-radius: 50%;
+       ;
+    }
   }
 }
 
