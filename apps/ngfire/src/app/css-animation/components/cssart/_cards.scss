@@ -166,8 +166,58 @@
   @extend .center;
   .card {
     @extend .center;
+    width: 205px;
+    height: 155px;
+    background-color: #d6d6d6;
+    border-radius: 15px;
+    box-shadow: 0 10px 15px -13px black;
+    position: relative ;
+
+    .lens {
+      width: 125px;
+      height: 125px;
+      background-color: #f5f5f5;
+      box-shadow: 0 7px 0 0 #c0c0c0;
+      border-radius: 50%;
+      @extend .center;
+      .inner-lens {
+        width: 105px;
+        height: 105px;
+        background-color: #00594c;
+        border-radius: 50%;
+        @extend .center;
+        &-2 {
+          border-top: 21px solid #00087B;
+          border-right: 21px solid #4db6ac;
+          border-bottom: 21px solid #80Cbc4;
+          border-left: 21px solid #25a69a;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .flash {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #f5f5f5;
+      border-radius: 50%;
+      box-shadow: 0 4px 0 0 #c0c0c0;
+      right: 15px;
+      top: 15px;
 
 
+    }
+
+    .button {
+      position: absolute;
+      width: 30px;
+      height: 5px;
+      background-color: #009587;
+      border-radius: 60px;
+      left: 16px;
+      top: -5px;
+    }
   }
 }
 
