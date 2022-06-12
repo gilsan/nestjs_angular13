@@ -223,9 +223,38 @@
 
 .card_5 {
   @extend .center;
-
+  background-color: $color-background-5;
   .card {
     @extend .center;
+    width: 250px;
+    height: 250p;
+    position: relative;
+    .arrow {
+      position: absolute;
+      border-top: 35px solid white;
+      border-left: 48px solid transparent;
+      border-right: 48px solid transparent;
+      border-bottom: 48px solid transparent;
+      width: 0;
+      height: 0;
+    }
+
+    .top {
+      top: -38px;
+      left: 82px;
+    }
+    .left {
+      top: -54px;
+      left: 60px;
+      transform: rotate(72deg);
+
+    }
+
+    .right {
+      top: -52px;
+      left: 103px;
+      transform: rotate(-66deg);
+    }
 
 
   }
