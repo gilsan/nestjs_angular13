@@ -427,9 +427,34 @@
     @extend .center;
     width: 200px;
     height: 200px;
+    border-radius: 60px;
+    background: radial-gradient(circle at 30% 107%, #FDF497 0%, #FDF497 5%, #FD5949 45%, #D6249F 60%, #285AEB 90%);
     .square {
-      width: 100%;
-      height: 100%;
+      width: 140px;
+      height: 140px;
+      background-color: transparent;
+      border: 12px solid white;
+      border-radius: 45px;
+      position: relative;
+      @extend .center;
+
+      .circle-big {
+        height: 60px;
+        width: 60px;
+        background-color: transparent;
+        border: 12px solid white;
+        border-radius: 50%;
+      }
+
+      .circle-small {
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background-color: white;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+      }
     }
   }
 
