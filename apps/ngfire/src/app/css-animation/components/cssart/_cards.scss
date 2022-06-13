@@ -223,40 +223,42 @@
 
 .card_5 {
   @extend .center;
-  background-color: $color-background-5;
+  // background-color: $color-background-5;
+  animation: rolling  5s linear infinite;
   .card {
     @extend .center;
     width: 250px;
-    height: 250p;
+    height: 250px;
     position: relative;
+
+    // border: 1px solid white;
     .arrow {
       position: absolute;
-      border-top: 35px solid white;
+      border-top: 35px solid $color-background-5;
       border-left: 48px solid transparent;
       border-right: 48px solid transparent;
       border-bottom: 48px solid transparent;
       width: 0;
       height: 0;
+
     }
 
     .top {
-      top: -38px;
+    //  top: -38px;
+      top: 98px;
       left: 82px;
     }
     .left {
-      top: -54px;
+      top: 82px;    // -54px;
       left: 60px;
       transform: rotate(72deg);
-
     }
 
     .right {
-      top: -52px;
+      top: 83px; // -52px;
       left: 103px;
       transform: rotate(-66deg);
     }
-
-
   }
 }
 
@@ -294,15 +296,8 @@
         border-radius: 5px;
         transform: rotate(45deg);
       }
-
-      &::after {
-
-      }
     }
-
-
   }
-
 }
 
 .card_7 {
@@ -327,17 +322,14 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-
       }
 
       .bar:nth-child(2) {
         transform:  translate(-50%, -50%)  rotate(60deg);
-
       }
 
       .bar:nth-child(3) {
         transform:  translate(-50%, -50%) rotate(-60deg);
-
       }
 
       .gear-inner {
@@ -435,6 +427,10 @@
     @extend .center;
     width: 200px;
     height: 200px;
+    .square {
+      width: 100%;
+      height: 100%;
+    }
   }
 
 }
