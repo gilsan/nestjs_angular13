@@ -7,8 +7,10 @@
       <form  class="form">
         <div class="mt-1">
           <span class="p-float-label" >
-            <input id="float-input" type="text" pInputText  [(ngModel)]="id" [ngModelOptions]="{standalone: true}" >
-            <label for="float-input">아이디</label>
+            <input id="float-input" type="email"
+            placeholder="test@test.com"
+            pInputText  [(ngModel)]="id" [ngModelOptions]="{standalone: true}" >
+            <label for="float-input">이메엘</label>
           </span>
         </div>
         <div class="mt-4">
