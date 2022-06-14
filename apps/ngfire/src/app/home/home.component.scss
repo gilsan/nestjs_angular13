@@ -1,0 +1,51 @@
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box_center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.courses-panel {
+    max-width: 400px;
+    margin: 20px auto 0 auto;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .left {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .user {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: white;
+      @extend .center;
+
+      &:hover,
+      &:active {
+        cursor: pointer;
+      }
+
+      .pi-user {
+        color: var(--green-500);
+      }
+    }
+}
+
+.title {
+    text-align: center;
+    margin-right: 15px;
+}

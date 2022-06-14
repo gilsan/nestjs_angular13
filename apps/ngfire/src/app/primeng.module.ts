@@ -17,6 +17,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { InputTextModule } from 'primeng/inputtext';
 import { MenubarModule } from 'primeng/menubar';
+import { MenuModule} from 'primeng/menu';
 import { PaginatorModule } from 'primeng/paginator';
 import { RatingModule } from 'primeng/rating';
 import { SelectButtonModule } from 'primeng/selectbutton';
@@ -50,6 +51,7 @@ import { TreeSelectModule } from 'primeng/treeselect';
     InputSwitchModule,
     InputTextModule,
     MenubarModule,
+    MenuModule,
     PaginatorModule,
     RatingModule,
     SelectButtonModule,
@@ -82,6 +84,7 @@ import { TreeSelectModule } from 'primeng/treeselect';
     InputSwitchModule,
     InputTextModule,
     MenubarModule,
+    MenuModule,
     PaginatorModule,
     RatingModule,
     SelectButtonModule,

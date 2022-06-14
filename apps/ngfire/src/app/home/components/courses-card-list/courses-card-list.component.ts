@@ -75,4 +75,8 @@ export class CoursesCardListComponent implements OnInit {
       },
     });
   }
+
+  onCancel() {
+    this.display = false;
+  }
 }

@@ -4,7 +4,12 @@
 }
 
 .create-course {
-  margin-top: 20px;
+  margin-top: 120px;
+  width: 400px;
+  height: 620px;
+  border-radius: 10px;
+  box-shadow: 0 10px 1rem rgba(0,0,0,0.4);
+  padding: 15px 10px;
 }
 
 .course-thumbnail {
@@ -49,4 +54,10 @@
 
 textarea {
   width: 380px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }

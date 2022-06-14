@@ -4,14 +4,15 @@ import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
-import { MenuItem } from 'primeng/api';
+import { MenuItem, MessageService } from 'primeng/api';
 import { CoursesService } from '../services/courses.service';
 import { ICOURSE } from '../models/course.model';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
   items: MenuItem[];
@@ -24,16 +25,20 @@ export class HomeComponent implements OnInit {
 
   advancedCourses$: Observable<ICOURSE[]>;
 
-  constructor(private router: Router, public courseService: CoursesService) {}
+  constructor(private router: Router,
+    public courseService: CoursesService,
+    private messageService: MessageService,
+    private auth: AuthService ) {}
 
   ngOnInit() {
     this.items = [
       {
-        label: '기본과정',
-        icon: 'pi pi-fw pi-home',
+        label: '로그아웃',
+        icon: 'pi pi-fw pi-sign-out',
         tabindex: '0',
         command: (event) => {
           this.index = 0;
+          this.auth.signOut();
         },
       }, // , routerLink: ['/pagename']
       {
@@ -46,9 +51,18 @@ export class HomeComponent implements OnInit {
       },
     ];
 
-    this.activeItem = this.items[0];
+   // this.activeItem = this.items[0];
 
     this.getCourse();
+    this.currentUser();
+  }
+
+  currentUser() {
+    this.auth.currentUser().then((data) => {
+      console.log('[사용자정보]', data.email, data.uid);
+    })
+
+
   }
 
   getCourse() {

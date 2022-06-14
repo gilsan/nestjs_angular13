@@ -57,7 +57,8 @@
       </div>
     </div>
     <ng-template pTemplate="footer">
-      <p-button icon="pi pi-check" (click)="saveCourse()" label="저장" styleClass="p-button-text"></p-button>
+      <p-button icon="pi pi-save" (click)="saveCourse()" label="저장" styleClass="p-button-text"></p-button>
+      <p-button icon="pi pi-ban" (click)="onCancel()" label="취소" styleClass="p-button-text"></p-button>
     </ng-template>
   </p-dialog>
 </div>

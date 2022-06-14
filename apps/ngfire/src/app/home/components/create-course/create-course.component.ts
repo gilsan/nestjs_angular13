@@ -97,4 +97,8 @@ export class CreateCourseComponent implements OnInit {
       )
       .subscribe();
   }
+
+  cancel() {
+    this.router.navigate(['/home']);
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { finalize } from 'rxjs';
 import { PAGE } from '../../../model/course';
 import { ICOURSE } from '../../../models/course.model';
@@ -15,7 +15,13 @@ export class CoursesComponent implements OnInit {
   course: ICOURSE;
   lessons: ILESSON[] = [];
   loading = false;
-  constructor(private route: ActivatedRoute, private courseService: CoursesService) {}
+
+  constructor(
+    private route: ActivatedRoute,
+    private courseService: CoursesService,
+    private router: Router
+    ) {}
+
   lessonsPage: ILESSON[] = [];
   totalPage = 0;
 
@@ -51,4 +57,9 @@ export class CoursesComponent implements OnInit {
     }
     this.lessons = this.lessonsPage.slice(start, end);
   }
+
+  backHome() {
+      this.router.navigate(['/home']);
+  }
+
 }

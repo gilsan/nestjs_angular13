@@ -1,15 +1,17 @@
 <div class="container">
   <div class="header">
-    <h2 class="title">전체과정</h2>
+    <div class="left">
+      <h2 class="title">전체과정</h2>
+      <button  pButton  pRipple  type="button"  icon="pi pi-plus"
+        class="p-button-rounded"  routerLink="/create-course" >
+      </button>
+    </div>
 
-    <button
-      pButton
-      pRipple
-      type="button"
-      icon="pi pi-plus"
-      class="p-button-rounded"
-      routerLink="/create-course"
-    ></button>
+    <div class="user">
+      <i class="pi pi-user" style="font-size: 2rem" (click)="menu.toggle($event)"></i>
+      <p-menu #menu [popup]="true" [model]="items"></p-menu>
+    </div>
+
   </div>
 
   <p-tabView>

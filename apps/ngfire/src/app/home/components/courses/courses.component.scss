@@ -3,6 +3,25 @@
   text-align: center;
   max-width: 700px;
   margin: 15% auto 0 auto;
+  border: 1px solid black;
+  box-shadow: 0 10px 1rem rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.pi-upload {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  &:hover,
+  &:active {
+    cursor: pointer;
+    color: red;
+    &:before {
+      background-color: greenyellow;
+      border-radius: 50%;
+      transform: scale(1.5);
+    }
+  }
 }
 
 .course-thumbnail {

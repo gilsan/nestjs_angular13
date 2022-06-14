@@ -10,6 +10,7 @@ import { map, tap } from 'rxjs/operators';
 export class AuthService {
   isLoggedIn$: Observable<boolean>;
   isLoggedOut$: Observable<boolean>;
+
   constructor(private afa: AngularFireAuth, private router: Router) {
     this.isLoggedIn$ = afa.authState.pipe(
     //  tap((data) => console.log('authState:', data)),
@@ -31,7 +32,17 @@ export class AuthService {
     );
   }
 
+  signOut() {
+    this.afa.signOut().then(() => {
+        this.router.navigate(['/sbook']);
+    });
+  }
+
   logout(): Observable<any> {
     return from(this.afa.signOut());
+  }
+
+  currentUser(): Promise<any> {
+    return this.afa.currentUser;
   }
 }
