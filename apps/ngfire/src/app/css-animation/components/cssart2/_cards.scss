@@ -109,8 +109,39 @@
 
 .card_2 {
   @extend .center;
+  background-color: #69506d;
   .card {
     @extend .center;
+    width: 200px;
+    height: 100px;
+    .watermelon {
+      width: 100%;
+      height: 100%;
+      background-color: #fd6c64;
+      border-left: 10px solid #5af5b6;
+      border-right: 10px solid #5af5b6;
+      border-bottom: 10px solid #5af5b6;
+      border-bottom-left-radius: 100px;
+      border-bottom-right-radius: 100px;
+
+      span {
+        width: 5px;
+        height: 5px;
+        background-color: #241313;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 10px;
+        &:nth-child(8),
+        &:nth-child(14) {
+          opacity: 0;
+        }
+        &:nth-child(15),
+        &:nth-child(16) {
+          transform: translateX(65px);
+        }
+      }
+
+    }
 
 
   }
@@ -120,26 +151,153 @@
   @extend .center;
   .card {
     @extend .center;
+    width: 200px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    .shape {
+      width: 30px;
+      height: 150px;
+      position: absolute;
+      background-color: black;
+      transform: rotate(-30deg);
+    }
 
+    .s1 {
+      top: 75px;
+      left: 40px;
+    }
 
+    .s2 {
+      top: 40px;
+      left: 77px;
+    }
+
+    .s3 {
+      top: 10px;
+      left: 114px;
+    }
   }
 }
 
 .card_4 {
   @extend .center;
+  background-color: #69506d;
   .card {
     @extend .center;
+    width: 160px;
+    height: 120px;
+    position: relative;
+    border-radius: 15px;
+    background-color: #5af5b6;
+    box-shadow: 0 0 0 10px #28a9e1, 0 15px 0 10px #115a91;
 
+    &:before {
+      content: "";
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      width: 50%;
+      height: 44%;
+      background-color: #5af5b6;
+      border-radius: 15px;
+      border: 15px solid #4d4d4d;
+    }
 
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 10px;
+      height: 100%;
+      background-color: #5af5b6;
+      transform: translate(-50%, 0%);
+    }
   }
 }
 
 .card_5 {
   @extend .center;
+  background-color: #69506d;
   .card {
     @extend .center;
+    width: 150px;
+    height: 150px;
 
+    position: relative;
 
+    .donut-body {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: #5af5b6;
+      border: 5px solid #003459;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 3px;
+        right: 1px;
+        width: 93%;
+        height: 95%;
+        background-color:#ffa7a8;
+        border-radius: 50%;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        border: 5px solid #003459;
+      }
+    }
+    .face {
+      width: 32px;
+      height: 16px;
+      position: absolute;
+      border: 3px solid #003459;
+      border-top: 0;
+      border-bottom-left-radius: 100px;
+      border-bottom-right-radius: 100px;
+      top: 32px;
+      left: 58px;
+      &::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background-color: #003959;
+        position: absolute;
+        top: -16px;
+        left: -14px;
+        border-radius: 50%;
+        box-shadow: 48px 0 #003959;
+      }
+
+    }
+    .highlight {
+      width: 40px;
+      height: 40px;
+      border: 8px solid white;
+      border-top: 0;
+      border-right: 0;
+      position: absolute;
+      left: 36px;
+      top: 73px;
+      border-bottom-left-radius: 50px;
+      opacity: 0.5;
+
+    }
   }
 }
 
