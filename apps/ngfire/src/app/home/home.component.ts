@@ -5,9 +5,11 @@ import { catchError, map } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { MenuItem, MessageService } from 'primeng/api';
-import { CoursesService } from '../services/courses.service';
+
 import { ICOURSE } from '../models/course.model';
 import { AuthService } from '../services/auth.service';
+import { CourseService } from './ngrx_data/course.service';
+import { CoursesService } from '../services/courses.service';
 
 @Component({
   selector: 'home',
@@ -59,7 +61,10 @@ export class HomeComponent implements OnInit {
 
   currentUser() {
     this.auth.currentUser().then((data) => {
-      console.log('[사용자정보]', data.email, data.uid);
+      if (data !== null) {
+        console.log('[사용자정보]', data.email, data.uid);
+      }
+
     })
 
 

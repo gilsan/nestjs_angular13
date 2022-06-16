@@ -22,6 +22,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HighlightedDirective } from './directives/highlighted.directive';
 import { CssAnimationModule } from './css-animation/css-animation.module';
 import { TypescriptComponent } from './typescript/typescript.component';
+import { StoreModule } from '@ngrx/store';
+import { EntityDataModule,  EntityMetadataMap } from '@ngrx/data';
+import { EffectsModule } from '@ngrx/effects';
+import { HttpClientModule } from '@angular/common/http';
+
+
+
 
 @NgModule({
   declarations: [AppComponent, AboutComponent, HeaderComponent, CreateUserComponent, LoginComponent, SidebarComponent, HighlightedDirective, TypescriptComponent],
@@ -37,9 +44,15 @@ import { TypescriptComponent } from './typescript/typescript.component';
     AngularFireStorageModule,
 
     HomeModule,
+    HttpClientModule,
      CssAnimationModule,
+     StoreModule.forRoot({}),
+     EffectsModule.forRoot([]),
+     EntityDataModule.forRoot({}),
   ],
   providers: [CourseResolver],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+
+}
