@@ -305,6 +305,42 @@
   @extend .center;
   .card {
     @extend .center;
+    width: 100px;
+    height: 150px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    .part {
+      width: 50px;
+      height: 50px;
+    }
+
+    .part-1 {
+      background-color: #003459;
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+    }
+    .part-2 {
+      background-color: #398dc9;
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+    }
+    .part-3 {
+      background-color: #453cc1;
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+    }
+    .part-4 {
+      background-color: #12181d;
+      border-radius: 50%;
+    }
+    .part-5 {
+      background-color: #8faabd;
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+      border-bottom-right-radius: 50%;
+    }
 
 
   }
@@ -315,7 +351,46 @@
   @extend .center;
   .card {
     @extend .center;
+    width: 190px;
+    height: 70px;
+    border-radius: 50%;
+    border: 5px solid #61dafb;
+    position: relative;
 
+    .circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #61dafb;
+      transform: translate(-50%,-50%);
+    }
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 5px solid #61dafb;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotate(60deg);
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 5px solid #61dafb;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotate(-60deg);
+    }
 
   }
 }
@@ -324,10 +399,166 @@
   @extend .center;
   .card {
     @extend .center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: lightcoral;
+    position: relative;
+
+    .line-1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 80%;
+      height: 80%;
+      border-radius: 50%;
+      border-right: 10px solid transparent;
+      border-top: 10px solid white;
+      border-left: 10px solid white;
+      border-bottom: 10px solid white;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .line-2 {
+      position: absolute;
+      top: 50%;
+      right: calc(5% + 10px);
+      width: 30%;
+      height: 10px;
+      background-color: white;
+    }
+
+    .line-3 {
+      position: absolute;
+      top: 25%;
+      left: 46%;
+      width: 20px;
+      height: 45%;
+      border-left: 10px solid white;
+      border-bottom: 10px solid white;
+    }
+
+    .circle {
+      position: absolute;
+      top: 25%;
+      left: 30%;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: white;
+    }
+  }
+}
+
+.card_9 {
+  @extend .center;
+  .card {
+    @extend .center;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    perspective: 100px;
+    animation: rolling 5s linear infinite;
+    animation-direction: alternate;
+
+    .card-1 {
+      padding: 50px;
+      position: absolute;
+      left: 7px;
+      background: #de4444;
+      transform-style: preserve-3d;
+      transform: rotateY(-20deg);
+    }
+    .card-2 {
+      padding: 50px;
+      position: absolute;
+      right: 0px;
+
+      background: #c85e5e;
+      transform-style: preserve-3d;
+      transform: rotateY(20deg);
+    }
+  }
+
+}
+
+@keyframes rolling {
+  0% { transform: rotateY(0deg)}
+  100% { transform: rotateY(360deg)}
+}
+.card_10 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  .card {
+    width: 500px;
+    height: 20px;
+    background-color: #5a3f21;
+    position: relative;
+
+    .clock {
+      width: 110px;
+      height: 110px;
+      background-color: #e9e6c9;
+      border: 10px solid #5aa668;
+      border-radius: 50%;
+      position: absolute;
+      top: -119px;
+      left: 15px;
+    }
+
+    .knot {
+
+      width: 10px;
+      height: 10px;
+      background-color: #9d374f;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .hand {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 4px;
+      height: 50px;
+      background-color: #47321A;
+
+    }
+
 
 
   }
+
 }
+.card_11 {
+  @extend .center;
+  .card {
+    @extend .center;
+    width: 200px;
+    height: 200px;
+
+    background-color: lightcoral;
+    position: relative;
+
+  }
+
+}
+.card_12 {
+  @extend .center;
+  .card {
+    @extend .center;
+    width: 200px;
+    height: 200px;
+
+    background-color: lightcoral;
+    position: relative;
+
+  }
+
+}
+
 
 
 
