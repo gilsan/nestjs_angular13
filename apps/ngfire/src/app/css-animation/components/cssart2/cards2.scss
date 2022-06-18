@@ -98,6 +98,61 @@
           border-radius: 50% 0 0 50%;
         }
       }
+
+    }
+    .left-eye {
+      position: absolute;
+      top: 30%;
+      left: 30%;
+      border: 4px solid black;
+      border-top: 4px solid transparent;
+      width: 30px;
+      height: 15px;
+      border-bottom-left-radius: 100px;
+      border-bottom-right-radius: 100px;
+    }
+
+    .right-eye {
+      position: absolute;
+      top: 30%;
+      right: 30%;
+      border: 4px solid black;
+      border-top: 4px solid transparent;
+      width: 30px;
+      height: 15px;
+      border-bottom-left-radius: 100px;
+      border-bottom-right-radius: 100px;
+    }
+
+    .lashes {
+      position: absolute;
+      bottom: -9px;
+      left: 48%;
+      width: 2px;
+      height: 8px;
+      background-color: #3c2114;
+
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: -4px;
+        left: -16px;
+        background-color: #3c2114;
+        transform: rotate(30deg);
+      }
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: -4px;
+        left: 13px;
+        background-color: #3c2114;
+        transform: rotate(-30deg);
+      }
     }
 
   }
