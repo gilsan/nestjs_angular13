@@ -485,6 +485,7 @@
 @keyframes rolling {
   0% { transform: rotateY(0deg)}
   100% { transform: rotateY(360deg)}
+
 }
 .card_10 {
   display: flex;
@@ -648,32 +649,6 @@
       top: -107px;
       left: 206px;
     }
-
-  }
-
-}
-.card_11 {
-  @extend .center;
-  .card {
-    @extend .center;
-    width: 200px;
-    height: 200px;
-
-    background-color: lightcoral;
-    position: relative;
-
-  }
-
-}
-.card_12 {
-  @extend .center;
-  .card {
-    @extend .center;
-    width: 200px;
-    height: 200px;
-
-    background-color: lightcoral;
-    position: relative;
 
   }
 
