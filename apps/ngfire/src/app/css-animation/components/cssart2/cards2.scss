@@ -156,7 +156,26 @@
     }
 
     .muzzle {
+      position: absolute;
+      width: 87px;
+      height: 55px;
+      background-color: #ffd49d;
+      top: 40%;
+      left: 27%;
+      border-radius: 50% 0 0 50%;
+      transform: rotate(-10deg);
 
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #ffd49d;
+        left: 100%;
+        border-radius: 0 50% 50% 0;
+        transform: rotate(20deg);
+        transform-origin: left top;
+      }
     }
 
   }
