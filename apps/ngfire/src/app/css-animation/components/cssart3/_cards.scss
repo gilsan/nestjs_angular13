@@ -4,11 +4,12 @@
 // https://bennettfeely.com/clippy/
 .card_1 {
   @extend .center;
+  background-color: green;
   .card {
     @extend .center;
     width: 215px;
     height: 405px;
-    background-color: green;
+
     position: relative;
   }
 
@@ -51,7 +52,7 @@
     background-color: white;
     border: 1px solid #000;
     border-radius: 50%;
-    left: 120px;
+    left: 137px;
     top:110px;
   }
 
@@ -72,7 +73,7 @@
     background-color: white;
     border: 1px solid #000;
     border-radius: 50%;
-    left: 62px;
+    left: 76px;
     top:115px;
   }
   .pupil-left {
@@ -84,6 +85,177 @@
     left: 33px;
     top: 34px;
   }
+
+  .f-side1 {
+    position: absolute;
+    width: 140px;
+    height: 60px;
+    background-color: #fed90f;
+    top: 185px;
+    left: 54px;
+  }
+
+  .f-side2 {
+    position: absolute;
+    width: 22px;
+    height: 53px;
+    background-color: #fed90f;
+    top: 172px;
+    left: 48px;
+    transform: rotate(-11deg);
+    border-left: 1px solid black;
+  }
+
+  .nose {
+    position: absolute;
+    background-color: #fed90f;
+    width: 70px;
+    height: 32px;
+    top: 171px;
+    left: 145px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+  }
+
+  .mouth {
+    position: absolute;
+    width: 115px;
+    height: 120px;
+    background-color: #d1b271;
+    top: 203px;
+    left: 91px;
+    border-radius: 50%;
+    border: 1px solid black;
+  }
+
+  .mouth-part1 {
+    background-color: #d1b271;
+    position: absolute;
+    width: 30px;
+    height: 27px;
+    top: 62px;
+    left: 99px;
+    border-radius: 50%;
+    border-right: 1px solid black;
+    transform: rotate(15deg);
+  }
+
+  .mouth-part2 {
+    background-color: #d1b271;
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    top: 20px;
+    left: 30px;
+    border-radius: 60%;
+    border-right: 1px solid black;
+    transform: rotate(-5deg);
+  }
+
+  .mouth-part3 {
+    background-color: #d1b271;
+    position: absolute;
+    width: 25px;
+    height: 48px;
+    top: 229px;
+    left: 203px;
+    border-top: 1px solid black;
+    border-radius: 10%;
+    transform: rotate(18deg);
+  }
+
+  .mouth-part4 {
+    background-color: #d1b271;
+    position: absolute;
+    width: 63px;
+    height: 30px;
+    top: 200px;
+    left: 150px;
+    border-right: 1px solid black;
+    border-top-right-radius: 70%;
+  }
+
+  .mouth-part5 {
+    background-color: #d1b271;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 260px;
+    left: 106px;
+
+  }
+
+  .neck {
+    background-color: #fed90f;
+    position: absolute;
+    width: 140px;
+    height: 150px;
+    top: 200px;
+    left: 52px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    transform: rotate(2deg);
+  }
+
+  .collar-left {
+    background-color: white;
+    position: absolute;
+    width: 110px;
+    height: 49px;
+    top: 330px;
+    left: 41px;
+    transform: rotate(15deg);
+    border-radius: 10%;
+    border: 1px solid black;
+  }
+
+  .collar-right {
+    background-color: white;
+    position: absolute;
+    width: 20px;
+    height: 50px;
+    top: 340px;
+    left: 182px;
+    border: 1px solid black;
+    transform: rotate(-20deg);
+  }
+
+  .ear {
+    background-color: #fed90f;
+    position: absolute;
+    width: 32px;
+    height: 37px;
+    top: 200px;
+    left: 32px;
+    border-radius: 50%;
+    transform: rotate(10deg);
+    border: 1px solid black;;
+
+    &-1 {
+
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      top: 8px;
+      left: 8px;
+      border-left: 1px solid black;
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+    }
+
+    &-2 {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      top: -3px;
+      border-bottom: 1px solid black;
+    }
+  }
+
+
+
 }
 
 .card_2 {
