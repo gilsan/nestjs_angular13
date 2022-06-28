@@ -1,0 +1,32 @@
+@import '../base';
+@import '../common';
+@import './animation';
+
+// https://bennettfeely.com/clippy/
+.card_9 {
+  @extend .center;
+  background: #cbe058;
+  .card {
+    @extend .center;
+
+    a {
+      text-decoration: none;
+      font-size: 2rem;
+      font-weight: 600;
+      padding: 15px 40px;
+      color: #555;
+      background: #fff;
+      letter-spacing: 2px;
+      transition: 0.5s;
+      clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 12% 50%, 0% 0%);
+
+      &:hover {
+        background: #a7b612;
+        color: #555;
+        letter-spacing: 4px;
+        clip-path: polygon(100% 0%, 85% 50%, 100% 100%, 17% 100%, 0% 50%, 13% 1%);
+      }
+    }
+  }
+
+}
