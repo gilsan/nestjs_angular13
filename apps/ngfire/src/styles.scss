@@ -19,6 +19,12 @@
 
 }
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box
+}
+
 .p-toolbar {
   padding: 0.2rem 1.25rem !important;
 }
@@ -30,6 +36,8 @@ body {
   font-size: 16px;
   line-height: 1.7;
 }
+
+
 
 .container {
   width: 1200px;

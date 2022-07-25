@@ -4,11 +4,13 @@ import { NgModule } from "@angular/core";
 import { PrimengModule } from "../primeng.module";
 import { NgbookComponent } from "./ngbook.component";
 import { NgbookRoutingModule } from "./ngbook.routing";
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 
 @NgModule({
   declarations: [
-    NgbookComponent
+    NgbookComponent,
+    ToolbarComponent
   ],
   imports: [
     CommonModule,
