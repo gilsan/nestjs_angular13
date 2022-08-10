@@ -119,7 +119,7 @@ export class SidebarComponent implements OnInit {
         routerLink: '/sbook',
       },
       {
-        label: '나의 기록',
+        label: '100개 콤포넌트',
         icon: 'pi pi-refresh',
         routerLink: '/ngbook',
       },

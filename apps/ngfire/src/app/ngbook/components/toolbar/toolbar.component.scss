@@ -1,0 +1,34 @@
+@import '../../styles/colors';
+@import '../../styles/variables';
+@import '../../styles/mixin';
+
+.toolbar-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  background-color: $blue;
+  color: white;
+
+  @include box-shadow();
+
+  @media screen and (max-width: $tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+h3 {
+  margin: 0;
+}
+
+:host ::ng-deep {
+   ul {
+    display: grid;
+    grid-gap: 10px;
+    grid-auto-flow: column;
+
+    li {
+      display: inline;
+    }
+   }
+}
