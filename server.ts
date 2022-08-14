@@ -5,7 +5,7 @@ import {Application} from "express";
 import {getAllCourses} from './server/get-courses.route';
 import {saveCourse} from './server/save-course.route';
 import { heroes, tests} from './server/heros.route';
-import { searchHeroes} from './server/hero-search.route';
+import { searchHeroById, searchHeroes} from './server/hero-search.route';
 
 const bodyParser = require('body-parser');
 require('cors')
@@ -20,6 +20,8 @@ app.route('/api/courses/:id').put(saveCourse);
 app.route('/boruto/heroes').get(heroes)
 
 app.route('/boruto/heroes/search').get(searchHeroes)
+app.route('/boruto/hero/search').get(searchHeroById)
+
 app.route('/photos').get(tests)
 
 
