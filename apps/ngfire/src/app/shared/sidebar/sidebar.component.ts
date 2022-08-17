@@ -100,7 +100,7 @@ export class SidebarComponent implements OnInit {
           { label: 'Part I', icon: 'pi pi-refresh',routerLink: '/animation/cssart1'},
           { label: 'Part II', icon: 'pi pi-refresh',routerLink: '/animation/cssart2'},
           { label: 'Part III', icon: 'pi pi-refresh',routerLink: '/animation/cssart3'},
-          { label: 'Part V', icon: 'pi pi-refresh',routerLink: '/animation/cssart4'}
+          // { label: 'Part V', icon: 'pi pi-refresh',routerLink: '/animation/cssart4'}
         ]
       },
       {
@@ -122,6 +122,11 @@ export class SidebarComponent implements OnInit {
         label: '100개 콤포넌트',
         icon: 'pi pi-refresh',
         routerLink: '/ngbook',
+      },
+      {
+        label: '첫화면',
+        icon: 'pi pi-refresh',
+        routerLink: '/mainscreen',
       },
     ]
   }
