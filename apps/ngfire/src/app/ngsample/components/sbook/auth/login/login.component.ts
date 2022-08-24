@@ -26,8 +26,6 @@ export class LoginComponent implements OnInit {
 
   ) {
 
-
-
     this.auth.login(this.id, this.passwd).subscribe({
       next: (data) => {
         this.messageService.add({severity:'success', summary:'메세지', detail:'로그인 되었습니다.'});

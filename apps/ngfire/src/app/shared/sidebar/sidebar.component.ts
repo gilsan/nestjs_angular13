@@ -114,7 +114,12 @@ export class SidebarComponent implements OnInit {
   ngSample() {
     this.sampleAngularLists  = [
       {
-        label: 'Simple Book',
+        label: '앵귤러과정',
+        icon: 'pi pi-refresh',
+        routerLink: '/home',
+      },
+      {
+        label: '초기화면',
         icon: 'pi pi-refresh',
         routerLink: '/sbook',
       },
@@ -123,11 +128,11 @@ export class SidebarComponent implements OnInit {
         icon: 'pi pi-refresh',
         routerLink: '/ngbook',
       },
-      {
-        label: '첫화면',
-        icon: 'pi pi-refresh',
-        routerLink: '/mainscreen',
-      },
+      // {
+      //   label: '첫화면',
+      //   icon: 'pi pi-refresh',
+      //   routerLink: '/sbook/mainscreen',
+      // },
     ]
   }
 

@@ -9,6 +9,7 @@ import { HomeComponent } from "./components/home/home.component";
 import { LoginComponent } from "./components/sbook/auth/login/login.component";
 import { RegisterComponent } from "./components/sbook/auth/register/register.component";
 import { ExListsRoutingModule } from "./exLists.routing";
+import { MainComponent } from "./mainscreen/mainscreen.component";
 
 
 
@@ -16,7 +17,8 @@ import { ExListsRoutingModule } from "./exLists.routing";
   declarations: [
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MainComponent
   ],
   imports: [
     CommonModule,

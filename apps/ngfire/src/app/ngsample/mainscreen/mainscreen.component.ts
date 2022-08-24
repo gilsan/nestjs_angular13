@@ -7,7 +7,7 @@ import { Component, OnInit } from "@angular/core";
   templateUrl: './mainscreen.component.html',
   styleUrls: ['./mainscreen.component.scss'],
 })
-export class SidebarComponent implements OnInit {
+export class MainComponent implements OnInit {
 
   ngOnInit(): void {
         console.log("test");
