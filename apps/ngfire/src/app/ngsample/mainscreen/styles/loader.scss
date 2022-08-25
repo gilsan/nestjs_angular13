@@ -8,10 +8,21 @@
   right: 0;
   bottom: 0;
   height: 100vh;
-  z-index: 99;
+  z-index: 0;
   background: #0b134f;
   display: grid;
   place-items: center;
+
+  &__animation {
+    animation: changeBackground 3s forwards;
+    animation-delay: 2s;
+    @keyframes changeBackground {
+      100% {
+        background: transparent;
+        opacity: 0.5;
+      }
+    }
+  }
 
   &__box {
     position: relative;
@@ -27,6 +38,24 @@
     }
   }
 
+
+
+  &__box_animation {
+    animation: loadingBox 3s forwards;
+    @keyframes loadingBox {
+      0% {
+        height: 500px;
+        border-radius:50%;
+      }
+
+      100% {
+        height: 500px;
+        border-radius: 0%;
+        border: none;
+      }
+    }
+  }
+
   &__bar {
     width: 90%;
     height: 10px;
@@ -38,9 +67,23 @@
     border-radius: 2px;
     &--inner {
       height: 100%;
-      width: 50%;
+      width: 0;
       border-radius: 2px;
       background: $green-color;
+    }
+  }
+
+  &__bar_animation {
+    animation: barFadeout 3s;
+    @keyframes  barFadeout {
+
+      100% {
+        rotate: 90deg;
+        top: 200%;
+        left: 1000%;
+
+      }
+
     }
   }
 
@@ -76,6 +119,8 @@
       }
     }
 
+
+
     &--border {
         width: 85%;
         height: 1px;
@@ -85,8 +130,6 @@
         left: 50%;
         transform: translateX(-50%);
     }
-
-
 
   }
 
@@ -104,6 +147,55 @@
     padding: 10px;
     &--number {
       color: $green-color
+    }
+
+  }
+
+  &__text_animation {
+    animation: width_animation 1s forwards;
+    @keyframes  width_animation {
+      0% { width: 85%; }
+      100% { width: 250px; }
+    }
+  }
+
+  &__text__counter_animation {
+    animation: opacityFadeout 1s infinite;
+    @keyframes opacityFadeout {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__svg {
+    position: absolute;
+    width: 85%;
+    top: 8%;
+    left: 8%;
+    transform: translate(-50%, -50%);
+
+  }
+
+  &__svg_opacity {
+    opacity: 0;
+  }
+
+  &__svg_animation {
+    animation: global 3s forwards infinite;
+    @keyframes global {
+      from {
+        opacity: 1;
+        transform: rotate(0deg);
+      }
+       to {
+        opacity: 1;
+        transform: rotate(360deg);
+
+       }
     }
   }
 

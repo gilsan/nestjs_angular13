@@ -27,11 +27,13 @@ import { EntityDataModule,  EntityMetadataMap } from '@ngrx/data';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 
-
+import { AngularAnimationComponent } from './angular_animation/angularAnimation.component';
 
 
 @NgModule({
-  declarations: [AppComponent, AboutComponent, HeaderComponent, CreateUserComponent, LoginComponent, SidebarComponent, HighlightedDirective, TypescriptComponent],
+  declarations: [AppComponent, AboutComponent, HeaderComponent, CreateUserComponent, LoginComponent, SidebarComponent, HighlightedDirective, TypescriptComponent, AngularAnimationComponent
+
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

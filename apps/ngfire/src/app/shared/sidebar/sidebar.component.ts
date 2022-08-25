@@ -104,9 +104,9 @@ export class SidebarComponent implements OnInit {
         ]
       },
       {
-        label: 'TypeScript',
+        label: '앵귤러 애니메이션',
         icon: 'pi pi-refresh',
-        routerLink: '/typescript',
+        routerLink: '/angularAnimation',
       },
     ]
   }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { AngularAnimationComponent } from './angular_animation/angularAnimation.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { CourseComponent } from './home/components/course/course.component';
 import { CoursesComponent } from './home/components/courses/courses.component';
@@ -72,8 +73,8 @@ const routes: Routes = [
     loadChildren: () => import('./ngsample/exLists.module').then((m) => m.ExListsModule),
   },
   {
-    path: 'typescript',
-    component: TypescriptComponent,
+    path: 'angularAnimation',
+    component:  AngularAnimationComponent,
   },
   {
     path: '**',

@@ -4,18 +4,23 @@
 
 
 <div class="container">
-  <div class="loading">
-    <div class="loading__box">
-        <div class="loading__text">
-          <div class="loading__text--border"></div>
-          L <div class="loading__text--dot"></div>OADING 경험
+  <div  class="loading"[ngClass]="{ 'loading__animtaion': loading}">
+    <div class="loading__box"
+    [ngClass]= "{  'loading__box_animation': loading}">
+        <img [src]="loading ? '../../../assets/img/SVG/loader15.svg' : ''"
+         [ngClass]="{'loading__svg': loading, 'loading__svg_opcity': !loading, 'loading__svg_animation': loading}"
+          alt="">
+        <div  [ngClass]="{'loading__text': !loading}" >
+          <div class="loading__text--border  loading__text_animation" ></div>
+          <span [ngStyle]="{'opacity': loading? 0: 1}">L</span>
+          <div [ngClass]="{'loading__text--dot': !loading}"></div><span  [ngStyle]="{'opacity': loading? 0: 1}">OADING 경험</span>
         </div>
-        <div class="loading__bar">
-          <div class="loading__bar--inner"></div>
+        <div   [ngClass]="{'loading__bar_animation': loading, 'loading__bar': !loading}">
+          <div class="loading__bar--inner"  [ngStyle]="progressBar()" ></div>
         </div>
-        <div class="loading__counter">
-          <span>0%</span>
-          <div class="loading__counter--number">100%</div>
+        <div   [ngClass]="{'loading__counter': !loading}">
+          <span [ngStyle]="{'opacity': loading? 0: 1}">0%</span>
+          <div [ngStyle]="{'opacity': loading? 0: 1}">{{100 - counter}}%</div>
         </div>
     </div>
   </div>
