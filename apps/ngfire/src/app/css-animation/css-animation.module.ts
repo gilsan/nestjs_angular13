@@ -14,6 +14,7 @@ import { CssartComponent } from './components/cssart/cssart.component';
 import { Cssart2Component } from './components/cssart2/cssart2.component';
 import { Cssart3Component } from './components/cssart3/cssart3.component';
 import { Cssart4Component } from './components/cssart4/cssart4.component';
+import { AngularAnimationComponent } from './components/angularAnimations/angularBasic/angularAnimation.component';
 
 
 
@@ -31,7 +32,8 @@ import { Cssart4Component } from './components/cssart4/cssart4.component';
     CssartComponent,
     Cssart2Component,
     Cssart3Component,
-    Cssart4Component
+    Cssart4Component,
+    AngularAnimationComponent
   ],
   imports: [
     CommonModule,

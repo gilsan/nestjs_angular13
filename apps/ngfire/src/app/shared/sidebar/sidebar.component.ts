@@ -90,8 +90,13 @@ export class SidebarComponent implements OnInit {
         items: [
           { label: 'Part I', icon: 'pi pi-refresh',routerLink: '/animation/animate'},
           { label: 'Part II', icon: 'pi pi-refresh',routerLink: '/animation/animate2'},
-          { label: 'Part III', icon: 'pi pi-refresh',routerLink: '/animation/animate3'}
-        ]
+          { label: 'Part III', icon: 'pi pi-refresh',routerLink: '/animation/animate3'},
+          { label: '앵귤러 애니메이션 기초1', icon: 'pi pi-refresh',routerLink: '/animation/angularProj1'},
+          { label: '앵귤러 애니메이션 기초2', icon: 'pi pi-refresh',routerLink: '/animation/angularProj2'},
+          { label: '앵귤러 애니메이션 기초3', icon: 'pi pi-refresh',routerLink: '/animation/angularProj3'},
+          { label: '앵귤러 애니메이션 기초4', icon: 'pi pi-refresh',routerLink: '/animation/angularProj4'}
+        ],
+        style: {'width' : '200px', 'color': 'blue'}
       },
       {
         label: 'CSS 아트',
@@ -103,11 +108,11 @@ export class SidebarComponent implements OnInit {
           // { label: 'Part V', icon: 'pi pi-refresh',routerLink: '/animation/cssart4'}
         ]
       },
-      {
-        label: '앵귤러 애니메이션',
-        icon: 'pi pi-refresh',
-        routerLink: '/angularAnimation',
-      },
+      // {
+      //   label: '앵귤러 애니메이션',
+      //   icon: 'pi pi-refresh',
+      //   routerLink: '/angularAnimation',
+      // },
     ]
   }
 

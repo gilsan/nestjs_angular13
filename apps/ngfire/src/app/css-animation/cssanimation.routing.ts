@@ -17,6 +17,7 @@ import { CssartComponent } from './components/cssart/cssart.component';
 import { Cssart2Component } from './components/cssart2/cssart2.component';
 import { Cssart3Component } from './components/cssart3/cssart3.component';
 import { Cssart4Component } from './components/cssart4/cssart4.component';
+import { AngularAnimationComponent } from './components/angularAnimations/angularBasic/angularAnimation.component';
 
 
 const routes: Routes = [
@@ -35,7 +36,8 @@ const routes: Routes = [
     { path: 'cssart1', component: CssartComponent},
     { path: 'cssart2', component: Cssart2Component},
     { path: 'cssart3', component: Cssart3Component},
-    { path: 'cssart4', component: Cssart4Component}
+    { path: 'cssart4', component: Cssart4Component},
+    { path: 'angularProj1', component: AngularAnimationComponent}
 
   ] }
 ];
