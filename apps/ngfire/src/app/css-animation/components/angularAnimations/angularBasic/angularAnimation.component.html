@@ -1,20 +1,21 @@
-<div class="container-box">
+<div class="container">
+  <div  class="loading" >
+    <div class="loading__box" >
+        <!-- <img [src]="'../../../assets/img/SVG/loader15.svg'" class="loading__svg" alt=""> -->
+        <div  class="loading__text" >
+          <div class="loading__text--border" @width></div>
+          L
+          <div class="loading__text--dot"  [@blink]="stateBlink"></div>OADING 경험
+        </div>
+        <div   class="loading__bar"  *ngIf="!progressBarFinish">
+            <div class="loading__bar--inner"  [ngStyle]="width"></div>
+        </div>
+        <div  *ngIf="progressBarFinish" [@movingBar]="'end'"></div>
 
-
-<hr>
-<input type="number" #input (input)="getNumber(input.value)">
-<br><br>
-<span [@numberEntereeState]="numberEntered == 1 ? 'selectedNumber' : 'unselectedNumber'">1</span>
-<span [@numberEntereeState]="numberEntered == 2 ? 'selectedNumber' : 'unselectedNumber'">2</span>
-<span [@numberEntereeState]="numberEntered == 3 ? 'selectedNumber' : 'unselectedNumber'">3</span>
-<span [@numberEntereeState]="numberEntered == 4 ? 'selectedNumber' : 'unselectedNumber'">4</span>
-<span [@numberEntereeState]="numberEntered == 5 ? 'selectedNumber' : 'unselectedNumber'">5</span>
-<span [@numberEntereeState]="numberEntered == 6 ? 'selectedNumber' : 'unselectedNumber'">6</span>
-<span [@numberEntereeState]="numberEntered == 7 ? 'selectedNumber' : 'unselectedNumber'">7</span>
-<span [@numberEntereeState]="numberEntered == 8 ? 'selectedNumber' : 'unselectedNumber'">8</span>
-<span [@numberEntereeState]="numberEntered == 9 ? 'selectedNumber' : 'unselectedNumber'">9</span>
-<span [@numberEntereeState]="numberEntered == 0 ? 'selectedNumber' : 'unselectedNumber'">0</span>
-
-
-
+        <div   class="loading__counter">
+          <span>0%</span>
+          <div>{{counter}}%</div>
+        </div>
+    </div>
+  </div>
 </div>

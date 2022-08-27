@@ -1,38 +1,65 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate} from '@angular/animations';
-import { numberEntereState } from './animations';
-
+import { barState, blinkState, numberEntereState, widthState } from './animations';
+import { interval, Observable } from 'rxjs';
+import { take } from 'rxjs/operators';
+import { SubSink } from 'subsink';
 @Component({
   selector: 'app-animation',
   templateUrl: './angularAnimation.component.html',
   styleUrls: ['./angularAnimation.component.scss'],
   animations: [
-    numberEntereState,
+    numberEntereState, blinkState,
+    barState, widthState
 
   ]
 
 })
-export class AngularAnimationComponent implements OnInit {
+export class AngularAnimationComponent implements OnInit, OnDestroy {
 
-  clickInfo = 'default';
-  numberEntered: number;
+  stateBlink = 'show';
+  width = {};
+  counter = 0;
+  progressBarFinish = false;
+  private subs = new SubSink();
 
   constructor() { }
 
+  ngOnDestroy(): void {
+     this.subs.unsubscribe();
+  }
+
   ngOnInit(): void {
+    this.blink();
+    this.progressBar()
+  }
+
+  blink() {
+    this.subs.sink = interval(1000).subscribe(val => {
+      this.stateBlink = this.stateBlink === 'show' ? 'hide' : 'show';
+    });
+  }
+
+  progressBar() {
+    this.subs.sink = interval(50).pipe(
+      take(101)
+    ).subscribe(val => {
+      this.width = {'width': val + '%'};
+      this.counter = val;
+
+      if (val >= 100) {
+        this.progressBarFinish = true;
+      }
+    })
 
   }
 
-  onClickSample() {
-    this.clickInfo ='clicked';
-    // setTimeout(() => {
-    //   this.clickInfo ='default';
-    // }, 1000);
-  }
 
-  getNumber(val: number) {
-    this.numberEntered= val;
-    console.log(this.numberEntered);
-  }
+
+
+
+
+
+
 
 }
