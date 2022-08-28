@@ -1,21 +1,64 @@
 <div class="container">
-  <div  class="loading" >
-    <div class="loading__box" >
-        <!-- <img [src]="'../../../assets/img/SVG/loader15.svg'" class="loading__svg" alt=""> -->
+  <!--   Loading -->
+  <div  class="loading"
+  [ngStyle]="{'background': loadingbackground ? 'white': '#0b134f',
+   'opacity': loadingbackground ? 0.5: 1 }">
+    <div class="loading__box" *ngIf="loadingBox">
         <div  class="loading__text" >
-          <div class="loading__text--border" @width></div>
+          <div   [@linewidth]="loadingBorder"></div>
           L
           <div class="loading__text--dot"  [@blink]="stateBlink"></div>OADING 경험
         </div>
+
         <div   class="loading__bar"  *ngIf="!progressBarFinish">
             <div class="loading__bar--inner"  [ngStyle]="width"></div>
         </div>
-        <div  *ngIf="progressBarFinish" [@movingBar]="'end'"></div>
+        <div  class="loading__bar" *ngIf="progressBarFinish"  [@movingBar]="movingBar" >
+
+        </div>
 
         <div   class="loading__counter">
           <span>0%</span>
           <div>{{counter}}%</div>
         </div>
     </div>
+
+    <div class="loading__box" *ngIf="!loadingBox" [@makeCircle]="makecircle">
+      <img class="image" [src]="'../../../assets/img/SVG/loader15.svg'" alt="" width="120" height="120">
+    </div>
+
+</div>
+<!--   Landing -->
+<div class="landing">
+  <div class="centered_link">
+    <a href="#" class="coolLink">COOL LINK</a>
   </div>
+  <!-- Header -->
+
+      <header class="header">
+        <div class="header__wrap">
+          <ul class="header__left">
+            <li><a href="#"><span>홈</span></a></li>
+            <li><a href="#"><span>다시보기</span></a></li>
+            <li><a href="#"><span>프로젝트</span></a></li>
+            <li><a href="#"><span>안내</span></a></li>
+            <li><a href="#"><span>질의응답</span></a></li>
+          </ul>
+          <div class="header__right">
+            <button>Contact</button>
+          </div>
+        </div>
+      </header>
+
+</div>
+
+
+
+
+
+
+
+
+
+
 </div>

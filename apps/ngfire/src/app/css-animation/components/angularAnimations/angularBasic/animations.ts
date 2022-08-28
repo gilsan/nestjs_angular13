@@ -1,5 +1,5 @@
 
-import { trigger, state, style, transition, animate} from '@angular/animations';
+import { trigger, state, style, transition, animate, keyframes} from '@angular/animations';
 
 export const numberEntereState =  trigger('numberEntereeState', [
   state('unselectedNumber', style({
@@ -37,39 +37,68 @@ export const blinkState = trigger('blink', [
     ]
 )
 
-export const widthState = trigger('width', [
-  transition('* => *', animate(1000, style({
-    width: '85%'
-  }))),
-  transition('*=> *', animate(1000, style({
-    width: '200px'
-  })) )
+export const widthState = trigger('linewidth', [
+  state('start', style({
+    width: '85%',
+    height: '1px',
+    background: 'red',
+    position: 'absolute',
+    bottom: '0',
+    left: '50%',
+    transform: 'translateX(-50%)',
+  })),
+  state('finish', style({
+    width: '200px',
+    height: '1px',
+    background: '#fff',
+    position: 'absolute',
+    bottom: '0',
+    left: '50%',
+    transform: 'translateX(-50%)',
+     })),
+  transition('start => finish', animate(3000)),
 ])
 
 
 export const barState = trigger('movingBar', [
+   state('start', style({
+    height: '10px',
+    width: '90%',
+    borderRadius: '2px',
+    background: '#6cff8d',
+   })),
+   state('finish', style({
+    background: '#6cff8d',
+    rotate: '270deg',
+    top: '200%',
+    left: '1000%'
 
+   })),
+  transition('start => finish',   animate(3000))
+])
 
+export const boxState = trigger('makeCircle', [
+   state('circle', style({
+    height: '300px',
+    borderRadius: '50%'
+   })),
+   state('hide', style({
+     border: 'none'
+   })),
+   transition('void => circle', [
+    animate(4000),
+   ]),
 
-  //  state('end', style({
-  //   height: '10px',
-  //   width: '90%',
-  //   borderRadius: '2px',
-  //   background: '#6cff8d',
-  //   rotate: '90deg',
-  //   top: '200%',
-  //   left: '1000%'
+])
 
-  //  })),
-  //  transition('void => *', animate(2000) ),
-  transition('void => *',   [
-    style({
-      height: '10px',
-      width: '90%',
-      borderRadius: '2px',
-      background: '#6cff8d',
-    }),
-    animate(2000)
-  ]),
-  // transition('void => end',   animate(1000))
+export const imageState = trigger('rolling', [
+    state('start', style({
+      transform: 'rotate(0deg) translate(-50%, -50%)',
+      transformOrigin: 'center'
+    })),
+    state('end', style({
+      transform: 'rotate(360deg) translate(-50%, -50%)',
+      transformOrigin: 'center'
+    })),
+    transition('start => end', animate(3000))
 ])
