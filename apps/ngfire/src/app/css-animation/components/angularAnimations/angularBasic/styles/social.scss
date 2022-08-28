@@ -1,0 +1,40 @@
+
+@import './base';
+
+.socials {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.coloredIcon {
+  color: #fff;
+  font-size: 35px;
+  &:hover {
+    animation:  coloredIconAnimation 0.3s infinite ;
+  }
+
+  @keyframes coloredIconAnimation {
+     0% {
+      text-shadow: 5px 4px $red-color, -5px -6px $blue-color;
+     }
+     25% {
+      text-shadow: -5px -6px $red-color, 5px 4px $blue-color;
+     }
+     50% {
+      text-shadow: 5px -4px $red-color, -8px 4px $blue-color;
+     }
+     75% {
+      text-shadow: -8px -4px $red-color, -5px -4px $blue-color;
+     }
+     100% {
+      text-shadow: -5px 0px $red-color, -5px -4px $blue-color;
+     }
+  }
+
+}
