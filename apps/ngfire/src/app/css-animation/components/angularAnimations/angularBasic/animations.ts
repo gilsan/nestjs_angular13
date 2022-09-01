@@ -102,3 +102,25 @@ export const imageState = trigger('rolling', [
     })),
     transition('start => end', animate(3000))
 ])
+
+export const movingLeft = trigger('movingleft', [
+  state('start', style({
+    transform: 'translate(0)'
+  })),
+  state('end', style({
+    transform: 'translate(50%)'
+  })),
+  transition('start => end', animate(15000))
+])
+
+export const movingRight = trigger('movingright', [
+  state('start', style({
+    transform: 'translate(0)'
+  })),
+  state('end', style({
+    transform: 'translate(-50%)'
+  })),
+
+  transition('start => end', animate(15000)),
+
+])

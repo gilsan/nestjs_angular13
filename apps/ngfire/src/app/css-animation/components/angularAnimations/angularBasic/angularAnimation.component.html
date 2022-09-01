@@ -76,21 +76,102 @@
 
         </div>
       </div>
-      <!-- Skills -->
-      <div class="skills">
-        <div class="skills__header">
-          <div class="skills__header--left"></div>
-          <div class="skills__header--right"></div>
+</div>
+
+
+<!-- Skills -->
+<section class="skills">
+  <div class="skills__header">웹기술</div>
+      <div class="skills__text skills__text--left">
+          JETPACK COMPOSE&nbsp;&nbsp;&nbsp;ANDROID&nbsp;&nbsp;&nbsp;
+          KOTLIN&nbsp;&nbsp;&nbsp;ANGULAR&nbsp;&nbsp;&nbsp;
+          REACT&nbsp;&nbsp;&nbsp;VIE&nbsp;&nbsp;&nbsp;
+      </div>
+
+      <div class="skills__text skills__text--right" [@movingright]="movingright">
+        JQuery&nbsp;&nbsp;&nbsp;PHP&nbsp;&nbsp;&nbsp;
+        KOTLIN&nbsp;&nbsp;&nbsp;ANGULAR&nbsp;&nbsp;&nbsp;
+        REACT&nbsp;&nbsp;&nbsp;VIE&nbsp;&nbsp;&nbsp;
+      </div>
+
+</section>
+
+<!--  Reviews -->
+<div class="section reviews">
+  <div class="reviews__header">
+    <div class="instructor">
+      <div class="instructor__curve"></div>
+      <div class="instructor__infos">
+        <img src="../../../../../assets/img/user-6.jpg" alt="" class="instructor__img">
+        <div class="instructor__col">
+          <div class="instructor__info">
+            <i class="uil uil-star"></i>
+            <span>4.9/5.0 Instructor rating</span>
+          </div>
+          <div class="instructor__info">
+            <i class="uil uil-star"></i>
+            <span>100+ 5 star reviews</span>
+          </div>
+          <div class="instructor__info">
+            <i class="uil uil-users-alt"></i>
+            <span>1K+ students</span>
+          </div>
+          <div class="instructor__info">
+            <i class="uil uil-star"></i>
+            <span>2 major courses</span>
+          </div>
         </div>
       </div>
+    </div>
+    <!-- swipe -->
+    <div class="swiper__wrapper">
+      <div class="swiper">
+         <div class="swiper-wrapper">
+          <swiper
+          [navigation]="true"
+          (swiper)="onSwiper($event)"
+          [pagination]="{ clickable: true }"
+          [scrollbar]="{ draggable: true }"
+        >
+          <ng-template swiperSlide>Slide 1</ng-template>
+          <ng-template swiperSlide>Slide 2</ng-template>
+          <ng-template swiperSlide>Slide 3</ng-template>
+          <ng-template swiperSlide>Slide 4</ng-template>
+          <ng-template swiperSlide>Slide 5</ng-template>
+          <ng-template swiperSlide>Slide 6</ng-template>
+        </swiper>
+         </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+
+
 
 
 
 
 
 </div>
-
-
+<!-- projects-->
+<div class="section">
+  <h1 class="projects__header">Some of my work</h1>
+  <div class="project">
+    <div class="project__header">
+      <span>8/1</span>
+      <span>2022 8</span>
+    </div>
+    <div class="project__infos">
+      <h1 class="project__infos--name">
+        Facebook Clone<span>Very advanced</span>
+      </h1>
+    </div>
+  </div>
+</div>
 
 
 

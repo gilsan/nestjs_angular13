@@ -1,19 +1,29 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { trigger, state, style, transition, animate} from '@angular/animations';
-import { barState, blinkState, boxState, numberEntereState, widthState,  } from './animations';
+import { barState, blinkState, boxState, movingRight, numberEntereState, widthState,  } from './animations';
 import { interval, Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { SubSink } from 'subsink';
-import { timeStamp } from 'console';
+
+import SwiperCore, { SwiperOptions, Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { EventsParams } from 'swiper/angular';
+
+
+// install Swiper modules
+SwiperCore.use([Navigation  ]);
+
+
+
 @Component({
   selector: 'app-animation',
   templateUrl: './angularAnimation.component.html',
   styleUrls: ['./angularAnimation.component.scss'],
   animations: [
     numberEntereState, blinkState,
-    barState, widthState,boxState,
+    barState, widthState,boxState,movingRight
 
-  ]
+  ],
+
 
 })
 export class AngularAnimationComponent implements OnInit, OnDestroy {
@@ -24,6 +34,9 @@ export class AngularAnimationComponent implements OnInit, OnDestroy {
   loadingBox = true;
   makecircle = 'circle';
   makecircleState = false;
+
+  movingright = 'start';
+
 
   imagestate =false;
   loadingbackground = false;
@@ -43,7 +56,7 @@ export class AngularAnimationComponent implements OnInit, OnDestroy {
     this.blink();
     this.progressBar();
     this.loadingborder();
-
+    this.movingRight();
   }
 
   blink() {
@@ -112,6 +125,30 @@ export class AngularAnimationComponent implements OnInit, OnDestroy {
     this.loadingbackground = true;
   }
 
+  movingRight() {
+    this.subs.sink =  interval(1000).pipe().subscribe(val => {
+
+         if (val % 16 === 0 || val === 0) {
+
+            if (this.movingright === 'start') {
+              this.movingright = 'end';
+            } else if (this.movingright === 'end') {
+              this.movingright = 'start';
+            }
+
+         }
+      })
+  }
+
+
+  onSwiper(params: EventsParams ) {
+    // const [swiper] = params;
+    // console.log(swiper);
+    console.log(params);
+  }
+  onSlideChange() {
+    console.log('slide change');
+  }
 
 
 

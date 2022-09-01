@@ -1,0 +1,42 @@
+@import './base.scss';
+
+.skills {
+  position: relative;
+  font-size: 30px;
+  height: 150px;
+  background: $yellow-color;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 0.5rem;
+
+  &__header {
+    font-weight: 600;
+  }
+
+  &__text {
+    position: absolute;
+    white-space: nowrap;
+    &--left {
+      left: 0;
+      top: 3rem;
+      animation: movingleft 14s linear infinite ;
+      @keyframes movingleft {
+        0% {
+          transform: translate(0);
+        }
+
+        100% {
+          transform: translate(50%);
+        }
+      }
+    }
+
+    &--right {
+      right: 0;
+      top: 6rem;
+    }
+  }
+
+
+
+}

@@ -15,7 +15,7 @@ import { Cssart2Component } from './components/cssart2/cssart2.component';
 import { Cssart3Component } from './components/cssart3/cssart3.component';
 import { Cssart4Component } from './components/cssart4/cssart4.component';
 import { AngularAnimationComponent } from './components/angularAnimations/angularBasic/angularAnimation.component';
-
+import { SwiperModule } from 'swiper/angular';
 
 
 @NgModule({
@@ -37,7 +37,8 @@ import { AngularAnimationComponent } from './components/angularAnimations/angula
   ],
   imports: [
     CommonModule,
-    CssAnimationRoutingModule
+    CssAnimationRoutingModule,
+    SwiperModule
   ]
 })
 export class CssAnimationModule { }

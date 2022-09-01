@@ -7,7 +7,14 @@
 @import './styles/coolButton';
 @import './styles/social';
 @import './styles/scrolldownWheel';
+@import './styles/skills';
+@import './styles/reviews';
+@import './styles/project';
+@import './styles/swiper';
 
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
 
 
 :host {
