@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { trigger, state, style, transition, animate} from '@angular/animations';
 import { barState, blinkState, boxState, movingRight, numberEntereState, widthState,  } from './animations';
 import { interval, Observable } from 'rxjs';
@@ -7,6 +7,10 @@ import { SubSink } from 'subsink';
 
 import SwiperCore, { SwiperOptions, Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { EventsParams } from 'swiper/angular';
+import { timeStamp } from 'console';
+import * as THREE from 'three';
+import { request } from 'http';
+import { EngineService } from './engine.service';
 
 
 // install Swiper modules
@@ -26,7 +30,7 @@ SwiperCore.use([Navigation  ]);
 
 
 })
-export class AngularAnimationComponent implements OnInit, OnDestroy {
+export class AngularAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
 
   stateBlink = 'show';
   loadingBorder = 'start';
@@ -46,10 +50,28 @@ export class AngularAnimationComponent implements OnInit, OnDestroy {
   progressBarFinish = false;
   private subs = new SubSink();
 
-  constructor() { }
+  status1 = false;
+  status2 = false;
+  status3 = false;
+
+
+
+
+  @ViewChild('rendererCanvas', { static: true })
+  public rendererCanvas: ElementRef<HTMLCanvasElement>;
+
+  constructor(
+    private engServ: EngineService
+  ) { }
+
 
   ngOnDestroy(): void {
      this.subs.unsubscribe();
+  }
+
+
+  ngAfterViewInit(): void {
+
   }
 
   ngOnInit(): void {
@@ -57,6 +79,9 @@ export class AngularAnimationComponent implements OnInit, OnDestroy {
     this.progressBar();
     this.loadingborder();
     this.movingRight();
+
+    this.engServ.createScene(this.rendererCanvas);
+    this.engServ.animate();
   }
 
   blink() {
@@ -144,12 +169,24 @@ export class AngularAnimationComponent implements OnInit, OnDestroy {
   onSwiper(params: EventsParams ) {
     // const [swiper] = params;
     // console.log(swiper);
-    console.log(params);
+   // console.log(params);
   }
   onSlideChange() {
-    console.log('slide change');
+   // console.log('slide change');
   }
 
+  status(val: number ){
+    this.status1 = false;
+    this.status2 = false;
+    this.status3 = false;
+      if (val === 1) {
+        this.status1 = true;
+      } else if (val === 2) {
+        this.status2 =true;
+      } else if (val === 3) {
+        this.status3 = true;
+      }
+  }
 
 
 

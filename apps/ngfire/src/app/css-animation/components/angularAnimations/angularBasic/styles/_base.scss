@@ -6,3 +6,22 @@ $yellow-color: #ffea5c;
 $darkish-blue: #060b11;
 $box-shadow-blue1:  rgba(31,38,135,0.27);
 $box-shadow-blue2:  rgba(31,38,135,0.67);
+
+
+.section {
+  padding: 1rem;
+  overflow: hidden;
+  min-height: 90vh;
+  padding-top:2rem;
+  &__header {
+    &--title {
+      font-weight: 400;
+      font-size: 17px;
+      color: #666;
+    }
+    &--subtitle {
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+}
