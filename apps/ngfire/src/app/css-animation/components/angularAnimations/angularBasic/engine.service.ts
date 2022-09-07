@@ -1,6 +1,9 @@
 import * as THREE from 'three';
 import { Injectable, ElementRef, OnDestroy, NgZone } from '@angular/core';
 
+
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,13 +13,20 @@ export class EngineService implements OnDestroy {
   private camera: THREE.PerspectiveCamera;
   private scene: THREE.Scene;
   private light: THREE.AmbientLight;
-
+  private loader: THREE.TextureLoader;
   private cube: THREE.Mesh;
 
   private frameId: number = null;
 
   public constructor(private ngZone: NgZone) {}
 
+  bg1 = "./background/19.jpg";
+  bg2 = "./background/24.jpg";
+  bg3 = "./background/26.jpg";
+  bg4 = "./background/44.jpg";
+  bg5 = "./background/213.jpg";
+
+  images = [ this.bg1,this.bg2, this.bg3, this.bg4, this.bg5 ];
   public ngOnDestroy() {
     if (this.frameId != null) {
       cancelAnimationFrame(this.frameId);
@@ -48,10 +58,19 @@ export class EngineService implements OnDestroy {
     this.light.position.z = 10;
     this.scene.add(this.light);
 
-    // const loader = new THREE.TextureLoader();
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00  });
+    const texture = new THREE.TextureLoader().load("./background/19.jpg");
+
+
+
+    // const geometry = new THREE.BoxGeometry(1, 1, 1);
+    const geometry = new THREE.PlaneGeometry( 10, 5 );
+    const material = new THREE.MeshBasicMaterial({
+     // color: 0x00ff00,
+     map: texture
+     // map: loader.load("https://upload.wikimedia.org/wikipedia/commons/b/b8/Exploding_planet.jpg")
+    });
     this.cube = new THREE.Mesh( geometry, material );
+
     this.scene.add(this.cube);
 
   }
@@ -79,8 +98,8 @@ export class EngineService implements OnDestroy {
       this.render();
     });
 
-    this.cube.rotation.x += 0.01;
-    this.cube.rotation.y += 0.01;
+    // this.cube.rotation.x += 0.01;
+    // this.cube.rotation.y += 0.01;
     this.renderer.render(this.scene, this.camera);
   }
 
