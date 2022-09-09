@@ -13,8 +13,17 @@
   height: 90vh;
   // background: transparent;
   // background: #111;
-  color: #0f0f0f;
+  // color: #0f0f0f;
   overflow: hidden;
+
+  .threejs {
+    position:absolute;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%);
+    width: 400px;
+    height: 300px;
+  }
 
   .header {
     position: absolute;

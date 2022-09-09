@@ -28,7 +28,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AngularAnimationComponent } from './angular_animation/angularAnimation.component';
-
+import { NgtCanvas } from '@angular-three/core';
 
 @NgModule({
   declarations: [AppComponent, AboutComponent, HeaderComponent, CreateUserComponent, LoginComponent, SidebarComponent, HighlightedDirective, TypescriptComponent, AngularAnimationComponent
@@ -51,6 +51,7 @@ import { AngularAnimationComponent } from './angular_animation/angularAnimation.
      StoreModule.forRoot({}),
      EffectsModule.forRoot([]),
      EntityDataModule.forRoot({}),
+
   ],
   providers: [CourseResolver],
   bootstrap: [AppComponent],

@@ -16,7 +16,9 @@ import { Cssart3Component } from './components/cssart3/cssart3.component';
 import { Cssart4Component } from './components/cssart4/cssart4.component';
 import { AngularAnimationComponent } from './components/angularAnimations/angularBasic/angularAnimation.component';
 import { SwiperModule } from 'swiper/angular';
-
+import { EngineComponent } from './components/angularAnimations/angularBasic/engine/engine.component';
+import { ThreeBasicComponent } from './components/threejs/engine/basic.component';
+// import { NgtCanvas } from '@angular-three/core';
 
 @NgModule({
   declarations: [
@@ -33,12 +35,15 @@ import { SwiperModule } from 'swiper/angular';
     Cssart2Component,
     Cssart3Component,
     Cssart4Component,
-    AngularAnimationComponent
+    AngularAnimationComponent,
+    EngineComponent,
+    ThreeBasicComponent
   ],
   imports: [
     CommonModule,
     CssAnimationRoutingModule,
-    SwiperModule
+    SwiperModule,
+
   ]
 })
 export class CssAnimationModule { }

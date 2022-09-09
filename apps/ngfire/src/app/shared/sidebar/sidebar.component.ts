@@ -91,10 +91,10 @@ export class SidebarComponent implements OnInit {
           { label: 'Part I', icon: 'pi pi-refresh',routerLink: '/animation/animate'},
           { label: 'Part II', icon: 'pi pi-refresh',routerLink: '/animation/animate2'},
           { label: 'Part III', icon: 'pi pi-refresh',routerLink: '/animation/animate3'},
-          { label: '앵귤러 애니메이션 기초1', icon: 'pi pi-refresh',routerLink: '/animation/angularProj1'},
-          { label: '앵귤러 애니메이션 기초2', icon: 'pi pi-refresh',routerLink: '/animation/angularProj2'},
-          { label: '앵귤러 애니메이션 기초3', icon: 'pi pi-refresh',routerLink: '/animation/angularProj3'},
-          { label: '앵귤러 애니메이션 기초4', icon: 'pi pi-refresh',routerLink: '/animation/angularProj4'}
+          { label: '애니메이션', icon: 'pi pi-refresh',routerLink: '/animation/angularProj1'},
+          { label: 'THREE Basic', icon: 'pi pi-refresh',routerLink: '/animation/threebasic'},
+          { label: '애니메이션 기초3', icon: 'pi pi-refresh',routerLink: '/animation/angularProj3'},
+          { label: '애니메이션 기초4', icon: 'pi pi-refresh',routerLink: '/animation/angularProj4'}
         ],
         style: {'width' : '200px', 'color': 'blue'}
       },
